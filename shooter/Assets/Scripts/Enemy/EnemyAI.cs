@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour {
 	public float time;
 	public float startShootTime;
 
+	public GameBehavior gameScript;
+
 	// Use this for initialization
 	void Start () {
 		time = Time.time + shootSpeed + startShootTime;
@@ -29,6 +31,8 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(){
+		gameScript.scoreCounter++;
+		print ("score = " + gameScript.scoreCounter);
 		Destroy (gameObject);
 	}
 }

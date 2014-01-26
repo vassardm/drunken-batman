@@ -3,22 +3,20 @@ using System.Collections;
 
 public class BGScroller : MonoBehaviour {
 
-	public float speed = 2;
+	public float speed = 2f;
 
 	// Use this for initialization
 	void Start () {
 
 	}
 
-	void FixedUpdate () {
-
-		if (Camera.main.WorldToScreenPoint (transform.position).y < 0 - (Screen.height / 2)) {
-			transform.position = new Vector3 (0, 10 - (speed * Time.deltaTime), 1);
-		} else {
-			Vector3 newPos = transform.position;
-			newPos.y -= speed * Time.deltaTime;
-			transform.position = newPos;
+	void Update () {
+		
+		if (transform.position.y < -11) {
+			transform.position = new Vector3 (0, 11f + (transform.position.y + 11f), 1);
 		}
 
+		transform.Translate(new Vector3(0, -1f * speed * Time.deltaTime, 0));
+		
 	}
 }

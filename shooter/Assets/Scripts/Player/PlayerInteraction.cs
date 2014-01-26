@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PlayerInteraction : MonoBehaviour {
 
-	public int numOfLives = 4;
 	public Vector3 respawnPoint = new Vector3(0, -4, 0);
+
+	public GameBehavior gameScript;
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag.Equals("EnemyBullet")){
@@ -15,8 +16,9 @@ public class PlayerInteraction : MonoBehaviour {
 	}
 
 	void respawn(){
-		numOfLives--;
-		if (numOfLives < 0) {
+		gameScript.numOfLives--;
+		print ("lives left = " + gameScript.numOfLives);
+		if (gameScript.numOfLives < 0) {
 			Destroy (gameObject);
 		} else {
 			gameObject.transform.position = respawnPoint;

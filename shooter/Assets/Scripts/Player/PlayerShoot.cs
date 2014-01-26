@@ -4,6 +4,10 @@ using System.Collections;
 public class PlayerShoot : MonoBehaviour {
 
 	public GameObject bullet;
+	public float bulletSpeed;
+	public float firingRate = .1f;
+	public float lastFired = -100f;
+	public GameBehavior gameScript;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +19,30 @@ public class PlayerShoot : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Z))
 		{
 			//Creates an object, giving it position, and 
-			Instantiate(bullet,transform.position,transform.rotation);
+			/*GameObject bullets = (Instantiate(bullet,transform.position,transform.rotation)) as GameObject;
+			BulletAI ai = bullets.GetComponent<BulletAI>();
+			ai.setSpeed(0, bulletSpeed);*/
+			//Instantiate(bullet, transform.position, transform.rotation);
+			if (Time.time >= lastFired + firingRate){
+				GameObject bullets = (Instantiate(bullet,transform.position,transform.rotation)) as GameObject;
+				BulletAI ai = bullets.GetComponent<BulletAI>();
+				ai.setSpeed(0, bulletSpeed);
+				lastFired = Time.time;
+			}
 		}	
+
+		if(Input.GetKeyDown(KeyCode.X))
+		{
+			if (gameScript.bombCounter > 0){
+				gameScript.bombCounter--;
+				for(int i = -6; i < 6; i++){
+					GameObject bullets = (Instantiate(bullet,transform.position,transform.rotation)) as GameObject;
+					BulletAI ai = bullets.GetComponent<BulletAI>();
+
+					ai.setSpeed(i/2.0f, bulletSpeed);
+				}
+			}
+		}
+
 	}
 }

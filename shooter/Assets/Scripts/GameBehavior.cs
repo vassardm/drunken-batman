@@ -5,6 +5,7 @@ public class GameBehavior : MonoBehaviour {
 
 	public int scoreCounter = 0;
 	public int numOfLives = 4;
+	public int bombCounter = 4;
 
 	// Use this for initialization
 	void Start () {

@@ -7,8 +7,12 @@ public class GameBehavior : MonoBehaviour {
 	public int numOfLives = 4;
 	public int bombCounter = 4;
 
+	public GUIText text;
+
 	// Use this for initialization
 	void Start () {
+
+		text.text = "";
 	
 	}
 	
@@ -21,5 +25,7 @@ public class GameBehavior : MonoBehaviour {
 				Time.timeScale = 1;
 			}
 		}
+
+		text.text = "Score: " + scoreCounter + "\nLives Left: " + numOfLives + "\nBombs Left: " + bombCounter;
 	}
 }

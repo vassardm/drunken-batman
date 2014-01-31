@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerInteraction : MonoBehaviour {
 
-	public Vector3 respawnPoint = new Vector3(0, -4, 0);
+	public Vector3 respawnPoint = new Vector3(-1.5f, -1.5f, 0);
 	public GameObject[] gibs;
 	public float explosionForce;
 	public float spawnRadius = 1.0f;

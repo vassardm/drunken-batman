@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour {
 
 		Vector2 newPosition = transform.position;		
 		
-		if((Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - padding)){
+		if((Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - padding - 310f)){
 			if(Input.GetAxis("Horizontal") < 0){
 				newPosition.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 			}

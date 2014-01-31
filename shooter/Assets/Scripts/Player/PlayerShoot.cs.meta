@@ -4,6 +4,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - bullet: {fileID: 100000, guid: 0673fe5b37633604cb85f88f2947e621, type: 2}
+  - gameScript: {instanceID: 0}
+  - playerShoot: {fileID: 8300000, guid: 71b981ad366646346b4e30cc9c2fc958, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

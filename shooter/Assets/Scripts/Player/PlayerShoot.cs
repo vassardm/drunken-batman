@@ -8,6 +8,8 @@ public class PlayerShoot : MonoBehaviour {
 	public float firingRate = .1f;
 	public float lastFired = -100f;
 	public GameBehavior gameScript;
+	public AudioClip playerShoot;
+	public AudioClip playerBomb;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +30,7 @@ public class PlayerShoot : MonoBehaviour {
 				BulletAI ai = bullets.GetComponent<BulletAI>();
 				ai.setSpeed(0, bulletSpeed);
 				lastFired = Time.time;
+				audio.PlayOneShot(playerShoot);
 			}
 		}	
 
@@ -41,6 +44,7 @@ public class PlayerShoot : MonoBehaviour {
 
 					ai.setSpeed(i/2.0f, bulletSpeed);
 				}
+				audio.PlayOneShot(playerBomb);
 			}
 		}
 

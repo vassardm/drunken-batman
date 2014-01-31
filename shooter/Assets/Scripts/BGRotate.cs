@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyBulletAI : MonoBehaviour {
+public class BGRotate : MonoBehaviour {
+
+	public float speed = 3;
 
 	// Use this for initialization
 	void Start () {
-
-		Vector2 newVelocity = Vector2.zero;
-		newVelocity.y = -10.0f;
-		rigidbody2D.velocity = newVelocity;
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+		transform.Rotate (0, speed, 0);
+
 	}
 }

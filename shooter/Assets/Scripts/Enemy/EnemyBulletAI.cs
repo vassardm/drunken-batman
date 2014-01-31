@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletAI : MonoBehaviour {
-
-	public float speed;
+public class EnemyBulletAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
 
 		Vector2 newVelocity = Vector2.zero;
-		newVelocity.y = speed;
+		newVelocity.y = -10.0f;
 		rigidbody2D.velocity = newVelocity;
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
-	
+	void OnTriggerEnter2D(Collider2D other){
+		Destroy (gameObject);
 	}
 }

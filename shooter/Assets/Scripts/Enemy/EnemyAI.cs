@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter2D(){
+	void OnTriggerEnter2D(Collider2D other){
 		gameScript.scoreCounter++;
 		print ("score = " + gameScript.scoreCounter);
 		var randNumb = Random.Range(1, 100);
@@ -54,7 +54,15 @@ public class EnemyAI : MonoBehaviour {
 			Instantiate(points, transform.position, transform.rotation);
 			print ("more points");
 		}
+		if(!other.tag.Equals("Player")){
+			BulletAI bulletAI = other.GetComponent<BulletAI>();
+			bulletAI.bulletDestroy();
+		}
 
 		Destroy (gameObject);
+	}
+
+	public void setGameScript(Camera cam){
+		gameScript = cam.GetComponent<GameBehavior>();
 	}
 }

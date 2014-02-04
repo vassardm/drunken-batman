@@ -29,5 +29,9 @@ public class BulletAI : MonoBehaviour {
 		xSpeed = x;
 		ySpeed = y;
 	}
+
+	public void bulletDestroy(){
+		Destroy (gameObject);
+	}
 }
 

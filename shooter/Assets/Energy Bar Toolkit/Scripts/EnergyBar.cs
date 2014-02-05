@@ -17,9 +17,28 @@ public class EnergyBar : MonoBehaviour {
     // Fields
     // ===========================================================
     
+	public GameObject bar;
+	public GameBehavior globals;
     public int valueCurrent = 50;
     public int valueMin = 0;
     public int valueMax = 100;
+
+	void Start() { 
+		if (bar.tag == "bomb_bar") {
+			valueCurrent = globals.bombCounter;
+				}
+		if (bar.tag == "life_bar") {
+			valueCurrent = globals.numOfLives;
+		}
+		if (bar.tag == "graze_bar") {
+			valueCurrent = globals.numOfLives;
+		}
+		if (bar.tag == "firepower_bar") {
+			valueCurrent = globals.numOfLives;
+		}
+
+	}
+
     
     public float ValueF {
         get {
@@ -53,7 +72,19 @@ public class EnergyBar : MonoBehaviour {
     // ===========================================================
 
     protected void Update() {
-        valueCurrent = Mathf.Clamp(valueCurrent, valueMin, valueMax);
+		if (bar.tag == "bomb_bar") {
+			valueCurrent = Mathf.Clamp(globals.bombCounter, valueMin, valueMax);
+		}
+		if (bar.tag == "life_bar") {
+			valueCurrent = Mathf.Clamp(globals.numOfLives, valueMin, valueMax);
+		}
+		if (bar.tag == "graze_bar") {
+			valueCurrent = Mathf.Clamp(globals.numOfLives, valueMin, valueMax);
+		}
+		if (bar.tag == "firepower_bar") {
+			valueCurrent = Mathf.Clamp(globals.numOfLives, valueMin, valueMax);
+		}
+	
         
         if (animationEnabled) {
             valueCurrent = valueMin + (int) (animValueF * (valueMax - valueMin));

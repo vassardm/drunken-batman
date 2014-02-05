@@ -5,7 +5,7 @@ public class PlayerShoot : MonoBehaviour {
 
 	public GameObject bullet;
 	public float bulletSpeed;
-	public float firingRate;
+	private float firingRate;
 	public float lastFired = -100f;
 	public GameBehavior gameScript;
 
@@ -25,9 +25,13 @@ public class PlayerShoot : MonoBehaviour {
 			ai.setSpeed(0, bulletSpeed);*/
 			//Instantiate(bullet, transform.position, transform.rotation);
 			if (Time.time >= lastFired + firingRate){
-				GameObject bullets = (Instantiate(bullet,transform.position,transform.rotation)) as GameObject;
-				BulletAI ai = bullets.GetComponent<BulletAI>();
-				ai.setSpeed(0, bulletSpeed);
+				for(int i = 0; i < gameScript.numOfBullets; i++){
+					Vector3 bulletPos = transform.position;
+					bulletPos.x = transform.position.x + ((-(gameScript.numOfBullets - 1)/2) + ((gameScript.numOfBullets - 1)*(i)))/5;
+					GameObject bullets = (Instantiate(bullet, bulletPos,transform.rotation)) as GameObject;
+					BulletAI ai = bullets.GetComponent<BulletAI>();
+					ai.setSpeed(0, bulletSpeed);
+				}
 				lastFired = Time.time;
 			}
 		}	

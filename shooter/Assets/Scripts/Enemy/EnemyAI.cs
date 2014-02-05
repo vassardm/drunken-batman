@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour {
 	public GameObject enemyBullet;
 	public float shootSpeed;
 	public float time;
-	public float startShootTime;
+	public float startShootTime = 0;
 	public GameObject oneUp;
 	public GameObject extraBomb;
 	public GameObject fireRate;
@@ -16,7 +16,12 @@ public class EnemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		time = Time.time + shootSpeed + startShootTime;
+		//time = Time.time + shootSpeed + startShootTime;
+		gameScript = Camera.main.GetComponent<GameBehavior>();
+	}
+
+	public void setTime(float startTime){
+		time = Time.time + shootSpeed + startTime;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +40,7 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		gameScript.scoreCounter++;
+		gameScript.scoreCounter+=1;
 		print ("score = " + gameScript.scoreCounter);
 		var randNumb = Random.Range(1, 100);
 		if(randNumb <= 5){
@@ -46,11 +51,11 @@ public class EnemyAI : MonoBehaviour {
 			Instantiate(extraBomb, transform.position, transform.rotation);
 			print ("extra bomb");
 		}
-		else if(randNumb >= 80){
+		else if(randNumb >= 60){
 			Instantiate(fireRate, transform.position, transform.rotation);
 			print ("fire rate");
 		}
-		else if(randNumb >= 70){
+		else if(randNumb >= 20){
 			Instantiate(points, transform.position, transform.rotation);
 			print ("more points");
 		}

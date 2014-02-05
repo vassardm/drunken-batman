@@ -4,6 +4,8 @@ using System.Collections;
 public class manyEnemies : MonoBehaviour {
 	
 	public GameObject basicEnemy;
+	public GameObject horEnemy;
+	public GameObject vertEnemy;
 	public GameObject medEnemy;
 	//public GameObject hardEnemy;
 	public float spawnAreaWidth;
@@ -20,12 +22,24 @@ public class manyEnemies : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		startTime = Time.time;
+		EnemyAI bEnAI = basicEnemy.GetComponent<EnemyAI>();
+		EnemyAI hEnAI = horEnemy.GetComponent<EnemyAI>();
+		EnemyAI vEnAI = vertEnemy.GetComponent<EnemyAI>();
 		for(int i = 0; i < numOfEnemiesX; i++){
 			for(int j = 0; j < numOfEnemiesY; j++){
 				Vector2 spawnPosition = transform.position;
 				spawnPosition.x += i * (spawnAreaWidth/numOfEnemiesX);
 				spawnPosition.y -= j * (spawnAreaHeight/numOfEnemiesY);
-				Instantiate(basicEnemy,spawnPosition, basicEnemy.transform.rotation);
+				if(i%2 == 0){
+					Instantiate(vertEnemy,spawnPosition, basicEnemy.transform.rotation);
+					float enShootSpeed = vEnAI.shootSpeed;
+					vEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
+				}
+				else{
+					Instantiate(horEnemy,spawnPosition, basicEnemy.transform.rotation);
+					float enShootSpeed = hEnAI.shootSpeed;
+					hEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
+				}
 			}
 		}
 	}

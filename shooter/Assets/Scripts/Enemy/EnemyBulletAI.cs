@@ -7,7 +7,7 @@ public class EnemyBulletAI : MonoBehaviour {
 	void Start () {
 
 		Vector2 newVelocity = Vector2.zero;
-		newVelocity.y = -10.0f;
+		newVelocity.y = -3.0f;
 		rigidbody2D.velocity = newVelocity;
 	
 	}

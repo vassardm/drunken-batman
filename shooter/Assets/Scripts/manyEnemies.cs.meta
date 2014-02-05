@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: 5e817374c60e7e74eb869aff1231ad51
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - basicEnemy: {fileID: 100000, guid: 2fa11fe6f9fb20b448029054d2c47374, type: 2}
+  - horEnemy: {fileID: 100000, guid: 7e9b44982df21664699a8155ce138810, type: 2}
+  - vertEnemy: {fileID: 100000, guid: 9db67d6d9655c754db9fc859feaa0711, type: 2}
+  - medEnemy: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

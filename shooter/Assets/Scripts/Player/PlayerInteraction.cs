@@ -30,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour {
 			Destroy(other);
 		}
 		else if (other.tag.Equals("fireUp")){
-			gameScript.fireRate -= .05f;
+			gameScript.increaseFireRate();
 			Destroy(other);
 		}
 		else if (other.tag.Equals("points")){
@@ -47,9 +47,14 @@ public class PlayerInteraction : MonoBehaviour {
 		}
 	}
 
+	public GameBehavior getGlobals(){
+		return gameScript;
+	}
+
 	void respawn(){
 		deathTime = Time.time;
 		gameScript.numOfLives--;
+		gameScript.firePower = 0;
 		print ("lives left = " + gameScript.numOfLives);
 		foreach(GameObject gib in gibs)
 		{

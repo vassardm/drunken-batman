@@ -22,7 +22,9 @@ public class GameBehavior : MonoBehaviour {
 
 		highScoreLabel = GameObject.Find ("High Score").GetComponent < UILabel>();
 		highScoreLabel.text = highScoreCounter.ToString();
-
+		fireRate = defaultFireRate;
+		scoreCounter = 0;
+		firePower = 0;
 		text.text = "";
 	
 	}
@@ -49,5 +51,20 @@ public class GameBehavior : MonoBehaviour {
 
 
 	//	text.text = "Score: " + scoreCounter + "\nLives Left: " + numOfLives + "\nBombs Left: " + bombCounter;
+	}
+
+	public void increaseFireRate(){
+		firePower++;
+		if(firePower > 15){
+			fireRate = defaultFireRate/2;
+		}
+		if(firePower > 31){
+			fireRate = defaultFireRate;
+			numOfBullets = 2;
+		}
+		if(firePower > 63){
+			fireRate = defaultFireRate/2;
+			numOfBullets = 2;
+		}
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameBehavior : MonoBehaviour {
 
-	public int highScoreCounter = 1000;
+	public int highScoreCounter = 5;
 	public int scoreCounter = 0;
 	public int numOfLives = 3;
 	public int bombCounter = 2;

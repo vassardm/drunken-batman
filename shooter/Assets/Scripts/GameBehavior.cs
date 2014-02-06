@@ -73,19 +73,4 @@ public class GameBehavior : MonoBehaviour {
 			numOfBullets = 2;
 		}
 	}
-
-	public void increaseFireRate(){
-		firePower++;
-		if(firePower > 15){
-			fireRate = defaultFireRate/2;
-		}
-		if(firePower > 31){
-			fireRate = defaultFireRate;
-			numOfBullets = 2;
-		}
-		if(firePower > 63){
-			fireRate = defaultFireRate/2;
-			numOfBullets = 2;
-		}
-	}
 }

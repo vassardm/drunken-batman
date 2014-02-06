@@ -10,6 +10,8 @@ public class PlayerInteraction : MonoBehaviour {
 	public float invunTime;
 	private float deathTime;
 	private bool invun = false;
+	public AudioClip playerLoseLife;
+	public AudioClip playerDie;
 
 	public GameBehavior gameScript;
 
@@ -62,10 +64,13 @@ public class PlayerInteraction : MonoBehaviour {
 			gibInstance.rigidbody.AddExplosionForce(explosionForce,transform.position,spawnRadius);
 		}
 		if (gameScript.numOfLives < 0) {
+			AudioSource.PlayClipAtPoint(playerDie, transform.position);
+			gameScript.audio.Stop();
 			Destroy (gameObject);
 		} else {
 			gameObject.transform.position = respawnPoint;
 			invun = true;
+			audio.PlayOneShot(playerLoseLife);
 		}
 	}
 

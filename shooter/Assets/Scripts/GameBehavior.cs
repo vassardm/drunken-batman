@@ -13,6 +13,7 @@ public class GameBehavior : MonoBehaviour {
 	public float numOfBullets = 1;
 	public UILabel scoreLabel;
 	public UILabel highScoreLabel;
+	public AudioClip backgroundLevelMusic;
 
 
 	public GUIText text;
@@ -20,6 +21,7 @@ public class GameBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scoreCounter = 0;
+		audio.Play ();
 
 		scoreLabel = GameObject.Find ("Current Score").GetComponent < UILabel>();
 		scoreLabel.text = scoreCounter.ToString();
@@ -41,8 +43,10 @@ public class GameBehavior : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.P)) {
 			if (Time.timeScale == 1){
 				Time.timeScale = 0;
+				audio.Pause ();
 			} else {
 				Time.timeScale = 1;
+				audio.Play();
 			}
 		}
 		scoreLabel = GameObject.Find ("Current Score").GetComponent < UILabel>();

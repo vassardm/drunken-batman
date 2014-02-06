@@ -131,6 +131,7 @@ GameObject:
   - 124: {fileID: 106788439}
   - 81: {fileID: 106788438}
   - 114: {fileID: 106788443}
+  - 82: {fileID: 106788444}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -224,7 +225,67 @@ MonoBehaviour:
   numOfBullets: 1
   scoreLabel: {fileID: 0}
   highScoreLabel: {fileID: 0}
+  backgroundLevelMusic: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351,
+    type: 3}
   text: {fileID: 343865947}
+--- !u!82 &106788444
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106788437}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .372999996
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &180466568
 Prefab:
   m_ObjectHideFlags: 0
@@ -609,8 +670,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 388
-  storedScreenHeight: 291
+  storedScreenWidth: 568
+  storedScreenHeight: 426
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -842,8 +903,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 388
-  storedScreenHeight: 291
+  storedScreenWidth: 568
+  storedScreenHeight: 426
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -1277,8 +1338,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 388
-  storedScreenHeight: 291
+  storedScreenWidth: 568
+  storedScreenHeight: 426
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -1414,6 +1475,10 @@ Prefab:
       propertyPath: numOfBullets
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: backgroundLevelMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   m_RootGameObject: {fileID: 106788437}
@@ -1460,6 +1525,7 @@ GameObject:
   - 114: {fileID: 1280911187}
   - 114: {fileID: 1280911188}
   - 114: {fileID: 1280911189}
+  - 82: {fileID: 1280911190}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1550,6 +1616,8 @@ MonoBehaviour:
   bulletSpeed: 7
   lastFired: -100
   gameScript: {fileID: 106788443}
+  playerBomb: {fileID: 8300000, guid: 8b3198d8077547f4e82e84fda7ead02d, type: 3}
+  playerShoot: {fileID: 8300000, guid: 9f41fc41fa5fa8e46bb073c16b141a5d, type: 3}
 --- !u!114 &1280911189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1643,67 @@ MonoBehaviour:
   explosionForce: 8
   spawnRadius: 1
   invunTime: 3
+  playerLoseLife: {fileID: 0}
+  playerDie: {fileID: 0}
   gameScript: {fileID: 106788443}
+--- !u!82 &1280911190
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280911182}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 9f41fc41fa5fa8e46bb073c16b141a5d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1345883657
 Prefab:
   m_ObjectHideFlags: 0
@@ -2234,8 +2362,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 388
-  storedScreenHeight: 291
+  storedScreenWidth: 568
+  storedScreenHeight: 426
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 0, g: .913725495, b: .996078432, a: 1}
@@ -2295,7 +2423,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00260416674, y: .00260416674, z: .00260416674}
+  m_LocalScale: {x: .00469483575, y: .00469483575, z: .00469483575}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 433793008}
@@ -2352,17 +2480,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 384
+    e00: 213
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 384
+    e11: 213
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 384
+    e22: 213
     e23: 0
     e30: 0
     e31: 0

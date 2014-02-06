@@ -8,6 +8,7 @@ MonoImporter:
   - extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   - fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   - points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
+  - enemyDies: {fileID: 8300000, guid: c18f9307ef8ebd645ad76b99b2243d8c, type: 3}
   - gameScript: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

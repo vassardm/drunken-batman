@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour {
 	public GameObject extraBomb;
 	public GameObject fireRate;
 	public GameObject points;
+//	public AudioClip enemyDies;
 
 	public GameBehavior gameScript;
 
@@ -63,7 +64,7 @@ public class EnemyAI : MonoBehaviour {
 			BulletAI bulletAI = other.GetComponent<BulletAI>();
 			bulletAI.bulletDestroy();
 		}
-
+	//	AudioSource.PlayClipAtPoint (enemyDies, transform.position);
 		Destroy (gameObject);
 	}
 

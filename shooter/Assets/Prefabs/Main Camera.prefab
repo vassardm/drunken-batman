@@ -94,6 +94,7 @@ MonoBehaviour:
   numOfBullets: 1
   scoreLabel: {fileID: 0}
   highScoreLabel: {fileID: 0}
+  backgroundLevelMusic: {fileID: 0}
   text: {fileID: 0}
 --- !u!124 &12400000
 Behaviour:

@@ -700,6 +700,7 @@ GameObject:
   - 65: {fileID: 168888452}
   - 114: {fileID: 168888451}
   - 114: {fileID: 168888450}
+  - 114: {fileID: 168888453}
   m_Layer: 8
   m_Name: Button - Initialize Game
   m_TagString: Untagged
@@ -811,6 +812,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 240, y: 50, z: 0}
   m_Center: {x: 1, y: -1, z: 0}
+--- !u!114 &168888453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168888447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940b61b1d0e203c479028ed9b1cffca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &169958118
 Prefab:
   m_ObjectHideFlags: 0
@@ -1448,6 +1460,7 @@ GameObject:
   - 65: {fileID: 315503968}
   - 114: {fileID: 315503967}
   - 114: {fileID: 315503966}
+  - 114: {fileID: 315503970}
   m_Layer: 8
   m_Name: Button - Terminate Game
   m_TagString: Untagged
@@ -1559,6 +1572,17 @@ MonoBehaviour:
   mFillDirection: 4
   mFillAmount: 1
   mInvert: 0
+--- !u!114 &315503970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 315503964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f3475caeadfee4091c294fe226ae5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371057365
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,12 +27,6 @@ public class EnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.X))
-		{
-			//Creates an object, giving it position, and 
-			Instantiate(enemyBullet,transform.position,transform.rotation);
-		}
-
 		if (Time.time > time) {
 			Instantiate(enemyBullet, transform.position, transform.rotation);
 			time += shootSpeed;

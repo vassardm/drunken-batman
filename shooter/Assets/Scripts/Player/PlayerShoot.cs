@@ -42,6 +42,8 @@ public class PlayerShoot : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.X))
 		{
 			if (gameScript.bombCounter > 0){
+				gameScript.grazeCounter = 0;
+				gameScript.grazeMultiplier = 1;
 				gameScript.bombCounter--;
 				for(int i = -6; i < 6; i++){
 					GameObject bullets = (Instantiate(bullet,transform.position,transform.rotation)) as GameObject;

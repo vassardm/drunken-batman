@@ -3,47 +3,56 @@ using System.Collections;
 
 public class GameBehavior : MonoBehaviour {
 
-	public int highScoreCounter = 5;
+	public int highScoreCounter = 1000;
 	public int scoreCounter = 0;
-	public int numOfLives = 4;
-	public int bombCounter = 4;
-	private float defaultFireRate = .3f;
+	public int numOfLives = 3;
+	public int bombCounter = 3;
+	public int grazeMultiplier = 1;
+	public int grazeCounter = 0;
+
 	public float fireRate;
 	public float firePower = 0;
 	public float numOfBullets = 1;
-	public int grazeMultiplier = 1;
-	public int grazeCounter = 0;
+
 	public UILabel scoreLabel;
 	public UILabel highScoreLabel;
 	public UILabel grazeLabel;
+
 	public AudioClip backgroundLevelMusic;
 
+	public GUIText placeholder;
 
-	public GUIText text;
+	private float defaultFireRate = .3f;
+
 
 	// Use this for initialization
 	void Start () {
-		scoreCounter = 0;
-		grazeMultiplier = 1;
-		grazeCounter = 0;
-		audio.Play ();
+		launchDefaultCounters ();
+		launchAudio ();
+		launchLabels ();
+	}
 
+	public void launchDefaultCounters() {
+		scoreCounter = 0;
+		grazeCounter = 0;
+		firePower = 0;
+		fireRate = defaultFireRate;
+		grazeMultiplier = 1;
+	}
+
+	public void launchAudio() {
+		audio.Play ();
+	}
+
+	public void launchLabels() {
 		scoreLabel = GameObject.Find ("Current Score").GetComponent < UILabel>();
 		scoreLabel.text = scoreCounter.ToString();
-
+		
 		highScoreLabel = GameObject.Find ("High Score").GetComponent < UILabel>();
 		highScoreLabel.text = highScoreCounter.ToString();
-
+		
 		grazeLabel = GameObject.Find ("Graze Label").GetComponent < UILabel>();
 		grazeLabel.text = "x" + grazeMultiplier.ToString();
-
-		fireRate = defaultFireRate;
-		scoreCounter = 0;
-		firePower = 0;
-		text.text = "";
-		fireRate = defaultFireRate;
-		scoreCounter = 0;
-		firePower = 0;
 	}
 	
 	// Update is called once per frame
@@ -59,48 +68,70 @@ public class GameBehavior : MonoBehaviour {
 			}
 		}
 
-		if (grazeCounter < 15) {
-			grazeLabel.text = "x" + grazeMultiplier.ToString();
-		}
+		updateGrazeMeterFunctionality ();
+		updateScoreandHighScoreFunctionality ();
 
-		if (grazeCounter >= 15 && grazeCounter <= 31) {
-			grazeLabel.text = "x" + grazeMultiplier.ToString();
-		}
+	}
 
-		if (grazeCounter >= 31 && grazeCounter <= 63) {
-			grazeLabel.text = "x" + grazeMultiplier.ToString();
-		}
-
-		if (grazeCounter > 63) {
-			grazeLabel.text = "x" + grazeMultiplier.ToString();
-		}
-
+	public void updateScoreandHighScoreFunctionality() {
 		scoreLabel = GameObject.Find ("Current Score").GetComponent < UILabel>();
 		scoreLabel.text = scoreCounter.ToString();
-	
-
+		
+		
 		if (scoreCounter >= highScoreCounter) {
 			highScoreCounter = scoreCounter;
 			highScoreLabel = GameObject.Find ("High Score").GetComponent < UILabel> ();
 			highScoreLabel.text = scoreCounter.ToString ();
+		}	
+	}
+
+	public void updateGrazeMeterFunctionality() {
+		string multiplerSymbol = "x";
+		int levelOneGrazeBenchmark = 15;
+		int levelTwoGrazeBenchmark = 31;
+		int levelThreeGrazeBenchmark = 63;
+
+		// Ensures Score Updates are multiplied by 1
+		if (grazeCounter < levelOneGrazeBenchmark) {
+			grazeLabel.text = multiplerSymbol + grazeMultiplier.ToString();
 		}
 
+		// Ensures Score Updates are multiplied by 2
+		if (grazeCounter > levelOneGrazeBenchmark && grazeCounter <= levelTwoGrazeBenchmark) {
+			grazeLabel.text = multiplerSymbol + grazeMultiplier.ToString();
+		}
 
-	//	text.text = "Score: " + scoreCounter + "\nLives Left: " + numOfLives + "\nBombs Left: " + bombCounter;
+		// Ensures Score Updates are multiplied by 4
+		if (grazeCounter > levelTwoGrazeBenchmark && grazeCounter <= levelThreeGrazeBenchmark) {
+			grazeLabel.text = multiplerSymbol + grazeMultiplier.ToString();
+		}
+
+		// Ensures Score Updates are multiplied by 8
+		if (grazeCounter > levelThreeGrazeBenchmark) {
+			grazeLabel.text = multiplerSymbol + grazeMultiplier.ToString();
+		}
 	}
 
 	public void increaseFireRate(){
+		int levelOnePowerBenchmark = 15;
+		int levelTwoPowerBenchmark = 31;
+		int levelThreePowerBenchmark = 63;
+
 		firePower++;
-		if(firePower > 15 && firePower <= 31){
-			fireRate = defaultFireRate/2;
+
+		if (firePower > levelOnePowerBenchmark && firePower <= levelTwoPowerBenchmark){
+			fireRate = defaultFireRate / 2;
 		}
-		if(firePower > 31 && fireRate <= 63){
+
+		if (firePower > levelTwoPowerBenchmark && fireRate <= levelThreePowerBenchmark){
 			fireRate = defaultFireRate;
 			numOfBullets = 2;
 		}
-		if(firePower > 63){
-			fireRate = defaultFireRate/2;
+
+		if (firePower > levelThreePowerBenchmark){
+			fireRate = defaultFireRate / 2;
 			numOfBullets = 2;
 		}
+
 	}
 }

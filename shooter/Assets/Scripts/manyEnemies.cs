@@ -7,14 +7,17 @@ public class manyEnemies : MonoBehaviour {
 	public GameObject horEnemy;
 	public GameObject vertEnemy;
 	public GameObject medEnemy;
-	//public GameObject hardEnemy;
+
 	public float spawnAreaWidth;
 	public float spawnAreaHeight;
+
 	public int numOfEnemiesX;
 	public int numOfEnemiesY;
+
 	public float secondWaveTime;
 	private bool secondReady = true;
 	private bool thirdReady = true;
+
 	public float thirdWaveTime;
 	private float startTime;
 	private float totalTime;

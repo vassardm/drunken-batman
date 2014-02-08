@@ -4,12 +4,16 @@ using System.Collections;
 public class PlayerShoot : MonoBehaviour {
 
 	public GameObject bullet;
-	public float bulletSpeed;
-	private float firingRate;
-	public float lastFired = -100f;
+
 	public GameBehavior gameScript;
+
+	public float bulletSpeed;
+	public float lastFired = -100f;
+
 	public AudioClip playerBomb;
 	public AudioClip playerShoot;
+
+	private float firingRate;
 
 	// Use this for initialization
 	void Start () {

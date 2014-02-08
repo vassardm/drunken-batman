@@ -4,14 +4,14 @@ using System.Collections;
 public class EnemyAI : MonoBehaviour {
 
 	public GameObject enemyBullet;
-	public float shootSpeed;
-	public float time;
-	public float startShootTime = 0;
 	public GameObject oneUp;
 	public GameObject extraBomb;
 	public GameObject fireRate;
 	public GameObject points;
-//	public AudioClip enemyDies;
+
+	public float shootSpeed;
+	public float time;
+	public float startShootTime = 0;
 
 	public GameBehavior gameScript;
 
@@ -35,23 +35,35 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag != "graze_trigger"){
-			gameScript.scoreCounter += 1;
+		int increaseEnemyKilledScoreBy = 100; // This is how many points you gain from killing a foe.
+		int scoreMultiplier = gameScript.grazeMultiplier;
+		int randomNumberFloor = 1;
+		int randomNumberCeiling = 100;
+		int getLifeUpItemBenchmark = 10;
+		int getBombUpItemBenchmark = 90;
+		int getIncreaseFireRateItemBenchmark = 60;
+		int getIncreasePointScoreBenchmark = 10;
+
+		if (other.tag != "graze_trigger") {
+
+			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
 			print ("score = " + gameScript.scoreCounter);
-			var randNumb = Random.Range (1, 100);
-			if (randNumb <= 5) {
+			var randNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
+
+			if (randNumb >= randomNumberFloor && randNumb <= getLifeUpItemBenchmark) {
 					Instantiate (points, transform.position, transform.rotation);
 					print ("extra life");
-			} else if (randNumb >= 90) {
+			} else if (randNumb >= getBombUpItemBenchmark && randNumb <= randomNumberCeiling) {
 					Instantiate (extraBomb, transform.position, transform.rotation);
 					print ("extra bomb");
-			} else if (randNumb >= 60) {
+			} else if (randNumb >= getIncreaseFireRateItemBenchmark && randNumb < getBombUpItemBenchmark) {
 					Instantiate (fireRate, transform.position, transform.rotation);
 					print ("fire rate");
-			} else if (randNumb >= 20) {
+			} else if (randNumb > getIncreasePointScoreBenchmark && randNumb < getIncreaseFireRateItemBenchmark) {
 					Instantiate (points, transform.position, transform.rotation);
 					print ("more points");
 			}
+
 			if (!other.tag.Equals ("Player")) {
 					BulletAI bulletAI = other.GetComponent<BulletAI> ();
 					bulletAI.bulletDestroy ();

@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyBulletAI : MonoBehaviour {
 
 	public GameBehavior globals;
-	public bool entered = false;
+	public bool entered = false; // You need this flag or the game will try to read EVERY instance of the collison!
 
 	// Use this for initialization
 	void Start () {
@@ -17,19 +17,24 @@ public class EnemyBulletAI : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
+
+		int levelOneGrazeBenchmark = 15;
+		int levelTwoGrazeBenchmark = 31;
+		int levelThreeGrazeBenchmark = 63;
+
 		if (other.tag == "graze_trigger") {
-			if (!entered){
+			if (!entered) {
 				print ("in graze trigger");
 				globals.grazeCounter++;
-				if(globals.grazeCounter > 15 && globals.grazeCounter <= 31){
+				if(globals.grazeCounter > levelOneGrazeBenchmark && globals.grazeCounter <= levelTwoGrazeBenchmark){
 					print ("graze level = 2");
 					globals.grazeMultiplier = 2;
 				}
-				if(globals.grazeCounter > 31 && globals.grazeCounter <= 63){
+				if(globals.grazeCounter > levelTwoGrazeBenchmark && globals.grazeCounter <= levelThreeGrazeBenchmark){
 					print ("graze level = 4");
 					globals.grazeMultiplier = 4;
 				}
-				if(globals.grazeCounter > 63){
+				if(globals.grazeCounter > levelThreeGrazeBenchmark){
 					print ("graze level = 8");
 					globals.grazeMultiplier = 8;
 				}

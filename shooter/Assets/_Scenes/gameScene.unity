@@ -216,21 +216,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a81ca0b196c1474f931ac68f5d2e2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScoreCounter: 5
-  scoreCounter: 31
-  numOfLives: 4
-  bombCounter: 4
+  highScoreCounter: 1000
+  scoreCounter: 0
+  numOfLives: 3
+  bombCounter: 3
+  grazeMultiplier: 1
+  grazeCounter: 0
   fireRate: .300000012
   firePower: 0
   numOfBullets: 1
-  grazeMultiplier: 1
-  grazeCounter: 0
   scoreLabel: {fileID: 0}
   highScoreLabel: {fileID: 0}
   grazeLabel: {fileID: 0}
   backgroundLevelMusic: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351,
     type: 3}
-  text: {fileID: 343865947}
+  placeholder: {fileID: 0}
 --- !u!82 &106788444
 AudioSource:
   m_ObjectHideFlags: 0
@@ -421,13 +421,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
-  shootSpeed: 5
-  time: 5
-  startShootTime: 0
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
   extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
+  shootSpeed: 5
+  time: 5
+  startShootTime: 0
   gameScript: {fileID: 106788443}
 --- !u!23 &205254425
 Renderer:
@@ -1673,6 +1673,22 @@ Prefab:
       propertyPath: backgroundLevelMusic
       value: 
       objectReference: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351, type: 3}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: scoreCounter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: highScoreCounter
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: numOfLives
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: bombCounter
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   m_RootGameObject: {fileID: 106788437}
@@ -1809,9 +1825,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 100000, guid: 0673fe5b37633604cb85f88f2947e621, type: 2}
+  gameScript: {fileID: 106788443}
   bulletSpeed: 7
   lastFired: -100
-  gameScript: {fileID: 106788443}
   playerBomb: {fileID: 8300000, guid: 8b3198d8077547f4e82e84fda7ead02d, type: 3}
   playerShoot: {fileID: 8300000, guid: 9f41fc41fa5fa8e46bb073c16b141a5d, type: 3}
 --- !u!114 &1280911189
@@ -2309,13 +2325,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
-  shootSpeed: 3
-  time: 5
-  startShootTime: 0
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
   extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
+  shootSpeed: 3
+  time: 5
+  startShootTime: 0
   gameScript: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
 --- !u!23 &1495852183
 Renderer:
@@ -2504,13 +2520,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
-  shootSpeed: 2.5
-  time: 5
-  startShootTime: 0
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
   extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
+  shootSpeed: 2.5
+  time: 5
+  startShootTime: 0
   gameScript: {fileID: 106788443}
 --- !u!23 &1667492146
 Renderer:

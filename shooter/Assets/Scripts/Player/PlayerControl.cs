@@ -3,8 +3,10 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
-	public float speed = 10.0f;
+	public float normalSpeed = 10.0f;
+	public float focusSpeed = 5.0f;
 	public float padding = 20.0f;
+	private float speed;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +17,12 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 
 		Vector2 newPosition = transform.position;	
+
+		if (Input.GetKey(KeyCode.LeftShift)) {
+			speed = focusSpeed;
+		} else {
+			speed = normalSpeed;
+		}
 
 		newPosition.x = restrictHorizontal();
 		newPosition.y = restrictVertical();

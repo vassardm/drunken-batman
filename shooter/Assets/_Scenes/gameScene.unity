@@ -113,7 +113,8 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 100000, guid: 78cefbddc5c84bf43b9a3625882a99f3, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 78cefbddc5c84bf43b9a3625882a99f3, type: 2}
   m_RootGameObject: {fileID: 1280911182}
   m_IsPrefabParent: 0
@@ -1810,7 +1811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd69caca7b329a4c9ccf0a0cb9635a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  normalSpeed: 10
+  focusSpeed: 2.5
   padding: 20
 --- !u!114 &1280911188
 MonoBehaviour:

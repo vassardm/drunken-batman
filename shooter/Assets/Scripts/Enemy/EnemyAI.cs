@@ -41,31 +41,30 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		gameScript.scoreCounter+=1;
-		print ("score = " + gameScript.scoreCounter);
-		var randNumb = Random.Range(1, 100);
-		if(randNumb <= 5){
-			Instantiate(points, transform.position, transform.rotation);
-			print ("extra life");
+		if (other.tag != "graze_trigger"){
+			gameScript.scoreCounter += 1;
+			print ("score = " + gameScript.scoreCounter);
+			var randNumb = Random.Range (1, 100);
+			if (randNumb <= 5) {
+					Instantiate (points, transform.position, transform.rotation);
+					print ("extra life");
+			} else if (randNumb >= 90) {
+					Instantiate (extraBomb, transform.position, transform.rotation);
+					print ("extra bomb");
+			} else if (randNumb >= 60) {
+					Instantiate (fireRate, transform.position, transform.rotation);
+					print ("fire rate");
+			} else if (randNumb >= 20) {
+					Instantiate (points, transform.position, transform.rotation);
+					print ("more points");
+			}
+			if (!other.tag.Equals ("Player")) {
+					BulletAI bulletAI = other.GetComponent<BulletAI> ();
+					bulletAI.bulletDestroy ();
+			}
+			//	AudioSource.PlayClipAtPoint (enemyDies, transform.position);
+			Destroy (gameObject);
 		}
-		else if(randNumb >= 90){
-			Instantiate(extraBomb, transform.position, transform.rotation);
-			print ("extra bomb");
-		}
-		else if(randNumb >= 60){
-			Instantiate(fireRate, transform.position, transform.rotation);
-			print ("fire rate");
-		}
-		else if(randNumb >= 20){
-			Instantiate(points, transform.position, transform.rotation);
-			print ("more points");
-		}
-		if(!other.tag.Equals("Player")){
-			BulletAI bulletAI = other.GetComponent<BulletAI>();
-			bulletAI.bulletDestroy();
-		}
-	//	AudioSource.PlayClipAtPoint (enemyDies, transform.position);
-		Destroy (gameObject);
 	}
 
 	public void setGameScript(Camera cam){

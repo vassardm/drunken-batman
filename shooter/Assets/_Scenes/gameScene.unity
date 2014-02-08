@@ -223,6 +223,8 @@ MonoBehaviour:
   fireRate: .300000012
   firePower: 0
   numOfBullets: 1
+  grazeMultiplier: 1
+  grazeCounter: 0
   scoreLabel: {fileID: 0}
   highScoreLabel: {fileID: 0}
   backgroundLevelMusic: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351,
@@ -738,8 +740,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -971,8 +973,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -1060,7 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 466167503}
   globals: {fileID: 106788443}
-  valueCurrent: 32
+  valueCurrent: 0
   valueMin: 0
   valueMax: 100
   animationEnabled: 0
@@ -1301,6 +1303,44 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1 &1043502591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1043502592}
+  - 61: {fileID: 1043502594}
+  m_Layer: 14
+  m_Name: LeftGrazeTrigger
+  m_TagString: graze_trigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1043502592
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1043502591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 1280911186}
+--- !u!61 &1043502594
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1043502591}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .25, y: 1.5}
+  m_Center: {x: -.5, y: 0}
 --- !u!1001 &1077905999
 Prefab:
   m_ObjectHideFlags: 0
@@ -1406,8 +1446,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -1633,7 +1673,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .50000006
+  m_Radius: .5
   m_Center: {x: 5.96046448e-08, y: 0}
 --- !u!33 &1280911185
 MeshFilter:
@@ -1652,7 +1692,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.27036142, y: -2.39328241, z: 0}
   m_LocalScale: {x: .5, y: .5, z: .5}
-  m_Children: []
+  m_Children:
+  - {fileID: 1043502592}
+  - {fileID: 1554529729}
   m_Father: {fileID: 0}
 --- !u!114 &1280911187
 MonoBehaviour:
@@ -2258,6 +2300,44 @@ Transform:
   - {fileID: 1390305063}
   - {fileID: 1392464040}
   m_Father: {fileID: 1238184020}
+--- !u!1 &1554529728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1554529729}
+  - 61: {fileID: 1554529730}
+  m_Layer: 14
+  m_Name: RightGrazeTrigger
+  m_TagString: graze_trigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1554529729
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554529728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 1280911186}
+--- !u!61 &1554529730
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554529728}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .25, y: 1.5}
+  m_Center: {x: .5, y: 0}
 --- !u!1001 &1631714285
 Prefab:
   m_ObjectHideFlags: 0
@@ -2558,8 +2638,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 0, g: .913725495, b: .996078432, a: 1}
@@ -2619,7 +2699,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 433793008}
@@ -2676,17 +2756,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 239.999985
+    e00: 160
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 239.999985
+    e11: 160
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 239.999985
+    e22: 160
     e23: 0
     e30: 0
     e31: 0

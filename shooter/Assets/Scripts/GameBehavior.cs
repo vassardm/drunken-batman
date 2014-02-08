@@ -11,6 +11,8 @@ public class GameBehavior : MonoBehaviour {
 	public float fireRate;
 	public float firePower = 0;
 	public float numOfBullets = 1;
+	public int grazeMultiplier = 1;
+	public int grazeCounter = 0;
 	public UILabel scoreLabel;
 	public UILabel highScoreLabel;
 	public AudioClip backgroundLevelMusic;
@@ -21,6 +23,8 @@ public class GameBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scoreCounter = 0;
+		grazeMultiplier = 1;
+		grazeCounter = 0;
 		audio.Play ();
 
 		scoreLabel = GameObject.Find ("Current Score").GetComponent < UILabel>();
@@ -65,10 +69,10 @@ public class GameBehavior : MonoBehaviour {
 
 	public void increaseFireRate(){
 		firePower++;
-		if(firePower > 15){
+		if(firePower > 15 && firePower <= 31){
 			fireRate = defaultFireRate/2;
 		}
-		if(firePower > 31){
+		if(firePower > 31 && fireRate <= 63){
 			fireRate = defaultFireRate;
 			numOfBullets = 2;
 		}

@@ -31,7 +31,6 @@ public class EnergyBar : MonoBehaviour {
 			valueCurrent = globals.numOfLives;
 		}
 		if (bar.tag == "graze_bar") {
-
 			valueCurrent = globals.grazeCounter;
 		}
 		if (bar.tag == "firepower_bar") {

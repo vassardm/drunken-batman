@@ -15,6 +15,7 @@ public class GameBehavior : MonoBehaviour {
 	public int grazeCounter = 0;
 	public UILabel scoreLabel;
 	public UILabel highScoreLabel;
+	public UILabel grazeLabel;
 	public AudioClip backgroundLevelMusic;
 
 
@@ -32,6 +33,10 @@ public class GameBehavior : MonoBehaviour {
 
 		highScoreLabel = GameObject.Find ("High Score").GetComponent < UILabel>();
 		highScoreLabel.text = highScoreCounter.ToString();
+
+		grazeLabel = GameObject.Find ("Graze Label").GetComponent < UILabel>();
+		grazeLabel.text = "x" + grazeMultiplier.ToString();
+
 		fireRate = defaultFireRate;
 		scoreCounter = 0;
 		firePower = 0;
@@ -53,6 +58,23 @@ public class GameBehavior : MonoBehaviour {
 				audio.Play();
 			}
 		}
+
+		if (grazeCounter < 15) {
+			grazeLabel.text = "x" + grazeMultiplier.ToString();
+		}
+
+		if (grazeCounter >= 15 && grazeCounter <= 31) {
+			grazeLabel.text = "x" + grazeMultiplier.ToString();
+		}
+
+		if (grazeCounter >= 31 && grazeCounter <= 63) {
+			grazeLabel.text = "x" + grazeMultiplier.ToString();
+		}
+
+		if (grazeCounter > 63) {
+			grazeLabel.text = "x" + grazeMultiplier.ToString();
+		}
+
 		scoreLabel = GameObject.Find ("Current Score").GetComponent < UILabel>();
 		scoreLabel.text = scoreCounter.ToString();
 	

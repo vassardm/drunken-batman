@@ -27,13 +27,13 @@ public class PlayerControl : MonoBehaviour {
 
 		Vector2 newPosition = transform.position;		
 		
-		if((Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - padding - 310f)){
+		if((Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - padding - 320f)){
 			if(Input.GetAxis("Horizontal") < 0){
 				newPosition.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 			}
 		}
 		
-		else if((Camera.main.WorldToScreenPoint(transform.position).x < 0 + padding)){
+		else if((Camera.main.WorldToScreenPoint(transform.position).x < 0 + padding + 35f)){
 			if(Input.GetAxis("Horizontal") > 0){
 				newPosition.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 			}
@@ -51,13 +51,13 @@ public class PlayerControl : MonoBehaviour {
 
 		Vector2 newPosition = transform.position;		
 		
-		if((Camera.main.WorldToScreenPoint(transform.position).y > Screen.height - padding)){
+		if((Camera.main.WorldToScreenPoint(transform.position).y > Screen.height - padding - 70f)){
 			if(Input.GetAxis("Vertical") < 0){
 				newPosition.y += Input.GetAxis("Vertical") * speed * Time.deltaTime;
 			}
 		}
 		
-		else if((Camera.main.WorldToScreenPoint(transform.position).y < 0 + padding)){
+		else if((Camera.main.WorldToScreenPoint(transform.position).y < 0 + padding + 75f)){
 			if(Input.GetAxis("Vertical") > 0){
 				newPosition.y += Input.GetAxis("Vertical") * speed * Time.deltaTime;
 			}

@@ -2785,7 +2785,11 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+=======
+  m_LocalScale: {x: .00260416674, y: .00260416674, z: .00260416674}
+>>>>>>> 683f552f1a4746be3eef961306d4aa2dd953cf46
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -2843,17 +2847,29 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
+<<<<<<< HEAD
     e00: 239.999985
+=======
+    e00: 384
+>>>>>>> 683f552f1a4746be3eef961306d4aa2dd953cf46
     e01: 0
     e02: 0
     e03: 0
     e10: 0
+<<<<<<< HEAD
     e11: 239.999985
+=======
+    e11: 384
+>>>>>>> 683f552f1a4746be3eef961306d4aa2dd953cf46
     e12: 0
     e13: 0
     e20: 0
     e21: 0
+<<<<<<< HEAD
     e22: 239.999985
+=======
+    e22: 384
+>>>>>>> 683f552f1a4746be3eef961306d4aa2dd953cf46
     e23: 0
     e30: 0
     e31: 0

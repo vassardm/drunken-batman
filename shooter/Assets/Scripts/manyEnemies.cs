@@ -7,6 +7,7 @@ public class manyEnemies : MonoBehaviour {
 	public GameObject horEnemy;
 	public GameObject vertEnemy;
 	public GameObject medEnemy;
+	public GameObject bossEnemy;
 
 	public float spawnAreaWidth;
 	public float spawnAreaHeight;
@@ -34,12 +35,12 @@ public class manyEnemies : MonoBehaviour {
 				spawnPosition.x += i * (spawnAreaWidth/numOfEnemiesX);
 				spawnPosition.y -= j * (spawnAreaHeight/numOfEnemiesY);
 				if(i%2 == 0){
-					Instantiate(vertEnemy,spawnPosition, basicEnemy.transform.rotation);
+					Instantiate(bossEnemy,spawnPosition, bossEnemy.transform.rotation);
 					float enShootSpeed = vEnAI.shootSpeed;
 					vEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
 				}
 				else{
-					Instantiate(horEnemy,spawnPosition, basicEnemy.transform.rotation);
+					Instantiate(bossEnemy,spawnPosition, bossEnemy.transform.rotation);
 					float enShootSpeed = hEnAI.shootSpeed;
 					hEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
 				}

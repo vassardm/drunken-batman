@@ -5,7 +5,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -35,15 +35,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c7a4b4ee15890498f818262bca0312, type: 1}
+  m_Script: {fileID: 11500000, guid: 84c7a4b4ee15890498f818262bca0312, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   textures: []
   textureRefs: []
   spriteSheets: []
   fonts:
   - active: 1
-    bmFont: {fileID: 102900000, guid: ebbfaefcc0e2c45ee9589ac465cf3c8c, type: 1}
-    texture: {fileID: 2800000, guid: de9bc1393812a4d9185d3e5128eb05aa, type: 1}
+    bmFont: {fileID: 102900000, guid: ebbfaefcc0e2c45ee9589ac465cf3c8c, type: 3}
+    texture: {fileID: 2800000, guid: de9bc1393812a4d9185d3e5128eb05aa, type: 3}
     dupeCaps: 0
     flipTextureY: 0
     charPadX: 0
@@ -54,8 +55,8 @@ MonoBehaviour:
     gradientTexture: {fileID: 0}
     gradientCount: 1
   - active: 1
-    bmFont: {fileID: 102900000, guid: d2cffc66467cb445d981c141f3d1b9cd, type: 1}
-    texture: {fileID: 2800000, guid: 835a139b807b7469cbfff133b17f77fd, type: 1}
+    bmFont: {fileID: 102900000, guid: d2cffc66467cb445d981c141f3d1b9cd, type: 3}
+    texture: {fileID: 2800000, guid: 835a139b807b7469cbfff133b17f77fd, type: 3}
     dupeCaps: 0
     flipTextureY: 0
     charPadX: 0
@@ -66,8 +67,8 @@ MonoBehaviour:
     gradientTexture: {fileID: 0}
     gradientCount: 1
   - active: 1
-    bmFont: {fileID: 102900000, guid: c61c325d604724fff8a0884f2b0d3654, type: 1}
-    texture: {fileID: 2800000, guid: 61dc92ebd3907492084c1971431dd30e, type: 1}
+    bmFont: {fileID: 102900000, guid: c61c325d604724fff8a0884f2b0d3654, type: 3}
+    texture: {fileID: 2800000, guid: 61dc92ebd3907492084c1971431dd30e, type: 3}
     dupeCaps: 0
     flipTextureY: 0
     charPadX: 0
@@ -94,10 +95,10 @@ MonoBehaviour:
   forcedTextureWidth: 1024
   forcedTextureHeight: 1024
   textureCompression: 0
-  atlasWidth: 512
-  atlasHeight: 512
+  atlasWidth: 256
+  atlasHeight: 256
   forceSquareAtlas: 0
-  atlasWastage: 46.3848114
+  atlasWastage: 25.1098633
   allowMultipleAtlases: 0
   removeDuplicates: 1
   textureParams:
@@ -105,7 +106,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: d7ca58a2b7e95495ebaf20527bc1e039, type: 1}
+    texture: {fileID: 2800000, guid: d7ca58a2b7e95495ebaf20527bc1e039, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -145,7 +146,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 90107987410404950bdf45be1f76ce43, type: 1}
+    texture: {fileID: 2800000, guid: 90107987410404950bdf45be1f76ce43, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -185,7 +186,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 45bc5dd920ae343f7ad74ead506687b2, type: 1}
+    texture: {fileID: 2800000, guid: 45bc5dd920ae343f7ad74ead506687b2, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -225,7 +226,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 2ed0c837bd46b483bab8e68a9bb8c5e0, type: 1}
+    texture: {fileID: 2800000, guid: 2ed0c837bd46b483bab8e68a9bb8c5e0, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -265,7 +266,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 2a83caf5a455248199485e5da3ff5500, type: 1}
+    texture: {fileID: 2800000, guid: 2a83caf5a455248199485e5da3ff5500, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -305,7 +306,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 2dff47291cc184c58b3ca4b700a00c4e, type: 1}
+    texture: {fileID: 2800000, guid: 2dff47291cc184c58b3ca4b700a00c4e, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -345,7 +346,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 0dfd239ca260444eb869628fb04f885e, type: 1}
+    texture: {fileID: 2800000, guid: 0dfd239ca260444eb869628fb04f885e, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -385,7 +386,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: bbda36fe208274750aa6fb343d5a0288, type: 1}
+    texture: {fileID: 2800000, guid: bbda36fe208274750aa6fb343d5a0288, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -425,7 +426,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 497b9ad7eb29145da83de9ae7b39627a, type: 1}
+    texture: {fileID: 2800000, guid: 497b9ad7eb29145da83de9ae7b39627a, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -465,7 +466,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: b7343bf4e58b84eb4bcf5da6b2a6e236, type: 1}
+    texture: {fileID: 2800000, guid: b7343bf4e58b84eb4bcf5da6b2a6e236, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -505,7 +506,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: ed6eace5351574075b607cc35ce3ba92, type: 1}
+    texture: {fileID: 2800000, guid: ed6eace5351574075b607cc35ce3ba92, type: 3}
     materialId: 1
     anchor: 4
     anchorX: 0
@@ -545,7 +546,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: 37ab6cccc3fca43c9b22ef17ad289719, type: 1}
+    texture: {fileID: 2800000, guid: 37ab6cccc3fca43c9b22ef17ad289719, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0
@@ -585,7 +586,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: decb81f6e18f248ff88c3eed04676420, type: 1}
+    texture: {fileID: 2800000, guid: decb81f6e18f248ff88c3eed04676420, type: 3}
     materialId: 0
     anchor: 0
     anchorX: 0
@@ -629,7 +630,7 @@ MonoBehaviour:
   atlasMaterials:
   - {fileID: 2100000, guid: d572e11b9f81d4a99a0a2811137dbfb3, type: 2}
   atlasTextures:
-  - {fileID: 2800000, guid: 6649ca7d0f45f4abb9e124a030611e2e, type: 1}
+  - {fileID: 2800000, guid: 6649ca7d0f45f4abb9e124a030611e2e, type: 3}
   atlasTextureFiles: []
   useTk2dCamera: 0
   targetHeight: 640
@@ -652,6 +653,7 @@ MonoBehaviour:
   physicsEngine: 0
   physicsDepth: .100000001
   disableTrimming: 0
+  disableRotation: 0
   normalGenerationMode: 0
   padAmount: -1
   autoUpdate: 1

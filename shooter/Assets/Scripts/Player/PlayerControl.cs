@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 
 	public float normalSpeed = 4.25f;
-	public float focusSpeed = 2.75f;
+	public float focusSpeed = 2.15f;
 	public float padding = 20.0f;
 	private float speed;
 

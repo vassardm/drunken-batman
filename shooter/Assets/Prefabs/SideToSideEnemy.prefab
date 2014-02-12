@@ -46,7 +46,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d2a5b39f06c6a74aacdfa162dddbed3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -61,7 +61,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!50 &5000000
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
   shootSpeed: 3
-  time: 5.06614304
+  time: 8.80948257
   startShootTime: 0
   gameScript: {fileID: 0}
 --- !u!114 &11400002

@@ -48,6 +48,7 @@ public class EnemyAI : MonoBehaviour {
 		if (other.tag.Equals("Player") || other.tag.Equals("PlayerBullet")) {
 
 			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
+			Destroy (gameObject);
 			gameScript.enemiesKilled++;
 			print ("score = " + gameScript.scoreCounter);
 			var randNumb = Random.Range (randomNumberFloor, randomNumberCeiling);

@@ -63,12 +63,14 @@ public class manyEnemies : MonoBehaviour {
 	void Update () {
 		totalTime = Time.time - startTime;
 		if((totalTime > secondWaveTime || gameScript.enemiesKilled >= (numOfEnemiesX*numOfEnemiesY)) && secondReady){
+			print ("Spawning Wave 2 jfalsdjflasjdflasjfaldsjflsajdflaj");
 			print (gameScript.enemiesKilled);
 			spawnSecond();
 			secondReady = false;
 			thirdReady = true;
 		}
 		else if((totalTime > thirdWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX*numOfEnemiesY) + (numOfEnemiesX2*numOfEnemiesY2))) && thirdReady){
+			print ("Spawning Wave 3 djfalsdjlfajdsflqjeorqpuweorq;lekjf;ladjzxmvlkdsoqweuroquroqu");
 			print (gameScript.enemiesKilled);
 			spawnThird();
 			thirdReady = false;

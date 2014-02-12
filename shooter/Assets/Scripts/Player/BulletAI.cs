@@ -5,10 +5,12 @@ public class BulletAI : MonoBehaviour {
 	
 	public float xSpeed;
 	public float ySpeed;
+	public GameBehavior gameScript;
 	
 	// Use this for initialization
 	void Start () {
-		
+
+		gameScript = Camera.main.GetComponent<GameBehavior>();
 		Vector2 newVelocity = Vector2.zero;
 		newVelocity.y = ySpeed;
 		newVelocity.x = xSpeed;
@@ -32,6 +34,7 @@ public class BulletAI : MonoBehaviour {
 
 	public void bulletDestroy(){
 		Destroy (gameObject);
+		gameScript.enemiesKilled++;
 	}
 }
 

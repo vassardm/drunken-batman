@@ -12,28 +12,39 @@ public class MedEnemyAI : MonoBehaviour {
 	public GameObject fireRate;
 	public GameObject points;
 	public int health;
+	private float moveTime = .5f;
+	private float changeTime;
+	private float speed = 1.5f;
+	public int vDirection;
+	public int hDirection;
 	
 	public GameBehavior gameScript;
 	
 	// Use this for initialization
 	void Start () {
+		gameScript = Camera.main.GetComponent<GameBehavior>();
 		time = Time.time + shootSpeed + startShootTime;
 		health = 3;
+		changeTime = Time.time + moveTime/2;
+		vDirection = 1;
+		hDirection = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.X))
-		{
-			//Creates an object, giving it position, and 
-			Instantiate(enemyBullet,transform.position,transform.rotation);
-		}
-		
 		if (Time.time > time) {
 			Instantiate(enemyBullet, transform.position, transform.rotation);
 			time += shootSpeed;
 		}
-		
+		if(changeTime < Time.time){
+			hDirection = hDirection*(-1);
+			vDirection = vDirection*(-1);
+			changeTime = Time.time + moveTime;
+		}
+		Vector3 newPos = transform.position;
+		newPos.x += hDirection * speed * Time.deltaTime;
+		newPos.y += vDirection * speed * Time.deltaTime;
+		transform.position = newPos;
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
@@ -68,6 +79,15 @@ public class MedEnemyAI : MonoBehaviour {
 			}
 			Destroy (gameObject);
 		}
+	}
+
+	public void setDirection(int hDir, int vDir){
+		hDirection = hDir;
+		vDirection = vDir;
+	}
+
+	public void setTime(float startTime){
+		time = Time.time + shootSpeed + startTime;
 	}
 }
 

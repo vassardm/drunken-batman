@@ -17,7 +17,7 @@ public class EnemyMoveUpDown : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(changeTime < Time.time){
-			direction = direction*(-1);
+			direction = direction * (-1);
 			changeTime = Time.time + moveTime;
 		}
 		Vector3 newPos = transform.position;

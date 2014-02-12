@@ -23,7 +23,7 @@ public class PlayerShoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		firingRate = gameScript.fireRate;
-		if(Input.GetKey(KeyCode.Z))
+		if (Input.GetKey(KeyCode.Z))
 		{
 			//Creates an object, giving it position, and 
 			/*GameObject bullets = (Instantiate(bullet,transform.position,transform.rotation)) as GameObject;
@@ -43,7 +43,7 @@ public class PlayerShoot : MonoBehaviour {
 			}
 		}	
 
-		if(Input.GetKeyDown(KeyCode.X))
+		if (Input.GetKeyDown(KeyCode.X))
 		{
 			if (gameScript.bombCounter > 0){
 				gameScript.grazeCounter = 0;

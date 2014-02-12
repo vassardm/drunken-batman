@@ -10,14 +10,14 @@ public class EnemyMoveSideToSide : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		changeTime = Time.time + moveTime/2;
-		direction =1;
+		changeTime = Time.time + moveTime / 2;
+		direction = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(changeTime < Time.time){
-			direction = direction*(-1);
+		if (changeTime < Time.time){
+			direction = direction * (-1);
 			changeTime = Time.time + moveTime;
 		}
 		Vector3 newPos = transform.position;

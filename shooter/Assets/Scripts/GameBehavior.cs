@@ -9,6 +9,7 @@ public class GameBehavior : MonoBehaviour {
 	public int bombCounter = 3;
 	public int grazeMultiplier = 1;
 	public int grazeCounter = 0;
+	public int enemiesKilled = 0;
 
 	public float fireRate;
 	public float firePower = 0;
@@ -36,6 +37,7 @@ public class GameBehavior : MonoBehaviour {
 		scoreCounter = 0;
 		grazeCounter = 0;
 		firePower = 0;
+		enemiesKilled = 0;
 		fireRate = defaultFireRate;
 		grazeMultiplier = 1;
 	}
@@ -113,9 +115,9 @@ public class GameBehavior : MonoBehaviour {
 	}
 
 	public void increaseFireRate(){
-		int levelOnePowerBenchmark = 15;
-		int levelTwoPowerBenchmark = 31;
-		int levelThreePowerBenchmark = 63;
+		int levelOnePowerBenchmark = 4;
+		int levelTwoPowerBenchmark = 8;
+		int levelThreePowerBenchmark = 16;
 
 		firePower++;
 

@@ -223,6 +223,7 @@ MonoBehaviour:
   bombCounter: 3
   grazeMultiplier: 1
   grazeCounter: 0
+  enemiesKilled: 0
   fireRate: .300000012
   firePower: 0
   numOfBullets: 1
@@ -602,14 +603,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 1.5
-  time: 0
+  time: 17.5947342
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
   extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
-  health: 0
+  health: 3
+  vDirection: 0
+  hDirection: 0
   gameScript: {fileID: 0}
 --- !u!136 &244083076
 CapsuleCollider:
@@ -742,8 +745,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 640
-  storedScreenHeight: 480
+  storedScreenWidth: 519
+  storedScreenHeight: 389
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -788,56 +791,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1480173335}
---- !u!1 &343865946
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 343865948}
-  - 132: {fileID: 343865947}
-  m_Layer: 0
-  m_Name: Placeholder Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!132 &343865947
-GUIText:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 343865946}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: Placeholder
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 0, y: 0}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_PixelCorrect: 1
-  m_RichText: 1
---- !u!4 &343865948
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 343865946}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &433793007
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,8 +928,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 640
-  storedScreenHeight: 480
+  storedScreenWidth: 519
+  storedScreenHeight: 389
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -1533,8 +1486,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 640
-  storedScreenHeight: 480
+  storedScreenWidth: 519
+  storedScreenHeight: 389
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -1665,7 +1618,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
       propertyPath: text
       value: 
-      objectReference: {fileID: 343865947}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
       propertyPath: numOfBullets
       value: 1
@@ -2742,8 +2695,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 640
-  storedScreenHeight: 480
+  storedScreenWidth: 519
+  storedScreenHeight: 389
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 0, g: .913725495, b: .996078432, a: 1}
@@ -2803,7 +2756,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+  m_LocalScale: {x: .00514138816, y: .00514138816, z: .00514138816}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -2861,17 +2814,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 239.999985
+    e00: 194.5
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 239.999985
+    e11: 194.5
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 239.999985
+    e22: 194.5
     e23: 0
     e30: 0
     e31: 0
@@ -2990,12 +2943,17 @@ MonoBehaviour:
   horEnemy: {fileID: 100000, guid: 7e9b44982df21664699a8155ce138810, type: 2}
   vertEnemy: {fileID: 100000, guid: 9db67d6d9655c754db9fc859feaa0711, type: 2}
   medEnemy: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
+  bossEnemy: {fileID: 100000, guid: d4e2bcaeca17a254b96efc776beb2462, type: 2}
   spawnAreaWidth: 6
   spawnAreaHeight: 3
   numOfEnemiesX: 5
   numOfEnemiesY: 3
-  secondWaveTime: 0
-  thirdWaveTime: 0
+  numOfEnemiesX2: 5
+  numOfEnemiesY2: 3
+  bossWaveTime: 150
+  thirdWaveTime: 100
+  secondWaveTime: 20
+  gameScript: {fileID: 0}
 --- !u!4 &1839096286
 Transform:
   m_ObjectHideFlags: 0
@@ -3070,14 +3028,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 2.5
-  time: 0
+  time: 17.5947342
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
   extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
-  health: 0
+  health: 3
+  vDirection: 0
+  hDirection: 0
   gameScript: {fileID: 0}
 --- !u!23 &1872448172
 Renderer:

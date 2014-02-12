@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class manyEnemies : MonoBehaviour {
@@ -7,6 +7,7 @@ public class manyEnemies : MonoBehaviour {
 	public GameObject horEnemy;
 	public GameObject vertEnemy;
 	public GameObject medEnemy;
+	public GameObject bossEnemy;
 
 	public float spawnAreaWidth;
 	public float spawnAreaHeight;
@@ -14,32 +15,43 @@ public class manyEnemies : MonoBehaviour {
 	public int numOfEnemiesX;
 	public int numOfEnemiesY;
 
-	public float secondWaveTime;
-	private bool secondReady = true;
-	private bool thirdReady = true;
+	public int numOfEnemiesX2;
+	public int numOfEnemiesY2;
 
+	private bool secondReady = true;
+	private bool thirdReady = false;
+	private bool bossReady = false;
+
+	public float bossWaveTime;
 	public float thirdWaveTime;
+	public float secondWaveTime;
 	private float startTime;
 	private float totalTime;
+
+	private EnemyAI hEnAI;
+	private EnemyAI vEnAI;
+
+	public GameBehavior gameScript;
 	
 	// Use this for initialization
 	void Start () {
+		totalTime = 0;
 		startTime = Time.time;
-		EnemyAI bEnAI = basicEnemy.GetComponent<EnemyAI>();
-		EnemyAI hEnAI = horEnemy.GetComponent<EnemyAI>();
-		EnemyAI vEnAI = vertEnemy.GetComponent<EnemyAI>();
+		gameScript = Camera.main.GetComponent<GameBehavior>();
+		hEnAI = horEnemy.GetComponent<EnemyAI>();
+		vEnAI = vertEnemy.GetComponent<EnemyAI>();
 		for(int i = 0; i < numOfEnemiesX; i++){
 			for(int j = 0; j < numOfEnemiesY; j++){
 				Vector2 spawnPosition = transform.position;
 				spawnPosition.x += i * (spawnAreaWidth/numOfEnemiesX);
 				spawnPosition.y -= j * (spawnAreaHeight/numOfEnemiesY);
 				if(i%2 == 0){
-					Instantiate(vertEnemy,spawnPosition, basicEnemy.transform.rotation);
+					Instantiate(vertEnemy,spawnPosition, vertEnemy.transform.rotation);
 					float enShootSpeed = vEnAI.shootSpeed;
 					vEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
 				}
 				else{
-					Instantiate(horEnemy,spawnPosition, basicEnemy.transform.rotation);
+					Instantiate(horEnemy,spawnPosition, horEnemy.transform.rotation);
 					float enShootSpeed = hEnAI.shootSpeed;
 					hEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
 				}
@@ -50,19 +62,67 @@ public class manyEnemies : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		totalTime = Time.time - startTime;
-		if(totalTime > secondWaveTime && secondReady){
+		if((totalTime > secondWaveTime || gameScript.enemiesKilled >= (numOfEnemiesX*numOfEnemiesY)) && secondReady){
+			print (gameScript.enemiesKilled);
 			spawnSecond();
+			secondReady = false;
+			thirdReady = true;
 		}
-		if(totalTime > thirdWaveTime && thirdReady){
+		else if((totalTime > thirdWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX*numOfEnemiesY) + (numOfEnemiesX2*numOfEnemiesY2))) && thirdReady){
+			print (gameScript.enemiesKilled);
 			spawnThird();
+			thirdReady = false;
+			bossReady = true;
 		}
-		
+		else if((totalTime > bossWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX*numOfEnemiesY) + 2*(numOfEnemiesX2*numOfEnemiesY2))) && bossReady){
+			spawnBoss();
+			bossReady = false;
+		}		
 	}
 	
 	void spawnSecond () {
-		return;
+		MedEnemyAI mEnAI = medEnemy.GetComponent<MedEnemyAI>();
+		for(int i = 0; i < numOfEnemiesX2; i++){
+			for(int j = 0; j < numOfEnemiesY2; j++){
+				Vector2 spawnPosition = transform.position;
+				spawnPosition.x += i * (spawnAreaWidth/numOfEnemiesX2);
+				spawnPosition.y -= j * (spawnAreaHeight/numOfEnemiesY2);
+				//var clone : MedEnemy;
+				int rand = Random.Range(0,10);
+				if(rand >= 4){
+					Instantiate(medEnemy,spawnPosition, medEnemy.transform.rotation);
+					float enShootSpeed = mEnAI.shootSpeed;
+					mEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
+				}
+				else if(rand <= 2){
+					Instantiate(horEnemy,spawnPosition, horEnemy.transform.rotation);
+					float enShootSpeed = hEnAI.shootSpeed;
+					hEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
+				}
+				else{
+					Instantiate(vertEnemy,spawnPosition, vertEnemy.transform.rotation);
+					float enShootSpeed = vEnAI.shootSpeed;
+					vEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
+				}
+			}
+		}
 	}
 	void spawnThird () {
+		MedEnemyAI mEnAI = medEnemy.GetComponent<MedEnemyAI>();
+		for(int i = 0; i < numOfEnemiesX2; i++){
+			for(int j = 0; j < numOfEnemiesY2; j++){
+				Vector2 spawnPosition = transform.position;
+				spawnPosition.x += i * (spawnAreaWidth/numOfEnemiesX2);
+				spawnPosition.y -= j * (spawnAreaHeight/numOfEnemiesY2);
+				//var clone : MedEnemy;
+				Instantiate(medEnemy,spawnPosition, medEnemy.transform.rotation);
+				float enShootSpeed = mEnAI.shootSpeed;
+				mEnAI.setTime(Random.Range(0,  (int)enShootSpeed*10)/10);
+			}
+		}
+	}
+
+	void spawnBoss(){
 		return;
 	}
 }

@@ -2395,7 +2395,11 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: 2
   halfTargetHeight: 10
+<<<<<<< Updated upstream
   buildKey: 1010795681
+=======
+  buildKey: 1076174295
+>>>>>>> Stashed changes
   dataGuid: f5e64bab9902aaa4593a2652b8552744
   managedSpriteCollection: 0
   hasPlatformData: 0

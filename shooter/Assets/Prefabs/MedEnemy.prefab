@@ -98,15 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0797b3ccb31b7f4eacbd7ac6d151b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   shootSpeed: 2.5
-  time: 0
+  time: 9.46105766
   startShootTime: 0
+  enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
   extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
-  health: 0
+  health: 3
+  vDirection: 0
+  hDirection: 0
   gameScript: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:

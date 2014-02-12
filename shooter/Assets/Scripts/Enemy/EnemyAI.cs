@@ -43,10 +43,12 @@ public class EnemyAI : MonoBehaviour {
 		int getBombUpItemBenchmark = 90;
 		int getIncreaseFireRateItemBenchmark = 60;
 		int getIncreasePointScoreBenchmark = 10;
+		
 
-		if (other.tag != "graze_trigger") {
+		if (other.tag.Equals("Player") || other.tag.Equals("PlayerBullet")) {
 
 			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
+			gameScript.enemiesKilled++;
 			print ("score = " + gameScript.scoreCounter);
 			var randNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
 
@@ -64,16 +66,13 @@ public class EnemyAI : MonoBehaviour {
 					print ("more points");
 			}
 
-			if (!other.tag.Equals ("Player")) {
+			if (other.tag.Equals ("PlayerBullet")) {
 					BulletAI bulletAI = other.GetComponent<BulletAI> ();
 					bulletAI.bulletDestroy ();
 			}
 			//	AudioSource.PlayClipAtPoint (enemyDies, transform.position);
-			Destroy (gameObject);
+
 		}
 	}
 
-	public void setGameScript(Camera cam){
-		gameScript = cam.GetComponent<GameBehavior>();
-	}
 }

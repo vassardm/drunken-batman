@@ -70,7 +70,11 @@ public class MedEnemyAI : MonoBehaviour {
 		else if (other.tag.Equals("Player")) {
 			health--;
 		}
-
+		if(health < 1){
+			Destroy (gameObject);
+			gameScript.enemiesKilled++;
+		}
+			
 		if (other.tag != "graze_trigger") {
 			
 			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
@@ -96,7 +100,7 @@ public class MedEnemyAI : MonoBehaviour {
 				bulletAI.bulletDestroy ();
 			}
 			//	AudioSource.PlayClipAtPoint (enemyDies, transform.position);
-			Destroy (gameObject);
+
 		}
 	}
 

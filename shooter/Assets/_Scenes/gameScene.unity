@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 1.5
-  time: 12.290659
+  time: 9.46105766
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
@@ -1575,9 +1575,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 1104816178}
   globals: {fileID: 106788443}
-  valueCurrent: 25
+  valueCurrent: 0
   valueMin: 0
-  valueMax: 256
+  valueMax: 16
   animationEnabled: 0
   animValueF: 0
 --- !u!1001 &1169737348
@@ -2756,7 +2756,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00260416674, y: .00260416674, z: .00260416674}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -2814,17 +2814,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 384
+    e00: 239.999985
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 384
+    e11: 239.999985
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 384
+    e22: 239.999985
     e23: 0
     e30: 0
     e31: 0
@@ -3028,7 +3028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 2.5
-  time: 12.290659
+  time: 9.46105766
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}

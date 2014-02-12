@@ -34,7 +34,7 @@ public class EnergyBar : MonoBehaviour {
 			valueCurrent = globals.grazeCounter;
 		}
 		if (bar.tag == "firepower_bar") {
-			valueCurrent = globals.numOfLives;
+			valueCurrent = (int) globals.firePower;
 		}
 
 	}
@@ -82,7 +82,7 @@ public class EnergyBar : MonoBehaviour {
 			valueCurrent = Mathf.Clamp(globals.grazeCounter, valueMin, valueMax);
 		}
 		if (bar.tag == "firepower_bar") {
-			valueCurrent = Mathf.Clamp(globals.numOfLives, valueMin, valueMax);
+			valueCurrent = Mathf.Clamp((int) globals.firePower, valueMin, valueMax);
 		}
 	
         

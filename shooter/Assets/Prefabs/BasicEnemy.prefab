@@ -46,7 +46,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d2a5b39f06c6a74aacdfa162dddbed3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -61,7 +61,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!50 &5000000
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -158,14 +158,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
-  shootSpeed: 3
-  time: 5
-  startShootTime: 0
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
   extraBomb: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
-  enemyDies: {fileID: 8300000, guid: c18f9307ef8ebd645ad76b99b2243d8c, type: 3}
+  shootSpeed: 3
+  time: 5
+  startShootTime: 0
   gameScript: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:

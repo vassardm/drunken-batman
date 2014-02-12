@@ -444,7 +444,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d2a5b39f06c6a74aacdfa162dddbed3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -460,7 +460,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 180466568}
   m_GameObject: {fileID: 205254421}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &205254427
 Transform:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 1.5
-  time: 17.5947342
+  time: 46.3765144
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
@@ -745,8 +745,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 519
-  storedScreenHeight: 389
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -928,8 +928,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 519
-  storedScreenHeight: 389
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -1486,8 +1486,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 519
-  storedScreenHeight: 389
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -2301,7 +2301,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d2a5b39f06c6a74aacdfa162dddbed3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2317,7 +2317,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1077905999}
   m_GameObject: {fileID: 1495852176}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1495852185
 Transform:
   m_ObjectHideFlags: 0
@@ -2496,7 +2496,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d2a5b39f06c6a74aacdfa162dddbed3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2524,7 +2524,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1345883657}
   m_GameObject: {fileID: 1667492144}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1667492149
 Transform:
   m_ObjectHideFlags: 0
@@ -2695,8 +2695,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 519
-  storedScreenHeight: 389
+  storedScreenWidth: 388
+  storedScreenHeight: 291
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 0, g: .913725495, b: .996078432, a: 1}
@@ -2756,7 +2756,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00514138816, y: .00514138816, z: .00514138816}
+  m_LocalScale: {x: .00260416674, y: .00260416674, z: .00260416674}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -2814,17 +2814,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 194.5
+    e00: 384
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 194.5
+    e11: 384
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 194.5
+    e22: 384
     e23: 0
     e30: 0
     e31: 0
@@ -3028,7 +3028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 2.5
-  time: 17.5947342
+  time: 46.3765144
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
@@ -3182,8 +3182,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 205254427}
   - {fileID: 1872448174}
+  - {fileID: 205254427}
   - {fileID: 1667492149}
   - {fileID: 244083074}
   m_Father: {fileID: 0}

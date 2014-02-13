@@ -73,10 +73,6 @@ public class MedEnemyAI : MonoBehaviour {
 		if(health < 1){
 			Destroy (gameObject);
 			gameScript.enemiesKilled++;
-		}
-			
-		if (other.tag != "graze_trigger") {
-			
 			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
 			print ("score = " + gameScript.scoreCounter);
 			var randNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
@@ -94,6 +90,11 @@ public class MedEnemyAI : MonoBehaviour {
 				Instantiate (points, transform.position, transform.rotation);
 				print ("more points");
 			}
+		}
+			
+		if (other.tag != "graze_trigger") {
+			
+
 			
 			if (!other.tag.Equals ("Player")) {
 				BulletAI bulletAI = other.GetComponent<BulletAI> ();

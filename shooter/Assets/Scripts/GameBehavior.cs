@@ -121,24 +121,28 @@ public class GameBehavior : MonoBehaviour {
 
 		firePower++;
 
-		if (firePower > levelOnePowerBenchmark && firePower <= levelTwoPowerBenchmark){
-			fireRate = defaultFireRate / 2;
-		}
-
-		if (firePower > levelTwoPowerBenchmark && fireRate <= levelThreePowerBenchmark){
-			fireRate = defaultFireRate;
-			numOfBullets = 2;
-		}
-
 		if (firePower > levelThreePowerBenchmark){
 			fireRate = defaultFireRate / 2;
 			numOfBullets = 2;
 		}
 
-		else{
+		else if (firePower > levelTwoPowerBenchmark){
+			fireRate = defaultFireRate;
+			numOfBullets = 2;
+		}
+
+		
+		else if (firePower > levelOnePowerBenchmark){
+			fireRate = defaultFireRate / 2;
+		}
+
+		else if(firePower < levelOnePowerBenchmark){
 			fireRate = defaultFireRate;
 			numOfBullets = 1;
 		}
+
+
+
 
 	}
 }

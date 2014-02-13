@@ -31,6 +31,8 @@ public class manyEnemies : MonoBehaviour {
 	private EnemyAI hEnAI;
 	private EnemyAI vEnAI;
 
+	private Vector3 bossSpawnPos;
+
 	public GameBehavior gameScript;
 	
 	// Use this for initialization
@@ -125,6 +127,9 @@ public class manyEnemies : MonoBehaviour {
 	}
 
 	void spawnBoss(){
-		return;
+		bossSpawnPos.x = -1;
+		bossSpawnPos.y = 1;
+		bossSpawnPos.z = 0;
+		Instantiate(bossEnemy, bossSpawnPos, bossEnemy.transform.rotation);
 	}
 }

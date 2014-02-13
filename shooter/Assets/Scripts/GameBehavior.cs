@@ -9,7 +9,7 @@ public class GameBehavior : MonoBehaviour {
 	public int bombCounter = 3;
 	public int grazeMultiplier = 1;
 	public int grazeCounter = 0;
-	public int enemiesKilled = 0;
+	public int enemiesKilled;
 
 	public float fireRate;
 	public float firePower = 0;
@@ -133,6 +133,11 @@ public class GameBehavior : MonoBehaviour {
 		if (firePower > levelThreePowerBenchmark){
 			fireRate = defaultFireRate / 2;
 			numOfBullets = 2;
+		}
+
+		else{
+			fireRate = defaultFireRate;
+			numOfBullets = 1;
 		}
 
 	}

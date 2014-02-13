@@ -34,12 +34,12 @@ public class PlayerInteraction : MonoBehaviour {
 		}
 		else if (other.tag.Equals("1UP")){
 			gameScript.numOfLives++;
-			print ("got it");
 			Destroy(other);
 		}
 		else if (other.tag.Equals("extraBomb")){
-			gameScript.bombCounter++;
-			print ("got it");
+			if(gameScript.bombCounter < 8){
+				gameScript.bombCounter++;
+			}
 			Destroy(other);
 		}
 		else if (other.tag.Equals("fireUp")){

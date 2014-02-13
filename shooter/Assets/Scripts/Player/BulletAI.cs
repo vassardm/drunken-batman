@@ -34,7 +34,6 @@ public class BulletAI : MonoBehaviour {
 
 	public void bulletDestroy(){
 		Destroy (gameObject);
-		gameScript.enemiesKilled++;
 	}
 }
 

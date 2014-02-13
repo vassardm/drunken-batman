@@ -1764,7 +1764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd69caca7b329a4c9ccf0a0cb9635a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 4.25
+  normalSpeed: 4.69999981
   focusSpeed: 2.1500001
   padding: 20
 --- !u!114 &1280911188

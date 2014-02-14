@@ -22,13 +22,14 @@ public class EnemyBulletAI : MonoBehaviour {
 	 */
 	void OnTriggerEnter2D(Collider2D other){
 
-		int levelOneGrazeBenchmark = 4;
+		/*int levelOneGrazeBenchmark = 4;
 		int levelTwoGrazeBenchmark = 9;
-		int levelThreeGrazeBenchmark = 15;
+		int levelThreeGrazeBenchmark = 15;*/
 
 		if (other.tag == "graze_trigger") {
 			if (!entered) {
-				print ("in graze trigger");
+				print ("in enemy bullet graze trigger");
+				/*print ("in graze trigger");
 				globals.grazeCounter++;
 				if (globals.grazeCounter > levelOneGrazeBenchmark && globals.grazeCounter <= levelTwoGrazeBenchmark) {
 					print ("graze level = 2");
@@ -41,7 +42,8 @@ public class EnemyBulletAI : MonoBehaviour {
 				if (globals.grazeCounter > levelThreeGrazeBenchmark){
 					print ("graze level = 8");
 					globals.grazeMultiplier = 8;
-				}
+				}*/
+				globals.updateGraze();
 				entered = true;
 			}
 		} else {

@@ -11,6 +11,8 @@ public class GameBehavior : MonoBehaviour {
 	public int grazeCounter = 0;
 	public int enemiesKilled;
 
+	public bool paused = false;
+
 	public float fireRate;
 	public float firePower = 0;
 	public float numOfBullets = 1;
@@ -63,15 +65,18 @@ public class GameBehavior : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.P)) {
 			if (Time.timeScale == 1){
 				Time.timeScale = 0;
-				audio.Pause ();
+				paused = true;
+				//audio.Pause ();
 			} else {
 				Time.timeScale = 1;
-				audio.Play();
+				paused = false;
+				//audio.Play();
 			}
 		}
 
 		updateGrazeMeterFunctionality ();
 		updateScoreandHighScoreFunctionality ();
+		updateFirePower ();
 
 	}
 
@@ -115,34 +120,56 @@ public class GameBehavior : MonoBehaviour {
 	}
 
 	public void increaseFireRate(){
+		firePower++;
+		updateFirePower ();
+
+	}
+
+	public void updateFirePower(){
+
 		int levelOnePowerBenchmark = 4;
 		int levelTwoPowerBenchmark = 8;
 		int levelThreePowerBenchmark = 16;
-
-		firePower++;
-
-		if (firePower > levelThreePowerBenchmark){
+		
+		if (firePower >= levelThreePowerBenchmark){
 			fireRate = defaultFireRate / 2;
 			numOfBullets = 2;
 		}
-
-		else if (firePower > levelTwoPowerBenchmark){
+		
+		else if (firePower >= levelTwoPowerBenchmark){
 			fireRate = defaultFireRate;
 			numOfBullets = 2;
 		}
-
 		
-		else if (firePower > levelOnePowerBenchmark){
+		
+		else if (firePower >= levelOnePowerBenchmark){
 			fireRate = defaultFireRate / 2;
 		}
-
+		
 		else if(firePower < levelOnePowerBenchmark){
 			fireRate = defaultFireRate;
 			numOfBullets = 1;
 		}
+	}
 
+	public void updateGraze(){
+		int levelOneGrazeBenchmark = 4;
+		int levelTwoGrazeBenchmark = 9;
+		int levelThreeGrazeBenchmark = 15;
 
-
-
+		//print ("in graze trigger");
+		grazeCounter++;
+		if (grazeCounter > levelOneGrazeBenchmark && grazeCounter <= levelTwoGrazeBenchmark) {
+			print ("graze level = 2");
+			grazeMultiplier = 2;
+		}
+		if (grazeCounter > levelTwoGrazeBenchmark && grazeCounter <= levelThreeGrazeBenchmark) {
+			print ("graze level = 4");
+			grazeMultiplier = 4;
+		}
+		if (grazeCounter > levelThreeGrazeBenchmark){
+			print ("graze level = 8");
+			grazeMultiplier = 8;
+		}
 	}
 }

@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 	public float explosionForce;
 	public float spawnRadius = 1.0f;
-	public float invunTime;
+	public float invunTime = 1.0f;
 
 	private float deathTime;
 	private bool invun = false;

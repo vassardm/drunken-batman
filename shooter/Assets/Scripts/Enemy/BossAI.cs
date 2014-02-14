@@ -24,13 +24,15 @@ public class BossAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > time) {
-			for (int i = 0; i < numBullets; i++) {
-				Instantiate(bossBullet, transform.position, Quaternion.Euler (0, 0, i * (360/numBullets) + angle));
-			}
-			angle += angleIncrement;
-			time += shootSpeed;
-		}		
+		if (!gameScript.paused){
+			if (Time.time > time) {
+				for (int i = 0; i < numBullets; i++) {
+					Instantiate(bossBullet, transform.position, Quaternion.Euler (0, 0, i * (360/numBullets) + angle));
+				}
+				angle += angleIncrement;
+				time += shootSpeed;
+			}	
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

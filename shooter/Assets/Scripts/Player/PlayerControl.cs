@@ -61,7 +61,7 @@ public class PlayerControl : MonoBehaviour {
 
 		Vector2 newPosition = transform.position;
 		float topWindowPadding = 70f;
-		float bottomWindowPadding = 75f;
+		float bottomWindowPadding = 90f;
 		
 		if ((Camera.main.WorldToScreenPoint(transform.position).y > Screen.height - padding - topWindowPadding)){
 			if(Input.GetAxis("Vertical") < 0){

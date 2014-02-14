@@ -12,7 +12,7 @@ public class BossBullet : MonoBehaviour {
 		
 		Vector2 newVelocity = Vector2.zero;
 		float rotation = gameObject.transform.eulerAngles.z;
-		print ("rotation" + rotation);
+		//print ("rotation" + rotation);
 		newVelocity.y = -Mathf.Cos (rotation * Mathf.Deg2Rad) * velocity;
 		newVelocity.x = Mathf.Sin (rotation * Mathf.Deg2Rad) * velocity;
 		rigidbody2D.velocity = newVelocity;
@@ -22,14 +22,16 @@ public class BossBullet : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other){
 		
-		int levelOneGrazeBenchmark = 4;
+		/*int levelOneGrazeBenchmark = 4;
 		int levelTwoGrazeBenchmark = 9;
-		int levelThreeGrazeBenchmark = 15;
+		int levelThreeGrazeBenchmark = 15;*/
 		
 		if (other.tag == "graze_trigger") {
 			if (!entered) {
+				print ("in boss graze trigger");
+				globals.updateGraze();
 				//print ("in graze trigger");
-				globals.grazeCounter++;
+				/*globals.grazeCounter++;
 				if(globals.grazeCounter > levelOneGrazeBenchmark && globals.grazeCounter <= levelTwoGrazeBenchmark){
 					//print ("graze level = 2");
 					globals.grazeMultiplier = 2;
@@ -41,7 +43,7 @@ public class BossBullet : MonoBehaviour {
 				if(globals.grazeCounter > levelThreeGrazeBenchmark){
 					//print ("graze level = 8");
 					globals.grazeMultiplier = 8;
-				}
+				}*/
 				entered = true;
 			}
 		} else {

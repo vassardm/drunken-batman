@@ -86,7 +86,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1.00000012, y: 2}
+  m_Size: {x: .899999976, y: .800000012}
   m_Center: {x: 5.96046448e-08, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -105,7 +105,7 @@ MonoBehaviour:
   fireRate: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
   points: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
   shootSpeed: 3
-  time: 24.0143909
+  time: 3
   startShootTime: 0
   gameScript: {fileID: 0}
 --- !u!114 &11400002

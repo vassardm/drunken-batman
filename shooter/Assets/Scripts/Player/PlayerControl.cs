@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
-	public float normalSpeed = 4.7f;
-	public float focusSpeed = 2.15f;
+	public float normalSpeed = 3.25f;
+	public float focusSpeed = 0.95f;
 	public float padding = 20.0f;
 	private float speed;
 

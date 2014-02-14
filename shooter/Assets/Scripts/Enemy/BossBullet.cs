@@ -22,9 +22,9 @@ public class BossBullet : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other){
 		
-		int levelOneGrazeBenchmark = 15;
-		int levelTwoGrazeBenchmark = 31;
-		int levelThreeGrazeBenchmark = 63;
+		int levelOneGrazeBenchmark = 4;
+		int levelTwoGrazeBenchmark = 9;
+		int levelThreeGrazeBenchmark = 15;
 		
 		if (other.tag == "graze_trigger") {
 			if (!entered) {

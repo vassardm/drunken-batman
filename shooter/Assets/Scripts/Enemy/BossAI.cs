@@ -18,7 +18,7 @@ public class BossAI : MonoBehaviour {
 	void Start () {
 		gameScript = Camera.main.GetComponent<GameBehavior> ();
 		time = Time.time + shootSpeed + startShootTime;
-		health = 10;
+		health = 150;
 	
 	}
 	
@@ -44,7 +44,9 @@ public class BossAI : MonoBehaviour {
 			health--;
 		}
 		if(health < 1){
-			gameScript.scoreCounter++;
+			int increaseEnemyKilledScoreBy = 10000; // This is how many points you gain from killing a foe.
+			int scoreMultiplier = gameScript.grazeMultiplier;
+			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
 			print ("score = " + gameScript.scoreCounter);
 			Destroy (gameObject);
 		}

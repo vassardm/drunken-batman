@@ -54,6 +54,7 @@ public class GameBehavior : MonoBehaviour {
 		scoreLabel.text = scoreCounter.ToString();
 		
 		highScoreLabel = GameObject.Find ("High Score").GetComponent < UILabel>();
+		highScoreCounter = PlayerPrefs.GetInt("1HighScore");  // default is 0
 		highScoreLabel.text = highScoreCounter.ToString();
 		
 		grazeLabel = GameObject.Find ("Graze Label").GetComponent < UILabel>();
@@ -171,6 +172,19 @@ public class GameBehavior : MonoBehaviour {
 		if (grazeCounter > levelThreeGrazeBenchmark){
 			print ("graze level = 8");
 			grazeMultiplier = 8;
+		}
+	}
+
+	public void checkIfHighScore() {
+		int oldScore;
+		int newScore = scoreCounter;
+		
+		for (int i = 1; i < 11; i++) {
+			if (PlayerPrefs.GetInt (i + "HighScore") < newScore) {
+				oldScore = PlayerPrefs.GetInt(i + "HighScore");
+				PlayerPrefs.SetInt(i + "HighScore", newScore);
+				newScore = oldScore;
+			} 
 		}
 	}
 }

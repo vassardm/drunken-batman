@@ -34,6 +34,8 @@ public class manyEnemies : MonoBehaviour {
 	private Vector3 bossSpawnPos;
 
 	public GameBehavior gameScript;
+
+	public ScoreStorage scoreStorage;
 	
 	// Use this for initialization
 	void Start () {
@@ -80,6 +82,7 @@ public class manyEnemies : MonoBehaviour {
 						spawnBoss ();
 						bossReady = false;
 				} else if (gameScript.bossKilled) {
+						scoreStorage.score = gameScript.scoreCounter;
 						Application.LoadLevel("victoryScene");
 				}
 	}

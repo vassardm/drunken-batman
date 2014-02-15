@@ -1137,6 +1137,45 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &691190822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 691190824}
+  - 114: {fileID: 691190823}
+  m_Layer: 0
+  m_Name: ScoreStorageObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &691190823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 691190822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc65ee37dddb48746a83fb69b7aa73d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+--- !u!4 &691190824
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 691190822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.3990941, y: 2.56470537, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &877603838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,6 +1957,7 @@ MonoBehaviour:
   playerLoseLife: {fileID: 8300000, guid: 7adf9e9a4c732ec44b63d50b642ecef2, type: 3}
   playerDie: {fileID: 8300000, guid: 90a96670d9d604f408d783a2b08e11e2, type: 3}
   gameScript: {fileID: 106788443}
+  scoreStorage: {fileID: 691190823}
 --- !u!82 &1280911190
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3059,6 +3099,7 @@ MonoBehaviour:
   thirdWaveTime: 100
   secondWaveTime: 20
   gameScript: {fileID: 0}
+  scoreStorage: {fileID: 691190823}
 --- !u!4 &1839096286
 Transform:
   m_ObjectHideFlags: 0

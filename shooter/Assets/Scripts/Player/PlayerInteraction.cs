@@ -19,6 +19,8 @@ public class PlayerInteraction : MonoBehaviour {
 
 	public GameBehavior gameScript;
 
+	public ScoreStorage scoreStorage;
+
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag.Equals("EnemyBullet") && !invun){
 			gameScript.grazeCounter = 0;
@@ -60,6 +62,7 @@ public class PlayerInteraction : MonoBehaviour {
 			AudioSource.PlayClipAtPoint(playerDie, transform.position);
 			gameScript.audio.Stop();
 			Destroy (gameObject);
+			scoreStorage.score = gameScript.scoreCounter;
 			Application.LoadLevel ("gameOverScene");
 		} else {
 			gameObject.transform.position = respawnPoint;

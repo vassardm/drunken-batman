@@ -27,10 +27,20 @@ public class BossAI : MonoBehaviour {
 		if (!gameScript.paused){
 			if (Time.time > time) {
 				for (int i = 0; i < numBullets; i++) {
-					Instantiate(bossBullet, transform.position, Quaternion.Euler (0, 0, i * (360/numBullets) + angle));
+					Instantiate(bossBullet, transform.position, Quaternion.Euler (0, 0, i * (360 / numBullets) + angle));
 				}
-				angle += angleIncrement;
-				time += shootSpeed;
+
+				float randomNumberAngleFloor = 5.0f;
+				float randomNumberAngleCeiling = 13.0f;
+				var varyingAngleIncNumb = Random.Range (randomNumberAngleFloor, randomNumberAngleCeiling);
+				angle += varyingAngleIncNumb;
+
+				float randomNumberFloor = 0.25f;
+				float randomNumberCeiling = 0.75f;
+				var varyingShootSpeedNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
+				time += varyingShootSpeedNumb;
+				//angle += angleIncrement;
+				//time += shootSpeed;
 			}	
 		}
 	}

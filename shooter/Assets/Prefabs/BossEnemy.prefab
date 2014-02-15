@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossBullet: {fileID: 100000, guid: a2f61b92243f02049b1cf5fa41093c1b, type: 2}
-  shootSpeed: .649999976
+  shootSpeed: .699999988
   time: 3
   startShootTime: 0
   health: 150
-  numBullets: 6
+  numBullets: 12
   angle: 0
   angleIncrement: 10
   gameScript: {fileID: 0}

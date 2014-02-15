@@ -178,12 +178,20 @@ public class GameBehavior : MonoBehaviour {
 	public void checkIfHighScore() {
 		int oldScore;
 		int newScore = scoreCounter;
+
+		//string oldName;
+		//string newName = nameEntered;
 		
-		for (int i = 1; i < 11; i++) {
+		for (int i = 1; i < 6; i++) {
 			if (PlayerPrefs.GetInt (i + "HighScore") < newScore) {
 				oldScore = PlayerPrefs.GetInt(i + "HighScore");
+		//		oldName = PlayerPrefs.GetString (i + "Name");
+
 				PlayerPrefs.SetInt(i + "HighScore", newScore);
+		//		PlayerPrefs.SetString(i + "Name", newName);
+
 				newScore = oldScore;
+		//		newName = "";
 			} 
 		}
 	}

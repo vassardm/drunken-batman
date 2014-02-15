@@ -10,6 +10,7 @@ public class GameBehavior : MonoBehaviour {
 	public int grazeMultiplier = 1;
 	public int grazeCounter = 0;
 	public int enemiesKilled;
+	public bool bossKilled;
 
 	public bool paused = false;
 

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globals: {fileID: 0}
   velocity: 1
-  entered: 1
+  entered: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

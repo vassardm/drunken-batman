@@ -20,9 +20,6 @@ public class PlayerInteraction : MonoBehaviour {
 	public GameBehavior gameScript;
 
 	void OnTriggerEnter2D(Collider2D other){
-		int scoreIncreaseByAfterCollectingPointItem = 500;
-		int scoreMultipler = gameScript.grazeMultiplier;
-
 		if (other.tag.Equals("EnemyBullet") && !invun){
 			gameScript.grazeCounter = 0;
 			gameScript.grazeMultiplier = 1;
@@ -31,24 +28,6 @@ public class PlayerInteraction : MonoBehaviour {
 			gameScript.grazeCounter = 0;
 			gameScript.grazeMultiplier = 1;
 			respawn ();
-		}
-		else if (other.tag.Equals("1UP")){
-			gameScript.numOfLives++;
-			Destroy(other);
-		}
-		else if (other.tag.Equals("extraBomb")){
-			if(gameScript.bombCounter < 8){
-				gameScript.bombCounter++;
-			}
-			Destroy(other);
-		}
-		else if (other.tag.Equals("fireUp")){
-			gameScript.increaseFireRate();
-			Destroy(other);
-		}
-		else if (other.tag.Equals("points")){
-			gameScript.scoreCounter += (scoreIncreaseByAfterCollectingPointItem * scoreMultipler);
-			Destroy(other);
 		}
 	}
 
@@ -81,6 +60,7 @@ public class PlayerInteraction : MonoBehaviour {
 			AudioSource.PlayClipAtPoint(playerDie, transform.position);
 			gameScript.audio.Stop();
 			Destroy (gameObject);
+			Application.LoadLevel ("gameOverScene");
 		} else {
 			gameObject.transform.position = respawnPoint;
 			invun = true;

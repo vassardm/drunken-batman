@@ -64,24 +64,24 @@ public class manyEnemies : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		totalTime = Time.time - startTime;
-		if((totalTime > secondWaveTime || gameScript.enemiesKilled >= (numOfEnemiesX*numOfEnemiesY)) && secondReady){
-			print ("Spawning Wave 2 jfalsdjflasjdflasjfaldsjflsajdflaj");
-			print (gameScript.enemiesKilled);
-			spawnSecond();
-			secondReady = false;
-			thirdReady = true;
-		}
-		else if((totalTime > thirdWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX*numOfEnemiesY) + (numOfEnemiesX2*numOfEnemiesY2))) && thirdReady){
-			print ("Spawning Wave 3 djfalsdjlfajdsflqjeorqpuweorq;lekjf;ladjzxmvlkdsoqweuroquroqu");
-			print (gameScript.enemiesKilled);
-			spawnThird();
-			thirdReady = false;
-			bossReady = true;
-		}
-		else if((totalTime > bossWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX*numOfEnemiesY) + 2*(numOfEnemiesX2*numOfEnemiesY2))) && bossReady){
-			spawnBoss();
-			bossReady = false;
-		}		
+		if ((totalTime > secondWaveTime || gameScript.enemiesKilled >= (numOfEnemiesX * numOfEnemiesY)) && secondReady) {
+						print ("Spawning Wave 2 jfalsdjflasjdflasjfaldsjflsajdflaj");
+						print (gameScript.enemiesKilled);
+						spawnSecond ();
+						secondReady = false;
+						thirdReady = true;
+				} else if ((totalTime > thirdWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX * numOfEnemiesY) + (numOfEnemiesX2 * numOfEnemiesY2))) && thirdReady) {
+						print ("Spawning Wave 3 djfalsdjlfajdsflqjeorqpuweorq;lekjf;ladjzxmvlkdsoqweuroquroqu");
+						print (gameScript.enemiesKilled);
+						spawnThird ();
+						thirdReady = false;
+						bossReady = true;
+				} else if ((totalTime > bossWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX * numOfEnemiesY) + 2 * (numOfEnemiesX2 * numOfEnemiesY2))) && bossReady) {
+						spawnBoss ();
+						bossReady = false;
+				} else if (gameScript.bossKilled) {
+						Application.LoadLevel("victoryScene");
+				}
 	}
 	
 	void spawnSecond () {

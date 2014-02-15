@@ -46,6 +46,8 @@ public class BossBullet : MonoBehaviour {
 				}*/
 				entered = true;
 			}
+		}else if (other.tag == "pickup") {
+			// Do Nothing				
 		} else {
 			Destroy (gameObject);
 		}

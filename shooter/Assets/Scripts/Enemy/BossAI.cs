@@ -50,6 +50,7 @@ public class BossAI : MonoBehaviour {
 			int scoreMultiplier = gameScript.grazeMultiplier;
 			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
 			print ("score = " + gameScript.scoreCounter);
+			gameScript.bossKilled = true;
 			Destroy (gameObject);
 		}
 	}

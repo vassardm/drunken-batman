@@ -30,7 +30,7 @@ public class BossAI : MonoBehaviour {
 					Instantiate(bossBullet, transform.position, Quaternion.Euler (0, 0, i * (360 / numBullets) + angle));
 				}
 
-				float randomNumberAngleFloor = 3.5f;
+				float randomNumberAngleFloor = 4.5f;
 				float randomNumberAngleCeiling = 11.5f;
 				var varyingAngleIncNumb = Random.Range (randomNumberAngleFloor, randomNumberAngleCeiling);
 				angle += varyingAngleIncNumb;

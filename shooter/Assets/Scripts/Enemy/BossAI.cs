@@ -30,12 +30,12 @@ public class BossAI : MonoBehaviour {
 					Instantiate(bossBullet, transform.position, Quaternion.Euler (0, 0, i * (360 / numBullets) + angle));
 				}
 
-				float randomNumberAngleFloor = 4.5f;
-				float randomNumberAngleCeiling = 11.5f;
+				float randomNumberAngleFloor = 5.5f;
+				float randomNumberAngleCeiling = 12.5f;
 				var varyingAngleIncNumb = Random.Range (randomNumberAngleFloor, randomNumberAngleCeiling);
 				angle += varyingAngleIncNumb;
 
-				float randomNumberFloor = 0.20f;
+				float randomNumberFloor = 0.25f;
 				float randomNumberCeiling = 0.65f;
 				var varyingShootSpeedNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
 				time += varyingShootSpeedNumb;

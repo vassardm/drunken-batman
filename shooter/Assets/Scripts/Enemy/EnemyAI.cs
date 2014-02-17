@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour {
 			var randNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
 
 			if (randNumb >= randomNumberFloor && randNumb <= getLifeUpItemBenchmark) {
-					Instantiate (points, transform.position, transform.rotation);
+					Instantiate (oneUp, transform.position, transform.rotation);
 					print ("extra life");
 			} else if (randNumb >= getBombUpItemBenchmark && randNumb <= randomNumberCeiling) {
 					Instantiate (extraBomb, transform.position, transform.rotation);

@@ -103,7 +103,7 @@ MonoBehaviour:
   time: 3
   startShootTime: 0
   health: 150
-  numBullets: 12
+  numBullets: 10
   angle: 0
   angleIncrement: 10
   gameScript: {fileID: 0}

@@ -234,6 +234,7 @@ MonoBehaviour:
   grazeLabel: {fileID: 0}
   backgroundLevelMusic: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351,
     type: 3}
+  grazeClip: {fileID: 8300000, guid: f512a7f6c352b5e4cbb0f872a9df32bf, type: 3}
   placeholder: {fileID: 0}
 --- !u!82 &106788444
 AudioSource:
@@ -432,6 +433,8 @@ MonoBehaviour:
   shootSpeed: 5
   time: 5
   startShootTime: 0
+  volume: .400000006
+  enemyDie: {fileID: 8300000, guid: c18f9307ef8ebd645ad76b99b2243d8c, type: 3}
   gameScript: {fileID: 106788443}
 --- !u!23 &205254425
 Renderer:
@@ -574,6 +577,7 @@ GameObject:
   - 114: {fileID: 244083077}
   - 136: {fileID: 244083076}
   - 114: {fileID: 244083075}
+  - 82: {fileID: 244083082}
   m_Layer: 11
   m_Name: MedEnemy
   m_TagString: Enemy
@@ -605,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 1.5
-  time: 23.5031452
+  time: 22.7454147
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
@@ -615,6 +619,9 @@ MonoBehaviour:
   health: 3
   vDirection: 0
   hDirection: 0
+  enemyHit: {fileID: 8300000, guid: 8f90dc881b477a04eb96e63ac969ab53, type: 3}
+  enemyDie: {fileID: 8300000, guid: a51023c126c5c794484c8eb2622fac8c, type: 3}
+  volume: .400000006
   gameScript: {fileID: 0}
 --- !u!136 &244083076
 CapsuleCollider:
@@ -700,6 +707,65 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1631714285}
   m_GameObject: {fileID: 244083073}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &244083082
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 12abbcd03e4df6a4c96c713e7611102a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1631714285}
+  m_GameObject: {fileID: 244083073}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 8f90dc881b477a04eb96e63ac969ab53, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &335364990
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,8 +813,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 625
+  storedScreenHeight: 469
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -980,8 +1046,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 625
+  storedScreenHeight: 469
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -1095,6 +1161,7 @@ GameObject:
   - 4: {fileID: 488091839}
   - 61: {fileID: 488091838}
   - 114: {fileID: 488091837}
+  - 82: {fileID: 488091840}
   m_Layer: 8
   m_Name: DropCollector
   m_TagString: pickup
@@ -1115,6 +1182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1280911182}
   gameScript: {fileID: 106788443}
+  oneUpClip: {fileID: 8300000, guid: c72f2140ef0f5ca4193949e55f183af4, type: 3}
+  fireUpClip: {fileID: 8300000, guid: c72f2140ef0f5ca4193949e55f183af4, type: 3}
+  bombUpClip: {fileID: 8300000, guid: 9cdde08b46ac9ed43b6a338d61213e66, type: 3}
+  pointsClip: {fileID: 8300000, guid: 2538ab5a007984147ba120f9a37b72af, type: 3}
+  volume: .300000012
 --- !u!61 &488091838
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1137,6 +1209,64 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!82 &488091840
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488091836}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 2538ab5a007984147ba120f9a37b72af, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .261999995
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &691190822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,8 +1759,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 625
+  storedScreenHeight: 469
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -1786,6 +1916,10 @@ Prefab:
       propertyPath: bombCounter
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: grazeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f512a7f6c352b5e4cbb0f872a9df32bf, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   m_RootGameObject: {fileID: 106788437}
@@ -2432,6 +2566,8 @@ MonoBehaviour:
   shootSpeed: 3
   time: 5
   startShootTime: 0
+  volume: .400000006
+  enemyDie: {fileID: 0}
   gameScript: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
 --- !u!23 &1495852183
 Renderer:
@@ -2627,6 +2763,8 @@ MonoBehaviour:
   shootSpeed: 2.5
   time: 5
   startShootTime: 0
+  volume: .400000006
+  enemyDie: {fileID: 8300000, guid: c18f9307ef8ebd645ad76b99b2243d8c, type: 3}
   gameScript: {fileID: 106788443}
 --- !u!23 &1667492146
 Renderer:
@@ -2840,8 +2978,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 568
-  storedScreenHeight: 426
+  storedScreenWidth: 625
+  storedScreenHeight: 469
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: 41539258830f7a24abc38d8bbe487af3, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2901,7 +3039,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+  m_LocalScale: {x: .00426439242, y: .00426439242, z: .00426439242}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -2959,17 +3097,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 239.999985
+    e00: 234.5
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 239.999985
+    e11: 234.5
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 239.999985
+    e22: 234.5
     e23: 0
     e30: 0
     e31: 0
@@ -3126,6 +3264,7 @@ GameObject:
   - 114: {fileID: 1872448175}
   - 136: {fileID: 1872448176}
   - 114: {fileID: 1872448171}
+  - 82: {fileID: 1872448177}
   m_Layer: 11
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -3174,7 +3313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 2.5
-  time: 23.5031452
+  time: 22.7454147
   startShootTime: 0
   enemyBullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
   oneUp: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
@@ -3184,6 +3323,9 @@ MonoBehaviour:
   health: 3
   vDirection: 0
   hDirection: 0
+  enemyHit: {fileID: 8300000, guid: 8f90dc881b477a04eb96e63ac969ab53, type: 3}
+  enemyDie: {fileID: 8300000, guid: a51023c126c5c794484c8eb2622fac8c, type: 3}
+  volume: .400000006
   gameScript: {fileID: 0}
 --- !u!23 &1872448172
 Renderer:
@@ -3252,6 +3394,65 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &1872448177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 12abbcd03e4df6a4c96c713e7611102a,
+    type: 2}
+  m_PrefabInternal: {fileID: 951382453}
+  m_GameObject: {fileID: 1872448168}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 8f90dc881b477a04eb96e63ac969ab53, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1891713945
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ public class EnemyAI : MonoBehaviour {
 	public float shootSpeed;
 	public float time;
 	public float startShootTime = 0;
+	public float volume = 0.4f;
+
+	public AudioClip enemyDie;
 
 	public GameBehavior gameScript;
 
@@ -48,6 +51,7 @@ public class EnemyAI : MonoBehaviour {
 		if (other.tag.Equals("Player") || other.tag.Equals("PlayerBullet")) {
 
 			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);
+			AudioSource.PlayClipAtPoint(enemyDie, transform.position, volume);
 			Destroy (gameObject);
 			gameScript.enemiesKilled++;
 			print ("score = " + gameScript.scoreCounter);
@@ -71,8 +75,6 @@ public class EnemyAI : MonoBehaviour {
 					BulletAI bulletAI = other.GetComponent<BulletAI> ();
 					bulletAI.bulletDestroy ();
 			}
-			//	AudioSource.PlayClipAtPoint (enemyDies, transform.position);
-
 		}
 	}
 

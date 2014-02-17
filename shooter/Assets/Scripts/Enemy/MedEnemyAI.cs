@@ -19,6 +19,10 @@ public class MedEnemyAI : MonoBehaviour {
 	private float speed = 1.5f;
 	public int vDirection;
 	public int hDirection;
+
+	public AudioClip enemyHit;
+	public AudioClip enemyDie;
+	public float volume = 0.4f;
 	
 	public GameBehavior gameScript;
 	
@@ -63,14 +67,17 @@ public class MedEnemyAI : MonoBehaviour {
 
 		if (other.tag.Equals("PlayerBullet")){
 			health--;
+			audio.PlayOneShot(enemyHit, volume);
 			BulletAI bulletAI = other.GetComponent<BulletAI>();
 			bulletAI.bulletDestroy();		
 		}
 
 		else if (other.tag.Equals("Player")) {
 			health--;
+			audio.PlayOneShot(enemyHit, volume);
 		}
 		if(health < 1){
+			AudioSource.PlayClipAtPoint(enemyDie, transform.position, volume);
 			Destroy (gameObject);
 			gameScript.enemiesKilled++;
 			gameScript.scoreCounter += (increaseEnemyKilledScoreBy * scoreMultiplier);

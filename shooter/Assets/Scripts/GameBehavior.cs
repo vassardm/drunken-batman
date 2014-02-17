@@ -23,6 +23,7 @@ public class GameBehavior : MonoBehaviour {
 	public UILabel grazeLabel;
 
 	public AudioClip backgroundLevelMusic;
+	public AudioClip grazeClip;
 
 	public GUIText placeholder;
 
@@ -68,11 +69,11 @@ public class GameBehavior : MonoBehaviour {
 			if (Time.timeScale == 1){
 				Time.timeScale = 0;
 				paused = true;
-				//audio.Pause ();
+				audio.volume = .1f;
 			} else {
 				Time.timeScale = 1;
 				paused = false;
-				//audio.Play();
+				audio.volume = .3f;
 			}
 		}
 
@@ -158,8 +159,10 @@ public class GameBehavior : MonoBehaviour {
 		int levelOneGrazeBenchmark = 4;
 		int levelTwoGrazeBenchmark = 9;
 		int levelThreeGrazeBenchmark = 15;
+		float volume = 1f;
 
 		//print ("in graze trigger");
+		audio.PlayOneShot(grazeClip, volume);
 		grazeCounter++;
 		if (grazeCounter > levelOneGrazeBenchmark && grazeCounter <= levelTwoGrazeBenchmark) {
 			print ("graze level = 2");

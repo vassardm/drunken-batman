@@ -2,7 +2,13 @@ fileFormatVersion: 2
 guid: d2ce48344aa38b04bb1075fb5fce4a0a
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - gameScript: {instanceID: 0}
+  - oneUpClip: {fileID: 8300000, guid: c72f2140ef0f5ca4193949e55f183af4, type: 3}
+  - fireUpClip: {fileID: 8300000, guid: c72f2140ef0f5ca4193949e55f183af4, type: 3}
+  - bombUpClip: {fileID: 8300000, guid: c72f2140ef0f5ca4193949e55f183af4, type: 3}
+  - pointsClip: {fileID: 8300000, guid: c72f2140ef0f5ca4193949e55f183af4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

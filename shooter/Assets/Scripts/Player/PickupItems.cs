@@ -27,7 +27,9 @@ public class PickupItems : MonoBehaviour {
 				int scoreIncreaseByAfterCollectingPointItem = 500;
 				int scoreMultipler = gameScript.grazeMultiplier;
 				if (other.tag.Equals ("1UP")) {
-						gameScript.numOfLives++;
+						if(gameScript.numOfLives < 8){
+							gameScript.numOfLives++;
+						}
 						AudioSource.PlayClipAtPoint(oneUpClip, transform.position, volume);
 						Destroy (other);
 				} else if (other.tag.Equals ("extraBomb")) {

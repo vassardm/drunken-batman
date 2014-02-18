@@ -27,6 +27,8 @@ public class manyEnemies : MonoBehaviour {
 	public float secondWaveTime;
 	private float startTime;
 	private float totalTime;
+	private float betweenWaveTime = 1.25f;
+	private float waveKillTime = 0;
 
 	private EnemyAI hEnAI;
 	private EnemyAI vEnAI;
@@ -67,24 +69,48 @@ public class manyEnemies : MonoBehaviour {
 	void Update () {
 		totalTime = Time.time - startTime;
 		if ((totalTime > secondWaveTime || gameScript.enemiesKilled >= (numOfEnemiesX * numOfEnemiesY)) && secondReady) {
-						print ("Spawning Wave 2 jfalsdjflasjdflasjfaldsjflsajdflaj");
-						print (gameScript.enemiesKilled);
-						spawnSecond ();
-						secondReady = false;
-						thirdReady = true;
-				} else if ((totalTime > thirdWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX * numOfEnemiesY) + (numOfEnemiesX2 * numOfEnemiesY2))) && thirdReady) {
-						print ("Spawning Wave 3 djfalsdjlfajdsflqjeorqpuweorq;lekjf;ladjzxmvlkdsoqweuroquroqu");
-						print (gameScript.enemiesKilled);
-						spawnThird ();
-						thirdReady = false;
-						bossReady = true;
-				} else if ((totalTime > bossWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX * numOfEnemiesY) + 2 * (numOfEnemiesX2 * numOfEnemiesY2))) && bossReady) {
-						spawnBoss ();
-						bossReady = false;
-				} else if (gameScript.bossKilled) {
-						scoreStorage.score = gameScript.scoreCounter;
-						Application.LoadLevel("victoryScene");
-				}
+			if(waveKillTime == 0){
+				waveKillTime = Time.time;
+			}
+			if(waveKillTime + betweenWaveTime < Time.time){
+				print ("Spawning Wave 2 jfalsdjflasjdflasjfaldsjflsajdflaj");
+				print (gameScript.enemiesKilled);
+				spawnSecond ();
+				secondReady = false;
+				thirdReady = true;
+				waveKillTime = 0;
+			}
+		} else if ((totalTime > thirdWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX * numOfEnemiesY) + (numOfEnemiesX2 * numOfEnemiesY2))) && thirdReady) {
+			if(waveKillTime == 0){
+				waveKillTime = Time.time;
+			}
+			if(waveKillTime + betweenWaveTime < Time.time){
+				print ("Spawning Wave 3 djfalsdjlfajdsflqjeorqpuweorq;lekjf;ladjzxmvlkdsoqweuroquroqu");
+				print (gameScript.enemiesKilled);
+				spawnThird ();
+				thirdReady = false;
+				bossReady = true;
+				waveKillTime = 0;
+			}
+		} else if ((totalTime > bossWaveTime || gameScript.enemiesKilled >= ((numOfEnemiesX * numOfEnemiesY) + 2 * (numOfEnemiesX2 * numOfEnemiesY2))) && bossReady) {
+			if(waveKillTime == 0){
+				waveKillTime = Time.time;
+			}
+			if(waveKillTime + betweenWaveTime < Time.time){
+				spawnBoss ();
+				bossReady = false;
+				waveKillTime = 0;
+			}
+		} else if (gameScript.bossKilled) {
+			if(waveKillTime == 0){
+				waveKillTime = Time.time;
+			}
+			if(waveKillTime + betweenWaveTime < Time.time){
+				scoreStorage.score = gameScript.scoreCounter;
+				Application.LoadLevel("victoryScene");
+				waveKillTime = 0;
+			}
+		}
 	}
 	
 	void spawnSecond () {

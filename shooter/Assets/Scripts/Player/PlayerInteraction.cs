@@ -6,6 +6,7 @@ public class PlayerInteraction : MonoBehaviour {
 	public Vector3 respawnPoint = new Vector3(-1.5f, -1.5f, 0);
 
 	public GameObject[] gibs;
+	public GameObject playerSprite;
 
 	public float explosionForce;
 	public float spawnRadius = 1.0f;
@@ -13,6 +14,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 	private float deathTime;
 	private bool invun = false;
+	private Color playerColorRestore;
 
 	public AudioClip playerLoseLife;
 	public AudioClip playerDie;
@@ -36,6 +38,8 @@ public class PlayerInteraction : MonoBehaviour {
 	void Update(){
 		if(invun){
 			if (Time.time - deathTime > invunTime){
+				Color transparency = playerColorRestore;
+				playerSprite.GetComponent<SpriteRenderer>().color = transparency;
 				invun = false;
 			}
 		}
@@ -67,6 +71,9 @@ public class PlayerInteraction : MonoBehaviour {
 			Application.LoadLevel ("gameOverScene");
 		} else {
 			gameObject.transform.position = respawnPoint;
+			playerColorRestore = playerSprite.GetComponent<SpriteRenderer>().color;
+			Color transparency = new Color(0, 0, 0, .4f);
+			playerSprite.GetComponent<SpriteRenderer>().color = transparency;
 			invun = true;
 			audio.PlayOneShot(playerLoseLife);
 		}

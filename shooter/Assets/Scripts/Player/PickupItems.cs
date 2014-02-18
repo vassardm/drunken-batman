@@ -26,12 +26,15 @@ public class PickupItems : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 				int scoreIncreaseByAfterCollectingPointItem = 500;
 				int scoreMultipler = gameScript.grazeMultiplier;
+				int itemCap = 8;
 				if (other.tag.Equals ("1UP")) {
-						gameScript.numOfLives++;
+						if (gameScript.numOfLives < itemCap) {
+							gameScript.numOfLives++;
+						}
 						AudioSource.PlayClipAtPoint(oneUpClip, transform.position, volume);
 						Destroy (other);
 				} else if (other.tag.Equals ("extraBomb")) {
-						if (gameScript.bombCounter < 8) {
+						if (gameScript.bombCounter < itemCap) {
 								gameScript.bombCounter++;
 						}
 						AudioSource.PlayClipAtPoint(bombUpClip, transform.position, volume);

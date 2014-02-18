@@ -155,7 +155,7 @@ Behaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1169737348}
   m_GameObject: {fileID: 106788437}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &106788440
 Behaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 335364990}
   globals: {fileID: 106788443}
+  shieldBar: {fileID: 0}
   valueCurrent: 3
   valueMin: 0
   valueMax: 8
@@ -1135,6 +1136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 466167503}
   globals: {fileID: 106788443}
+  shieldBar: {fileID: 0}
   valueCurrent: 0
   valueMin: 0
   valueMax: 16
@@ -1267,6 +1269,160 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &626956614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 626956615}
+  - 114: {fileID: 626956617}
+  - 114: {fileID: 626956616}
+  m_Layer: 0
+  m_Name: Shield Meter
+  m_TagString: shield_bar
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &626956615
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 626956614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1480173335}
+--- !u!114 &626956616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 626956614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77830493bd83da7498a26ed1cb510a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texturesBackground: []
+  texturesForeground:
+  - texture: {fileID: 2800000, guid: 8c9459920e74bd44582662fbbdb81e2f, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  pivot: 7
+  guiDepth: 1
+  anchorObject: {fileID: 0}
+  anchorCamera: {fileID: 0}
+  positionSizeFromTransform: 0
+  positionSizeFromTransformNormalized: 0
+  premultipliedAlpha: 0
+  labelEnabled: 0
+  labelSkin: {fileID: 0}
+  labelPosition: {x: 0, y: 0}
+  labelPositionNormalized: 0
+  labelFormat: '{cur}/{max}'
+  labelColor: {r: 1, g: 1, b: 1, a: 1}
+  labelOutlineEnabled: 1
+  labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
+  effectSmoothChange: 1
+  effectSmoothChangeSpeed: .5
+  storedScreenWidth: 800
+  storedScreenHeight: 600
+  _tint: {r: 1, g: 1, b: 1, a: 1}
+  screenPosition: {x: .625, y: .400000006}
+  screenPositionNormalized: 1
+  size: {x: 70, y: 15}
+  sizeNormalized: 0
+  screenPositionCalculateSize: 0
+  textureBackground: {fileID: 0}
+  textureBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  textureBar: {fileID: 2800000, guid: dbc62ca044ac58d42b977e178f54f428, type: 3}
+  textureBarColorType: 1
+  textureBarColor: {r: 1, g: 1, b: 1, a: 1}
+  textureBarGradient:
+    key0:
+      serializedVersion: 2
+      rgba: 4278190335
+    key1:
+      serializedVersion: 2
+      rgba: 4294246144
+    key2:
+      serializedVersion: 2
+      rgba: 0
+    key3:
+      serializedVersion: 2
+      rgba: 0
+    key4:
+      serializedVersion: 2
+      rgba: 0
+    key5:
+      serializedVersion: 2
+      rgba: 0
+    key6:
+      serializedVersion: 2
+      rgba: 0
+    key7:
+      serializedVersion: 2
+      rgba: 0
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  textureForeground: {fileID: 0}
+  textureForegroundColor: {r: 1, g: 1, b: 1, a: 1}
+  growDirection: 1
+  radialRotatePoint: 0
+  radialCustomCenter: {x: 0, y: 0}
+  radialOffset: 0
+  radialLength: 1
+  effectBurn: 0
+  effectBurnTextureBar: {fileID: 0}
+  effectBurnTextureBarColor: {r: 1, g: 0, b: 0, a: 1}
+  effectBlink: 0
+  effectBlinkValue: .200000003
+  effectBlinkRatePerSecond: 1
+  effectBlinkColor: {r: 1, g: 1, b: 1, a: 0}
+  effectEdge: 0
+  effectEdgeTexture: {fileID: 0}
+  effectEdgeIn: .200000003
+  effectEdgeOut: .200000003
+  effectEdgeRotateAngle: 100
+--- !u!114 &626956617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 626956614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bfc393ba3e9ba4886cecff90d9a611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 626956614}
+  globals: {fileID: 106788443}
+  shieldBar: {fileID: 0}
+  valueCurrent: 0
+  valueMin: 0
+  valueMax: 2
+  animationEnabled: 0
+  animValueF: 0
 --- !u!1 &691190822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +2004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 1104816178}
   globals: {fileID: 106788443}
+  shieldBar: {fileID: 0}
   valueCurrent: 0
   valueMin: 0
   valueMax: 16
@@ -1920,6 +2077,10 @@ Prefab:
       propertyPath: grazeClip
       value: 
       objectReference: {fileID: 8300000, guid: f512a7f6c352b5e4cbb0f872a9df32bf, type: 3}
+    - target: {fileID: 12400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   m_RootGameObject: {fileID: 106788437}
@@ -2088,6 +2249,7 @@ MonoBehaviour:
   explosionForce: 8
   spawnRadius: 1
   invunTime: 1
+  timeSpentWaitingForShieldGone: 0
   playerLoseLife: {fileID: 8300000, guid: 7adf9e9a4c732ec44b63d50b642ecef2, type: 3}
   playerDie: {fileID: 8300000, guid: 90a96670d9d604f408d783a2b08e11e2, type: 3}
   gameScript: {fileID: 106788443}
@@ -2405,6 +2567,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 626956615}
   - {fileID: 1104816179}
   - {fileID: 335364993}
   - {fileID: 1701627196}
@@ -3008,6 +3171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 1701627195}
   globals: {fileID: 106788443}
+  shieldBar: {fileID: 0}
   valueCurrent: 3
   valueMin: 0
   valueMax: 8

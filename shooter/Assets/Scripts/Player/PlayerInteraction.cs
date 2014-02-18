@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 	public float explosionForce;
 	public float spawnRadius = 1.0f;
-	public float invunTime = 1.0f;
+	public float invunTime = 2.0f;
 
 	private float deathTime;
 	private bool invun = false;
@@ -35,7 +35,7 @@ public class PlayerInteraction : MonoBehaviour {
 
 	void Update(){
 		if(invun){
-			if(Time.time - deathTime > invunTime){
+			if (Time.time - deathTime > invunTime){
 				invun = false;
 			}
 		}

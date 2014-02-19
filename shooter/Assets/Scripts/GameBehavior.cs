@@ -178,24 +178,27 @@ public class GameBehavior : MonoBehaviour {
 		}
 	}
 
-	public void checkIfHighScore() {
-		int oldScore;
+	public void saveScore() {
+		PlayerPrefs.SetInt ("savedScore", scoreCounter);
+
+		// moved logic to gameover / victory scene
+		/*int oldScore;
 		int newScore = scoreCounter;
 
-		//string oldName;
-		//string newName = nameEntered;
-		
+		string oldName;
+		string newName = PlayerPrefs.GetString ("initials", "INI");
+
 		for (int i = 1; i < 6; i++) {
 			if (PlayerPrefs.GetInt (i + "HighScore") < newScore) {
 				oldScore = PlayerPrefs.GetInt(i + "HighScore");
-		//		oldName = PlayerPrefs.GetString (i + "Name");
+				oldName = PlayerPrefs.GetString (i + "Name");
 
 				PlayerPrefs.SetInt(i + "HighScore", newScore);
-		//		PlayerPrefs.SetString(i + "Name", newName);
+				PlayerPrefs.SetString(i + "Name", newName);
 
 				newScore = oldScore;
-		//		newName = "";
+				newName = oldName;
 			} 
-		}
+		} */
 	}
 }

@@ -47,7 +47,7 @@ public class loadScores : MonoBehaviour {
 		scoreLabel5.text = score.ToString();
 
 		// Names
-		/*string name = PlayerPrefs.GetString("1Name"); 
+		string name = PlayerPrefs.GetString("1Name"); 
 		nameLabel1.text = name;
 
 		name = PlayerPrefs.GetString("2Name"); 
@@ -60,7 +60,7 @@ public class loadScores : MonoBehaviour {
 		nameLabel4.text = name;
 
 		name = PlayerPrefs.GetString("5Name"); 
-		nameLabel5.text = name; */
+		nameLabel5.text = name; 
 	}
 
 }

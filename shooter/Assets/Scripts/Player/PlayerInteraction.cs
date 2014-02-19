@@ -67,7 +67,7 @@ public class PlayerInteraction : MonoBehaviour {
 			gameScript.audio.Stop();
 			Destroy (gameObject);
 			scoreStorage.score = gameScript.scoreCounter;
-			gameScript.checkIfHighScore();
+			gameScript.saveScore();
 			Application.LoadLevel ("gameOverScene");
 		} else {
 			gameObject.transform.position = respawnPoint;

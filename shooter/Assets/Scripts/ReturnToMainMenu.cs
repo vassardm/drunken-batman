@@ -7,9 +7,15 @@ public class ReturnToMainMenu : MonoBehaviour {
 	private float startTime;
 	private UIInput inputText;
 
+	private int highScoreCollector;
+	public UILabel scoreCollectorLabel;
+
+
 	void Start(){
 		startTime = Time.time + waitTime;
 		inputText = GameObject.Find ("inputText").GetComponent < UIInput>();
+		highScoreCollector = PlayerPrefs.GetInt("savedScore");  // default is 0
+		scoreCollectorLabel.text = highScoreCollector.ToString();
 	}
 
 	// Update is called once per frame

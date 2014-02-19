@@ -8,8 +8,7 @@ public class PickupItems : MonoBehaviour {
 	public AudioClip oneUpClip;
 	public AudioClip fireUpClip;
 	public AudioClip bombUpClip;
-	public AudioClip pointsClip;
-	public float volume = 0.4f;
+	public float volume = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +44,6 @@ public class PickupItems : MonoBehaviour {
 						Destroy (other);
 				} else if (other.tag.Equals ("points")) {
 						gameScript.scoreCounter += (scoreIncreaseByAfterCollectingPointItem * scoreMultipler);
-						AudioSource.PlayClipAtPoint(pointsClip, transform.position, volume);
 						Destroy (other);
 				}
 		}

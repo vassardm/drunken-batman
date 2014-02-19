@@ -18,7 +18,7 @@ public class BossAI : MonoBehaviour {
 	void Start () {
 		gameScript = Camera.main.GetComponent<GameBehavior> ();
 		time = Time.time + shootSpeed + startShootTime;
-		health = 50;
+		health = 150;
 	
 	}
 	

@@ -86,7 +86,6 @@ GameObject:
   - 92: {fileID: 406224578}
   - 124: {fileID: 406224577}
   - 81: {fileID: 406224576}
-  - 114: {fileID: 406224581}
   - 82: {fileID: 406224582}
   m_Layer: 0
   m_Name: Main Camera
@@ -156,18 +155,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &406224581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 406224575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d0f8b6c6d0e3d24190875747e492463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreCollectorLabel: {fileID: 1586258043}
 --- !u!82 &406224582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -381,6 +368,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 914305840}
   - 212: {fileID: 914305839}
+  - 114: {fileID: 914305841}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -422,6 +410,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &914305841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 914305838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0f8b6c6d0e3d24190875747e492463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreCollectorLabel: {fileID: 0}
 --- !u!1001 &1084316209
 Prefab:
   m_ObjectHideFlags: 0
@@ -811,7 +811,6 @@ GameObject:
   - 114: {fileID: 2067872685}
   - 65: {fileID: 2067872684}
   - 114: {fileID: 2067872683}
-  - 114: {fileID: 2067872687}
   m_Layer: 8
   m_Name: inputText
   m_TagString: Untagged
@@ -924,15 +923,3 @@ MonoBehaviour:
   mFillDirection: 4
   mFillAmount: 1
   mInvert: 0
---- !u!114 &2067872687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2067872681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d0f8b6c6d0e3d24190875747e492463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreCollectorLabel: {fileID: 0}

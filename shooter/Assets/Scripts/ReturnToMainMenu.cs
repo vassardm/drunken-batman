@@ -22,10 +22,10 @@ public class ReturnToMainMenu : MonoBehaviour {
 	void Update () {
 		if (Time.time > startTime){
 			if (Input.GetKey (KeyCode.KeypadEnter) || Input.GetKey (KeyCode.Return)) {
-				string newName = inputText.value;
-				print (newName);
 
+				string newName = inputText.value;
 				int newScore = PlayerPrefs.GetInt ("savedScore");
+
 				int oldScore;
 				string oldName;
 

@@ -266,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 830182946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00427350448, y: .00427350448, z: .00427350448}
+  m_LocalScale: {x: .00260416674, y: .00260416674, z: .00260416674}
   m_Children:
   - {fileID: 1817543027}
   - {fileID: 2067872682}
@@ -323,17 +323,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 233.999985
+    e00: 384
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 233.999985
+    e11: 384
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 233.999985
+    e22: 384
     e23: 0
     e30: 0
     e31: 0
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0f8b6c6d0e3d24190875747e492463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreCollectorLabel: {fileID: 0}
+  scoreCollectorLabel: {fileID: 1586258043}
 --- !u!1001 &1084316209
 Prefab:
   m_ObjectHideFlags: 0

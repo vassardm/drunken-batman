@@ -3,10 +3,10 @@ using System.Collections;
 
 public class GameBehavior : MonoBehaviour {
 
-	public int highScoreCounter = 1000;
+	public int highScoreCounter = 1000000;
 	public int scoreCounter = 0;
-	public int numOfLives = 3;
-	public int bombCounter = 3;
+	public int numOfLives = 99;
+	public int bombCounter = 99;
 	public int grazeMultiplier = 1;
 	public int grazeCounter = 0;
 	public int enemiesKilled;

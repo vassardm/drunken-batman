@@ -27,7 +27,7 @@ public class GameBehavior : MonoBehaviour {
 
 	public GUIText placeholder;
 
-	private float defaultFireRate = .3f;
+	private float defaultFireRate = .35f;
 
 
 	// Use this for initialization
@@ -132,25 +132,51 @@ public class GameBehavior : MonoBehaviour {
 
 		int levelOnePowerBenchmark = 4;
 		int levelTwoPowerBenchmark = 8;
-		int levelThreePowerBenchmark = 16;
-		
-		if (firePower >= levelThreePowerBenchmark){
-			fireRate = defaultFireRate / 2;
+		int levelThreePowerBenchmark = 13;
+		int levelFourPowerBenchmark = 19;
+		int levelFivePowerBenchmark = 26;
+		int levelSixPowerBenchmark = 32;
+
+
+		if (firePower >= levelSixPowerBenchmark){
+			float fireRateReductionBonus = (0.0025f * firePower);
+			fireRate =  (defaultFireRate / 2.25f) - fireRateReductionBonus;
+			numOfBullets = 3;
+		}
+
+		else if (firePower >= levelFivePowerBenchmark){
+			float fireRateReductionBonus = (0.0020f * firePower);
+			fireRate =  (defaultFireRate / 2.125f) - fireRateReductionBonus;
+			numOfBullets = 2;
+		}
+
+		else if (firePower >= levelFourPowerBenchmark){
+			float fireRateReductionBonus = (0.0016f * firePower);
+			fireRate = (defaultFireRate / 2.0f) - fireRateReductionBonus;
+			numOfBullets = 2;
+		}
+
+		else if (firePower >= levelThreePowerBenchmark){
+			float fireRateReductionBonus = (0.0014f * firePower);
+			fireRate = (defaultFireRate / 1.75f) - fireRateReductionBonus;
 			numOfBullets = 2;
 		}
 		
 		else if (firePower >= levelTwoPowerBenchmark){
-			fireRate = defaultFireRate;
+			float fireRateReductionBonus = (0.0012f * firePower);
+			fireRate = (defaultFireRate / 1.5f) - fireRateReductionBonus;
 			numOfBullets = 2;
-		}
-		
+		}	
 		
 		else if (firePower >= levelOnePowerBenchmark){
-			fireRate = defaultFireRate / 2;
+			float fireRateReductionBonus = (0.0011f * firePower);
+			fireRate = (defaultFireRate / 1.25f) - fireRateReductionBonus;
+			numOfBullets = 1;
 		}
 		
 		else if(firePower < levelOnePowerBenchmark){
-			fireRate = defaultFireRate;
+			float fireRateReductionBonus = (0.010f * firePower);
+			fireRate = defaultFireRate - fireRateReductionBonus;
 			numOfBullets = 1;
 		}
 	}

@@ -226,14 +226,13 @@ MonoBehaviour:
   enemiesKilled: 0
   bossKilled: 0
   paused: 0
-  fireRate: .300000012
+  fireRate: .400000006
   firePower: 0
   numOfBullets: 1
   scoreLabel: {fileID: 0}
   highScoreLabel: {fileID: 0}
   grazeLabel: {fileID: 0}
-  backgroundLevelMusic: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351,
-    type: 3}
+  backgroundLevelMusic: {fileID: 0}
   grazeClip: {fileID: 8300000, guid: f512a7f6c352b5e4cbb0f872a9df32bf, type: 3}
   placeholder: {fileID: 0}
 --- !u!82 &106788444
@@ -244,7 +243,7 @@ AudioSource:
   m_GameObject: {fileID: 106788437}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: .30399999
   m_Pitch: 1
@@ -813,8 +812,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 823
-  storedScreenHeight: 433
+  storedScreenWidth: 378
+  storedScreenHeight: 278
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1047,8 +1046,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 823
-  storedScreenHeight: 433
+  storedScreenWidth: 378
+  storedScreenHeight: 278
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -1760,8 +1759,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 823
-  storedScreenHeight: 433
+  storedScreenWidth: 378
+  storedScreenHeight: 278
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -1852,7 +1851,7 @@ MonoBehaviour:
   shieldBar: {fileID: 0}
   valueCurrent: 0
   valueMin: 0
-  valueMax: 16
+  valueMax: 32
   animationEnabled: 0
   animValueF: 0
 --- !u!1001 &1169737348
@@ -1901,7 +1900,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
       propertyPath: backgroundLevelMusic
       value: 
-      objectReference: {fileID: 8300000, guid: f176949fc4a6fb34daf48599cf299351, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
       propertyPath: scoreCounter
       value: 0
@@ -1925,6 +1924,14 @@ Prefab:
     - target: {fileID: 12400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: firePower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: fireRate
+      value: .400000006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
@@ -2985,8 +2992,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 823
-  storedScreenHeight: 433
+  storedScreenWidth: 378
+  storedScreenHeight: 278
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: 41539258830f7a24abc38d8bbe487af3, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3047,7 +3054,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00461893762, y: .00461893762, z: .00461893762}
+  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -3105,17 +3112,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 216.5
+    e00: 160
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 216.5
+    e11: 160
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 216.5
+    e22: 160
     e23: 0
     e30: 0
     e31: 0
@@ -3227,23 +3234,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1839096284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e817374c60e7e74eb869aff1231ad51, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ec1907be6250974a87015e94d73d496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicEnemy: {fileID: 100000, guid: 2fa11fe6f9fb20b448029054d2c47374, type: 2}
-  horEnemy: {fileID: 100000, guid: 7e9b44982df21664699a8155ce138810, type: 2}
-  vertEnemy: {fileID: 100000, guid: 9db67d6d9655c754db9fc859feaa0711, type: 2}
-  medEnemy: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
-  bossEnemy: {fileID: 100000, guid: d4e2bcaeca17a254b96efc776beb2462, type: 2}
-  spawnAreaWidth: 6
-  spawnAreaHeight: 3
-  numOfEnemiesX: 5
-  numOfEnemiesY: 3
-  numOfEnemiesX2: 5
-  numOfEnemiesY2: 3
-  bossWaveTime: 150
-  thirdWaveTime: 100
-  secondWaveTime: 20
+  minion: {fileID: 0}
   gameScript: {fileID: 0}
   scoreStorage: {fileID: 691190823}
 --- !u!4 &1839096286

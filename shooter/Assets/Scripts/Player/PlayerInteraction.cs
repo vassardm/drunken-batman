@@ -22,7 +22,7 @@ public class PlayerInteraction : MonoBehaviour {
 	public GameBehavior gameScript;
 
 	public ScoreStorage scoreStorage;
-
+	
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag.Equals("EnemyBullet") && !invun){
 			gameScript.grazeCounter = 0;
@@ -36,6 +36,7 @@ public class PlayerInteraction : MonoBehaviour {
 	}
 
 	void Update(){
+
 		if(invun){
 			if (Time.time - deathTime > invunTime){
 				Color transparency = playerColorRestore;
@@ -53,7 +54,7 @@ public class PlayerInteraction : MonoBehaviour {
 		int gameOverBenchmark = 0;
 		deathTime = Time.time;
 		gameScript.numOfLives--;
-		gameScript.firePower = 0;
+		gameScript.firePower = gameScript.firePower / 2;
 		print ("lives left = " + gameScript.numOfLives);
 
 		foreach(GameObject gib in gibs)

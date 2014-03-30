@@ -35,8 +35,8 @@ public class BossAI : MonoBehaviour {
 				var varyingAngleIncNumb = Random.Range (randomNumberAngleFloor, randomNumberAngleCeiling);
 				angle += varyingAngleIncNumb;
 
-				float randomNumberFloor = 0.25f;
-				float randomNumberCeiling = 0.55f;
+				float randomNumberFloor = 0.20f;
+				float randomNumberCeiling = 0.40f;
 				var varyingShootSpeedNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
 				time += varyingShootSpeedNumb;
 				//angle += angleIncrement;

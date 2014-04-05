@@ -31,9 +31,9 @@ public class SandboxSpawn : MonoBehaviour {
     {
         foreach (GameObject existingEnemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            print("Name: " + existingEnemy.name);
-            if (existingEnemy.name.Equals(enemy.name))
+            if (existingEnemy.Equals(enemy))
             {
+                print("Name: " + existingEnemy.name);
                 return;
             }
         }

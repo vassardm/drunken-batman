@@ -64,6 +64,10 @@ public class GameBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Application.LoadLevel("AvastAlpha");
+        }
 	
 		if (Input.GetKeyDown (KeyCode.P)) {
 			if (Time.timeScale == 1){

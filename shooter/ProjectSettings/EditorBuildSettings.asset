@@ -13,3 +13,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/gameOverScene.unity
   - enabled: 1
     path: Assets/_Scenes/victoryScene.unity
+  - enabled: 0
+    path: Assets/_Scenes/AvastAlpha.unity
+  - enabled: 1
+    path: Assets/_Scenes/sandbox.unity

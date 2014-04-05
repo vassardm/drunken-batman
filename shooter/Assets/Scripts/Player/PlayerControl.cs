@@ -24,17 +24,73 @@ public class PlayerControl : MonoBehaviour {
 		transform.position = new Vector2(restrictHorizontal(), restrictVertical());
 	}
 
+    private float MoveLeft()
+    {
+        if (Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - padding - RIGHT_WIN_PADDING)
+        {
+            print("LEFT" + transform.position.x);
+            return transform.position.x - (speed * Time.deltaTime);
+
+        }
+        else
+        {
+            print("LEFT NOT IN WORLD" + transform.position.x);
+            return transform.position.x;
+        }
+
+        return transform.position.x - (speed * Time.deltaTime);
+    }
+
+    private void MoveRight()
+    {
+        print("Getting right input!");
+        if (Camera.main.WorldToScreenPoint(transform.position).x < 0 + padding + LEFT_WIN_PADDING)
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+    }
+
+    private float MoveDown()
+    {
+        if (Camera.main.WorldToScreenPoint(transform.position).y > Screen.height - padding - TOP_WIN_PADDING)
+        {
+            return transform.position.y - (speed * Time.deltaTime);
+        }
+        else
+        {
+            return transform.position.y;
+        }
+    }
+
+    private float MoveUp()
+    {
+        if (Camera.main.WorldToScreenPoint(transform.position).y < 0 + padding + BOTTOM_WIN_PADDING)
+        {
+            return transform.position.y + (speed * Time.deltaTime);
+        }
+        else
+        {
+            return transform.position.y;
+        }
+    }
+
 	float restrictHorizontal() {
 
-		Vector2 newPosition = transform.position;
+		Vector2 newPosition = transform.position;	
+		float rightWindowPadding = 320f;
+		float leftWindowPadding = 35f;
 		
-		if ((Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - padding - RIGHT_WIN_PADDING)){
+		if ((Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - padding - rightWindowPadding)){
 			if(Input.GetAxis("Horizontal") < 0){
 				newPosition.x += (Input.GetAxis("Horizontal") * speed * Time.deltaTime);
 			}
 		}
 		
-		else if ((Camera.main.WorldToScreenPoint(transform.position).x < 0 + padding + LEFT_WIN_PADDING)){
+		else if ((Camera.main.WorldToScreenPoint(transform.position).x < 0 + padding + leftWindowPadding)){
 			if(Input.GetAxis("Horizontal") > 0){
 				newPosition.x += (Input.GetAxis("Horizontal") * speed * Time.deltaTime);
 			}
@@ -52,14 +108,16 @@ public class PlayerControl : MonoBehaviour {
 	float restrictVertical() {
 
 		Vector2 newPosition = transform.position;
+		float topWindowPadding = 70f;
+		float bottomWindowPadding = 90f;
 		
-		if ((Camera.main.WorldToScreenPoint(transform.position).y > Screen.height - padding - TOP_WIN_PADDING)){
+		if ((Camera.main.WorldToScreenPoint(transform.position).y > Screen.height - padding - topWindowPadding)){
 			if(Input.GetAxis("Vertical") < 0){
 				newPosition.y += (Input.GetAxis("Vertical") * speed * Time.deltaTime);
 			}
 		}
 		
-		else if ((Camera.main.WorldToScreenPoint(transform.position).y < 0 + padding + BOTTOM_WIN_PADDING)){
+		else if ((Camera.main.WorldToScreenPoint(transform.position).y < 0 + padding + bottomWindowPadding)){
 			if(Input.GetAxis("Vertical") > 0){
 				newPosition.y += (Input.GetAxis("Vertical") * speed * Time.deltaTime);
 			}

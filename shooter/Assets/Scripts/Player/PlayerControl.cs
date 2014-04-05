@@ -20,27 +20,8 @@ public class PlayerControl : MonoBehaviour {
 		} else {
 			speed = normalSpeed;
 		}
-        /*
-        Vector2 newPosition = new Vector2();
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            newPosition.x = MoveLeft();
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            MoveRight();
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            newPosition.y = MoveDown();
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            newPosition.y = MoveUp();
-        }
-        */
+
 		transform.position = new Vector2(restrictHorizontal(), restrictVertical());
-       // transform.position = newPosition;
 	}
 
     private float MoveLeft()

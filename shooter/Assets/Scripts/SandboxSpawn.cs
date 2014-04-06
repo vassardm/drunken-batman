@@ -10,19 +10,19 @@ public class SandboxSpawn : MonoBehaviour
 	public GameObject enemy1, enemy2, enemy3, enemy4;
 
 	void Update() {
-		if (Input.GetKey (KeyCode.Alpha1)) 
+		if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             SpawnEnemy(enemy1);
         }
-        else if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SpawnEnemy(enemy2);
         }
-        else if (Input.GetKey(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SpawnEnemy(enemy3);
         }
-        else if (Input.GetKey(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SpawnEnemy(enemy4);
         }

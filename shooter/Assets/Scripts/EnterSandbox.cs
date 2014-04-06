@@ -4,7 +4,7 @@ using System.Collections;
 /// <summary>
 /// Loads the Sanbox scene
 /// </summary>
-public class EnterSanbox : MonoBehaviour {
+public class EnterSandbox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {

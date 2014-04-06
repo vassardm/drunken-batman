@@ -5,7 +5,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Controls the enemy spawn behavior of the sanbox scene
 /// </summary>
-public class SandboxSpawn : MonoBehaviour {
+public class SandboxSpawn : MonoBehaviour 
+{
 
 	public GameObject enemy1, enemy2, enemy3, enemy4;
 

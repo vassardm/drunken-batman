@@ -11,6 +11,7 @@ public class PlayerInteraction : MonoBehaviour {
 	public float explosionForce;
 	public float spawnRadius = 1.0f;
 	public float invunTime = 2.0f;
+	public bool deathTrigger = false;
 
 	private float deathTime;
 	private bool invun = false;
@@ -51,6 +52,7 @@ public class PlayerInteraction : MonoBehaviour {
 	}
 
 	void respawn(){
+		deathTrigger = true; // This just allows it to trigger true for the T-Horse.
 		int gameOverBenchmark = 0;
 		deathTime = Time.time;
 		gameScript.numOfLives--;

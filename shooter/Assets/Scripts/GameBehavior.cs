@@ -9,7 +9,7 @@ public class GameBehavior : MonoBehaviour {
 	public int bombCounter = 99;
 	public int grazeMultiplier = 1;
 	public int grazeCounter = 0;
-	public int enemiesKilled;
+	public int enemiesKilled = 0;
 	public bool bossKilled;
 
 	public bool paused = false;
@@ -27,7 +27,7 @@ public class GameBehavior : MonoBehaviour {
 
 	public GUIText placeholder;
 
-	private float defaultFireRate = .35f;
+	private float defaultFireRate = .4f;
 
 
 	// Use this for initialization

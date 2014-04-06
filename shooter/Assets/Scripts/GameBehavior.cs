@@ -142,8 +142,18 @@ public class GameBehavior : MonoBehaviour {
 		int levelFivePowerBenchmark = 26;
 		int levelSixPowerBenchmark = 32;
 
+		// Set caps so silliness will not happen.
+		if (firePower > levelSixPowerBenchmark) {
+			firePower = levelSixPowerBenchmark;
+		}
 
-		if (firePower >= levelSixPowerBenchmark){
+		if (firePower < 0) {
+			firePower = 0;
+		}
+
+		// Other than that proceed as normal.
+
+		if (firePower == levelSixPowerBenchmark){
 			float fireRateReductionBonus = (0.0025f * firePower);
 			fireRate =  (defaultFireRate / 2.25f) - fireRateReductionBonus;
 			numOfBullets = 3;

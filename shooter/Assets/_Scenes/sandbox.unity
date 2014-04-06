@@ -2024,9 +2024,9 @@ MonoBehaviour:
   storedScreenWidth: 459
   storedScreenHeight: 305
   _tint: {r: 1, g: 1, b: 1, a: 1}
-  screenPosition: {x: .75999999, y: .689999998}
+  screenPosition: {x: .790000021, y: .689999998}
   screenPositionNormalized: 1
-  size: {x: 70, y: 70}
+  size: {x: 75, y: 75}
   sizeNormalized: 0
   screenPositionCalculateSize: 0
   textureBackground: {fileID: 0}
@@ -2113,7 +2113,7 @@ MonoBehaviour:
   shieldBar: {fileID: 0}
   difficultyGlobals: {fileID: 106788445}
   valueCurrent: 0
-  valueMin: -350
+  valueMin: -351
   valueMax: 350
   animationEnabled: 0
   animValueF: 0

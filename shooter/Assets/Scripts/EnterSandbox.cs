@@ -8,7 +8,7 @@ public class EnterSandbox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.BackQuote))
+        if (Input.GetKey(KeyCode.Delete))
         {
             Application.LoadLevel("sandbox");
         }

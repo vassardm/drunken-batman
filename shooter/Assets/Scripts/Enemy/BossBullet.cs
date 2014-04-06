@@ -5,6 +5,7 @@ public class BossBullet : MonoBehaviour {
 
 	public GameBehavior globals;
 	public float velocity = -6.5f;
+	public bool grazeTrigger = false;
 	public bool entered = false; // You need this flag or the game will try to read EVERY instance of the collison!
 	
 	// Use this for initialization
@@ -45,6 +46,7 @@ public class BossBullet : MonoBehaviour {
 					globals.grazeMultiplier = 8;
 				}*/
 				entered = true;
+				grazeTrigger = true;
 			}
 		}else if (other.tag == "pickup") {
 			// Do Nothing				

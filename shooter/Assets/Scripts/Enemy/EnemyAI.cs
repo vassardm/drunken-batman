@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour {
 	public float startShootTime = 0;
 	public float volume = 0.4f;
 
+	public bool enemyDefeatedTrigger = false;
+
 	public AudioClip enemyDie;
 
 	public GameBehavior gameScript;
@@ -38,6 +40,8 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
+		//enemyDefeatedTrigger = true;
+
 		int increaseEnemyKilledScoreBy = 100; // This is how many points you gain from killing a foe.
 		int scoreMultiplier = gameScript.grazeMultiplier;
 		int randomNumberFloor = 1;

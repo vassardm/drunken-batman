@@ -13,6 +13,7 @@ public class GameBehavior : MonoBehaviour {
 	public bool bossKilled;
 
 	public bool paused = false;
+	public bool grazeTriggered = false;
 
 	public float fireRate;
 	public float firePower = 0;
@@ -186,6 +187,7 @@ public class GameBehavior : MonoBehaviour {
 	}
 
 	public void updateGraze(){
+		grazeTriggered = true;
 		int levelOneGrazeBenchmark = 4;
 		int levelTwoGrazeBenchmark = 9;
 		int levelThreeGrazeBenchmark = 15;

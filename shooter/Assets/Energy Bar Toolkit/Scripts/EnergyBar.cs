@@ -20,6 +20,7 @@ public class EnergyBar : MonoBehaviour {
 	public GameObject bar;
 	public GameBehavior globals;
 	public PlayerInteraction shieldBar;
+	public THorseSystemMechanics difficultyGlobals;
     public int valueCurrent = 50;
     public int valueMin = 0;
     public int valueMax = 100;
@@ -39,6 +40,9 @@ public class EnergyBar : MonoBehaviour {
 		}
 		if (bar.tag == "shield_bar") {
 			valueCurrent = (int) shieldBar.invunTime;
+		}
+		if (bar.tag == "t_horse_bar") {
+			valueCurrent = (difficultyGlobals.fragmentCounter);
 		}
 
 	}
@@ -89,7 +93,10 @@ public class EnergyBar : MonoBehaviour {
 			valueCurrent = Mathf.Clamp((int) globals.firePower, valueMin, valueMax);
 		}
 		if (bar.tag == "shield_bar") {
-				valueCurrent = Mathf.Clamp((int) shieldBar.invunTime, valueMin, valueMax);
+			valueCurrent = Mathf.Clamp((int) shieldBar.invunTime, valueMin, valueMax);
+		}
+		if (bar.tag == "t_horse_bar") {
+			valueCurrent = Mathf.Clamp(difficultyGlobals.fragmentCounter, valueMin, valueMax);
 		}
 	
         

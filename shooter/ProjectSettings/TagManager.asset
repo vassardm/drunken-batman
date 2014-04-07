@@ -20,6 +20,7 @@ TagManager:
   - graze_trigger
   - pickup
   - shield_bar
+  - t_horse_bar
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

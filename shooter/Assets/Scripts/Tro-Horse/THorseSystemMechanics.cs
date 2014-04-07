@@ -11,7 +11,7 @@ public class THorseSystemMechanics : MonoBehaviour {
 	// TODO: Relies on the superclass "Enemy"
 
 	// Construct values only access by this class.
-	private int fragmentCounter;
+	public int fragmentCounter;
 	private int fragmentMin = -350;
 	private int fragmentMax = 350;
 	private WarningLevel currentWarningLevel;
@@ -70,6 +70,7 @@ public class THorseSystemMechanics : MonoBehaviour {
 		// If the player dies, you will lose 85 points.
 		if (deathFlag.deathTrigger) {
 			handlePointLossReduction ();
+			deathFlag.deathTrigger = false;
 		}
 		else {
 			increasePointScore();
@@ -90,14 +91,13 @@ public class THorseSystemMechanics : MonoBehaviour {
 	// Handle the mechanics if a player does well against the system.
 	public void increasePointScore() {
 		// This counter increases in two ways.
-		// 1) You will earn 3 points if you defeat an enemy
-		// TODO: Implement this mechanic when the Enemy Class gets refactored so it can capture the point increase
-
+		// 1) You will earn 3 points for each enemy you defeated.
 		// 2) You will earn 1 point for each graze you perform.
-		int defaultGrazeCounter = 0;
-		if (gameScript.grazeCounter != defaultGrazeCounter) {
-			fragmentCounter++;
+		if (gameScript.grazeTriggered) {
+			fragmentCounter += 1;
+			gameScript.grazeTriggered = false;
 		}
+
 
 		// In case that the player is doing too well....
 		if (fragmentCounter > fragmentMax) {
@@ -115,6 +115,14 @@ public class THorseSystemMechanics : MonoBehaviour {
 		int blueLevelBenchmark = -125;
 		int purpleLevelBenchmark = -255;
 		int whiteLevelBenchmark = -325;
+
+		// Red: Increase bullet speed of enemies + (all below above Green)
+		// Orange: Increase bullet density against player
+		// Yellow: Increases bullet fire rate of enemies
+		// Green: NORMAL BEHAVIOR
+		// Blue: Decreases bullet fire rate of enemies
+		// Purple Decreases Bullet Speed of enemies
+		// White: Increases chances of life and bomb upgrades by 50%
 
 		if (fragmentCounter >= redLevelBenchmark){
 			currentWarningLevel = securitySystem["red"];

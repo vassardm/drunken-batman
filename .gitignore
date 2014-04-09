@@ -7,3 +7,5 @@
 *.unityproj
 *.sln
 *.userprefs
+*.meta
+*.suo

@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-		iTween.MoveTo(gameObject, iTween.Hash ("path", GetRelativePath (this.pathName, this.transform.position), "speed", this.speed));
+		iTween.MoveTo(gameObject, iTween.Hash ("path", GetRelativePath (this.pathName, this.transform.position), "speed", this.speed, "looptype", iTween.LoopType.loop));
     }
 	
 	// Update is called once per frame

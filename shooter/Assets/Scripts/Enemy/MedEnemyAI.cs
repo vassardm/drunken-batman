@@ -57,7 +57,6 @@ public class MedEnemyAI : MonoBehaviour {
 
 		int increaseEnemyKilledScoreBy = 1000; // This is how many points you gain from killing a more difficult foe
 		int scoreMultiplier = gameScript.grazeMultiplier;
-		int deathHPBenchmark = 1;
 		int randomNumberFloor = 1;
 		int randomNumberCeiling = 100;
 		int getLifeUpItemBenchmark = 10;

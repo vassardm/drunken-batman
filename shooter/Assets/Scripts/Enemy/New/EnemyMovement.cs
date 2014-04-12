@@ -6,9 +6,6 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     public string pathName;
 
-    private Vector3[] path;
-    private int currentPoint;
-
     void Start()
     {
 		iTween.MoveTo(gameObject, iTween.Hash ("path", GetRelativePath (this.pathName, this.transform.position), "speed", this.speed));

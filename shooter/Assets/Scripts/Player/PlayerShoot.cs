@@ -50,12 +50,19 @@ public class PlayerShoot : MonoBehaviour {
 					gameScript.grazeCounter = 0;
 					gameScript.grazeMultiplier = 1;
 					gameScript.bombCounter--;
-					for(int i = -6; i < 6; i++){
-						GameObject bullets = (Instantiate(bullet,transform.position,transform.rotation)) as GameObject;
-						BulletAI ai = bullets.GetComponent<BulletAI>();
+                    
+                    // TODO: Allow the bullets to be wiped off the screen for enemies...
 
-						ai.setSpeed(i/2.0f, bulletSpeed);
-					}
+
+                    for (int i = -10; i < 10; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            GameObject bullets = (Instantiate(bullet, transform.position, transform.rotation)) as GameObject;
+                            BulletAI ai = bullets.GetComponent<BulletAI>();
+                            ai.setSpeed(i / 2.0f, bulletSpeed);
+                        }
+                    }
 					audio.PlayOneShot(playerBomb);
 				}
 			}

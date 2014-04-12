@@ -6,8 +6,8 @@ using System.Collections;
 /// </summary>
 public class SandboxSpawn : MonoBehaviour 
 {
-
-	public GameObject enemy1, enemy2, enemy3, enemy4;
+	public GameObject enemy1, enemy2, enemy3, enemy4, enemy5;
+    public GameBehavior gameScript;
 
 	void Update() {
 		if (Input.GetKeyDown(KeyCode.Alpha1)) 
@@ -25,6 +25,15 @@ public class SandboxSpawn : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SpawnEnemy(enemy4);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SpawnEnemy(enemy5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            gameScript.firePower += 10;
         }
 	}
 

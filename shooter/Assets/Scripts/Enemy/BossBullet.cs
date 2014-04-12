@@ -23,28 +23,10 @@ public class BossBullet : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other){
 		
-		/*int levelOneGrazeBenchmark = 4;
-		int levelTwoGrazeBenchmark = 9;
-		int levelThreeGrazeBenchmark = 15;*/
-		
 		if (other.tag == "graze_trigger") {
 			if (!entered) {
 				print ("in boss graze trigger");
 				globals.updateGraze();
-				//print ("in graze trigger");
-				/*globals.grazeCounter++;
-				if(globals.grazeCounter > levelOneGrazeBenchmark && globals.grazeCounter <= levelTwoGrazeBenchmark){
-					//print ("graze level = 2");
-					globals.grazeMultiplier = 2;
-				}
-				if(globals.grazeCounter > levelTwoGrazeBenchmark && globals.grazeCounter <= levelThreeGrazeBenchmark){
-					//print ("graze level = 4");
-					globals.grazeMultiplier = 4;
-				}
-				if(globals.grazeCounter > levelThreeGrazeBenchmark){
-					//print ("graze level = 8");
-					globals.grazeMultiplier = 8;
-				}*/
 				entered = true;
 				grazeTrigger = true;
 			}

@@ -10,7 +10,7 @@ public class RegularEnemyRewards : MonoBehaviour {
     public GameObject scoreUpPickUpItem;
 
 
-    public void DropRewards(GameBehavior gameMechanicsInterface, int hitpoints)
+    public void DropRewards(GameBehavior gameMechanicsInterface)
     {
         grantPlayerPoints(gameMechanicsInterface);
         grantPowerUpItem();

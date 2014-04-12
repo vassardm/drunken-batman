@@ -83,7 +83,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 9db67d6d9655c754db9fc859feaa0711, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9db67d6d9655c754db9fc859feaa0711, type: 2}
       propertyPath: m_LocalPosition.y
@@ -879,7 +879,7 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 1053
+  storedScreenWidth: 879
   storedScreenHeight: 909
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 1053
+  storedScreenWidth: 879
   storedScreenHeight: 909
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
@@ -1739,6 +1739,7 @@ GameObject:
   - 136: {fileID: 1075318341}
   - 82: {fileID: 1075318340}
   - 114: {fileID: 1075318339}
+  - 114: {fileID: 1075318347}
   m_Layer: 11
   m_Name: TestEnemy
   m_TagString: Enemy
@@ -1753,7 +1754,7 @@ Transform:
   m_PrefabInternal: {fileID: 31586637}
   m_GameObject: {fileID: 1075318337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: .800000012, y: .800000012, z: 1}
   m_Children: []
   m_Father: {fileID: 1936018685}
@@ -1769,7 +1770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  speed: 0
   rewards: {fileID: 1936018687}
 --- !u!82 &1075318340
 AudioSource:
@@ -1914,6 +1914,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 31586637}
   m_GameObject: {fileID: 1075318337}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1075318347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075318337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538bfae3530c1524d91c846bf31bf933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  pathName: CirclePath
 --- !u!1001 &1077905999
 Prefab:
   m_ObjectHideFlags: 0
@@ -2019,7 +2032,7 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 1053
+  storedScreenWidth: 879
   storedScreenHeight: 909
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
@@ -2194,6 +2207,26 @@ Prefab:
       propertyPath: fireRate
       value: .400000006
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   m_RootGameObject: {fileID: 106788437}
@@ -2262,7 +2295,7 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: .0313725509, b: .0627451017, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: 1
-  storedScreenWidth: 1053
+  storedScreenWidth: 879
   storedScreenHeight: 909
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .790000021, y: .689999998}
@@ -3114,6 +3147,60 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .349999994, y: 1.5}
   m_Center: {x: .5, y: 0}
+--- !u!1 &1619168513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1619168515}
+  - 114: {fileID: 1619168514}
+  m_Layer: 0
+  m_Name: Paths
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1619168514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619168513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: CirclePath
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -.00999999978, y: 1.95653152, z: 0}
+  - {x: 1.13, y: 1.09953356, z: 0}
+  - {x: 1.49288797, y: -.0771111846, z: 0}
+  - {x: 1.12842178, y: -1.15249002, z: 0}
+  - {x: 0, y: -1.63999999, z: 0}
+  - {x: -.649999976, y: -1.36000001, z: 0}
+  - {x: -.910000026, y: -.670000017, z: 0}
+  - {x: -.460000008, y: -.189999998, z: 0}
+  - {x: 0, y: 1.95653248, z: 0}
+  nodeCount: 9
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!4 &1619168515
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619168513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7421093, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &1631714285
 Prefab:
   m_ObjectHideFlags: 0
@@ -3417,7 +3504,7 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 1053
+  storedScreenWidth: 879
   storedScreenHeight: 909
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: 41539258830f7a24abc38d8bbe487af3, type: 3}
@@ -3480,7 +3567,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00220022001, y: .00220022001, z: .00220022001}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -3538,17 +3625,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 454.5
+    e00: 239.999985
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 454.5
+    e11: 239.999985
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 454.5
+    e22: 239.999985
     e23: 0
     e30: 0
     e31: 0

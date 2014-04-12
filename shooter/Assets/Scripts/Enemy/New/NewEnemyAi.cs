@@ -4,10 +4,8 @@ using System.Collections;
 public class NewEnemyAI : MonoBehaviour 
 {
     public int health;
-    public int speed;
 
     public RegularEnemyRewards rewards;
-
     public GameBehavior GameScript { get; set; }
 
 	// Use this for initialization
@@ -40,20 +38,4 @@ public class NewEnemyAI : MonoBehaviour
             rewards.DropRewards(GameScript);
         }
     }
-
-    #region Movement
-
-    private Vector3[] GetRelativePath(string pathName, Vector3 relativePoint)
-    {
-        Vector3[] path = iTweenPath.GetPath (pathName);
-        Vector3[] result = new Vector3[path.Length];
-        for (int i =0; i < path.Length; i++) 
-        {
-            result[i] = relativePoint + path[i];
-        }
-
-        return result;
-    }
-
-    #endregion
 }

@@ -23,12 +23,15 @@ public class PlayerInteraction : MonoBehaviour {
 	public GameBehavior gameScript;
 
 	public ScoreStorage scoreStorage;
+
+    public BulletAI currentBulletsOnScreen;
 	
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag.Equals("EnemyBullet") && !invun){
 			gameScript.grazeCounter = 0;
 			gameScript.grazeMultiplier = 1;
 			respawn ();
+ 
 		} else if (other.tag.Equals("Enemy") && !invun){
 			gameScript.grazeCounter = 0;
 			gameScript.grazeMultiplier = 1;

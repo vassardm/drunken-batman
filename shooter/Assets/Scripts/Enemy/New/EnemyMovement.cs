@@ -11,16 +11,12 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        path = GetRelativePath(pathName, transform.position);
-        currentPoint = 0;
+		iTween.MoveTo(gameObject, iTween.Hash ("path", GetRelativePath (this.pathName, this.transform.position), "speed", this.speed));
     }
 	
 	// Update is called once per frame
 	void Update()
     {
-        int index = currentPoint % path.Length;
-        currentPoint++;
-        iTween.MoveUpdate(gameObject, path[index], 2);
 	}
 
     private Vector3[] GetRelativePath(string pathName, Vector3 relativePoint)

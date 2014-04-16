@@ -10,10 +10,10 @@ public class RegularEnemyRewards : MonoBehaviour {
     public GameObject scoreUpPickUpItem;
 
 
-    public void DropRewards(GameBehavior gameMechanicsInterface)
+    public void DropRewards(GameBehavior gameMechanicsInterface, GameObject obj)
     {
         grantPlayerPoints(gameMechanicsInterface);
-        grantPowerUpItem();
+        grantPowerUpItem(obj);
     }
 
     public void grantPlayerPoints(GameBehavior gameMechanicsInterface)
@@ -26,7 +26,7 @@ public class RegularEnemyRewards : MonoBehaviour {
         gameMechanicsInterface.scoreCounter += totalScoreIncrease;
     }
 
-    public void grantPowerUpItem()
+    public void grantPowerUpItem(GameObject obj)
     {
         int randonNumberLow = 0;
         int randomNumberHigh = 10;
@@ -36,19 +36,19 @@ public class RegularEnemyRewards : MonoBehaviour {
 
         if (randNumber == randonNumberLow)
         {
-            Instantiate(oneUpPickupItem, transform.position, transform.rotation);
+            Instantiate(oneUpPickupItem, obj.transform.position, obj.transform.rotation);
         }
         else if (randNumber >= firePowerLow && randNumber < bombUpLow)
         {
-            Instantiate(firePowerPickUpItem, transform.position, transform.rotation);
+            Instantiate(firePowerPickUpItem, obj.transform.position, obj.transform.rotation);
         }
         else if (randNumber >= bombUpLow && randNumber < randomNumberHigh)
         {
-            Instantiate(bombUpPickUpItem, transform.position, transform.rotation);
+            Instantiate(bombUpPickUpItem, obj.transform.position, obj.transform.rotation);
         }
         else
         {
-            Instantiate(scoreUpPickUpItem, transform.position, transform.rotation);
+            Instantiate(scoreUpPickUpItem, obj.transform.position, obj.transform.rotation);
         }
     }
 }

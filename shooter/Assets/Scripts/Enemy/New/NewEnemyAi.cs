@@ -35,7 +35,7 @@ public class NewEnemyAI : MonoBehaviour
         {
             Destroy(gameObject);
             GameScript.enemiesKilled++;
-            rewards.DropRewards(GameScript);
+            rewards.DropRewards(GameScript, gameObject);
         }
     }
 }

@@ -363,6 +363,95 @@ MonoBehaviour:
   gameScript: {fileID: 106788443}
   deathFlag: {fileID: 1280911189}
   fragmentCounter: 0
+--- !u!1 &145440365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 145440366}
+  - 114: {fileID: 145440368}
+  - 114: {fileID: 145440367}
+  - 114: {fileID: 145440369}
+  m_Layer: 0
+  m_Name: Wave4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &145440366
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145440365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512005097}
+--- !u!114 &145440367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145440365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: StraightRight2
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -5.55000019, y: .75, z: 0}
+  - {x: 2.45000005, y: .75, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 3
+  pathVisible: 1
+--- !u!114 &145440368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145440365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: StraightRight1
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -5.55000019, y: 2.22000003, z: 0}
+  - {x: 2.45000005, y: 2.22000003, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 3
+  pathVisible: 1
+--- !u!114 &145440369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145440365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: New Path 4
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 2.45000005, y: -.870000005, z: 0}
+  - {x: -5.55000019, y: -.870000005, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 4
+  pathVisible: 1
 --- !u!1001 &180466568
 Prefab:
   m_ObjectHideFlags: 0
@@ -931,6 +1020,67 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1480173335}
+--- !u!1 &346490650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 346490651}
+  - 114: {fileID: 346490652}
+  m_Layer: 0
+  m_Name: Wave2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &346490651
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346490650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512005097}
+--- !u!114 &346490652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346490650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: StraightLoop
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -5.73999977, y: .970000029, z: 0}
+  - {x: -4.26000023, y: .970000029, z: 0}
+  - {x: -2.8599999, y: .970000029, z: 0}
+  - {x: -1.88999999, y: .970000029, z: 0}
+  - {x: -1.16999996, y: 1.14999998, z: 0}
+  - {x: -.620000005, y: 1.5, z: 0}
+  - {x: -.319999993, y: 2.02999997, z: 0}
+  - {x: -.680000007, y: 2.6099999, z: 0}
+  - {x: -1.25999999, y: 2.61999989, z: 0}
+  - {x: -1.97000003, y: 2.19000006, z: 0}
+  - {x: -1.84000003, y: 1.40999997, z: 0}
+  - {x: -1.20000005, y: 1.00999999, z: 0}
+  - {x: .100000001, y: 1.00999999, z: 0}
+  - {x: .699999988, y: 1.00999999, z: 0}
+  - {x: 2.47000003, y: 1.00999999, z: 0}
+  - {x: 3.45000005, y: 1.00999999, z: 0}
+  nodeCount: 16
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
 --- !u!1 &372740473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1515,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1630781625}
+  - {fileID: 145440366}
+  - {fileID: 1111983329}
   - {fileID: 1619168515}
+  - {fileID: 346490651}
   m_Father: {fileID: 0}
 --- !u!1 &691190822
 GameObject:
@@ -2159,6 +2313,61 @@ MonoBehaviour:
   valueMax: 32
   animationEnabled: 0
   animValueF: 0
+--- !u!1 &1111983328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1111983329}
+  - 114: {fileID: 1111983330}
+  m_Layer: 0
+  m_Name: Wave3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1111983329
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111983328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512005097}
+--- !u!114 &1111983330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111983328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: New Path 2
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -3.21000004, y: -3.61999989, z: 0}
+  - {x: -3.21000004, y: .959999979, z: 0}
+  - {x: -3.0999999, y: 1.75999999, z: 0}
+  - {x: -2.86999989, y: 2.21000004, z: 0}
+  - {x: -2.25999999, y: 2.52999997, z: 0}
+  - {x: -1.39999998, y: 2.53999996, z: 0}
+  - {x: -.790000021, y: 2.21000004, z: 0}
+  - {x: -.5, y: 1.75999999, z: 0}
+  - {x: -.289999992, y: .959999979, z: 0}
+  - {x: -.289999992, y: -3.6099999, z: 0}
+  nodeCount: 10
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1001 &1169737348
 Prefab:
   m_ObjectHideFlags: 0
@@ -3192,7 +3401,7 @@ GameObject:
   - 114: {fileID: 1619168518}
   - 114: {fileID: 1619168519}
   m_Layer: 0
-  m_Name: BasicWave
+  m_Name: Wave1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3347,6 +3556,58 @@ MonoBehaviour:
   nodeCount: 10
   initialized: 1
   initialName: New Path 2
+  pathVisible: 1
+--- !u!1 &1630781624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1630781625}
+  - 114: {fileID: 1630781626}
+  m_Layer: 0
+  m_Name: BossWave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1630781625
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1630781624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512005097}
+--- !u!114 &1630781626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1630781624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: BossPath
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -1.04999995, y: 2.1400001, z: 0}
+  - {x: .879999995, y: 2.1400001, z: 0}
+  - {x: .879999995, y: -1.16999996, z: 0}
+  - {x: -1.04999995, y: -.479999989, z: 0}
+  - {x: -3.17000008, y: -1.16999996, z: 0}
+  - {x: -3.17000008, y: 2.1400001, z: 0}
+  - {x: -1.04999995, y: 2.1400001, z: 0}
+  nodeCount: 7
+  initialized: 1
+  initialName: New Path 5
   pathVisible: 1
 --- !u!1001 &1631714285
 Prefab:
@@ -3902,6 +4163,11 @@ MonoBehaviour:
   enemy3: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
   enemy4: {fileID: 100000, guid: d4e2bcaeca17a254b96efc776beb2462, type: 2}
   enemy5: {fileID: 0}
+  pathName1: BasicPath4
+  pathName2: 
+  pathName3: 
+  pathName4: 
+  pathName5: 
   gameScript: {fileID: 106788443}
 --- !u!4 &1839096286
 Transform:

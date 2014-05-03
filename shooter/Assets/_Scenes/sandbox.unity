@@ -883,8 +883,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 909
+  storedScreenWidth: 371
+  storedScreenHeight: 893
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1118,8 +1118,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 909
+  storedScreenWidth: 371
+  storedScreenHeight: 893
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -1340,6 +1340,33 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &512005096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 512005097}
+  m_Layer: 0
+  m_Name: Paths
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512005097
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512005096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1619168515}
+  m_Father: {fileID: 0}
 --- !u!1 &691190822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  pathName: CirclePath
+  pathName: BasicPath4
 --- !u!1001 &1077905999
 Prefab:
   m_ObjectHideFlags: 0
@@ -2036,8 +2063,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 909
+  storedScreenWidth: 371
+  storedScreenHeight: 893
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -2299,8 +2326,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: .0313725509, b: .0627451017, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: 1
-  storedScreenWidth: 879
-  storedScreenHeight: 909
+  storedScreenWidth: 371
+  storedScreenHeight: 893
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .790000021, y: .689999998}
   screenPositionNormalized: 1
@@ -3160,8 +3187,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 1619168515}
   - 114: {fileID: 1619168514}
+  - 114: {fileID: 1619168516}
+  - 114: {fileID: 1619168517}
+  - 114: {fileID: 1619168518}
+  - 114: {fileID: 1619168519}
   m_Layer: 0
-  m_Name: Paths
+  m_Name: BasicWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3193,7 +3224,7 @@ MonoBehaviour:
   nodeCount: 9
   initialized: 1
   initialName: New Path 1
-  pathVisible: 1
+  pathVisible: 0
 --- !u!4 &1619168515
 Transform:
   m_ObjectHideFlags: 0
@@ -3204,7 +3235,119 @@ Transform:
   m_LocalPosition: {x: -2.7421093, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 512005097}
+--- !u!114 &1619168516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619168513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: BasicPath1
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -5.65999985, y: 2.4000001, z: 0}
+  - {x: -4.42999983, y: 1.88999999, z: 0}
+  - {x: -3.51999998, y: 1.19000006, z: 0}
+  - {x: -2.9000001, y: -.0900000036, z: 0}
+  - {x: -2.50999999, y: -1.83000004, z: 0}
+  - {x: -1.65999997, y: -2.73000002, z: 0}
+  - {x: -.379999995, y: -2.52999997, z: 0}
+  - {x: -.600000024, y: -1.25999999, z: 0}
+  - {x: -.730000019, y: 0, z: 0}
+  - {x: -1.64999998, y: .660000026, z: 0}
+  nodeCount: 10
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 0
+--- !u!114 &1619168517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619168513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: BasicPath2
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 2.70000005, y: 2.4000001, z: 0}
+  - {x: 1.04999995, y: 1.88999999, z: 0}
+  - {x: .660000026, y: 1.19000006, z: 0}
+  - {x: .540000021, y: -.0900000036, z: 0}
+  - {x: .150000006, y: -1.83000004, z: 0}
+  - {x: -.400000006, y: -2.73000002, z: 0}
+  - {x: -1.58000004, y: -2.52999997, z: 0}
+  - {x: -2.88000011, y: -1.25999999, z: 0}
+  - {x: -2.41000009, y: 0, z: 0}
+  - {x: -1.04999995, y: .660000026, z: 0}
+  nodeCount: 10
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 0
+--- !u!114 &1619168518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619168513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: BasicPath3
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 2.61999989, y: 1.01999998, z: 0}
+  - {x: 1.04999995, y: .460000008, z: 0}
+  - {x: .660000026, y: -.289999992, z: 0}
+  - {x: .540000021, y: -1.27999997, z: 0}
+  - {x: .150000006, y: -2.42000008, z: 0}
+  - {x: -1.35000002, y: -2.41000009, z: 0}
+  - {x: -2.48000002, y: -1.89999998, z: 0}
+  - {x: -2.42000008, y: -.419999987, z: 0}
+  - {x: -1.28999996, y: .189999998, z: 0}
+  - {x: -.0900000036, y: .660000026, z: 0}
+  nodeCount: 10
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 0
+--- !u!114 &1619168519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619168513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: BasicPath4
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -5.65999985, y: 1.03999996, z: 0}
+  - {x: -4.42999983, y: .850000024, z: 0}
+  - {x: -2.74000001, y: .810000002, z: 0}
+  - {x: -2.16000009, y: -.699999988, z: 0}
+  - {x: -1.80999994, y: -2.21000004, z: 0}
+  - {x: -.680000007, y: -2.24000001, z: 0}
+  - {x: -.819999993, y: -.800000012, z: 0}
+  - {x: -1.28999996, y: .280000001, z: 0}
+  - {x: -1.45000005, y: .779999971, z: 0}
+  - {x: -1.65999997, y: 1.08000004, z: 0}
+  nodeCount: 10
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1001 &1631714285
 Prefab:
   m_ObjectHideFlags: 0
@@ -3508,8 +3651,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 909
+  storedScreenWidth: 371
+  storedScreenHeight: 893
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: 41539258830f7a24abc38d8bbe487af3, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3571,7 +3714,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00220022001, y: .00220022001, z: .00220022001}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -3629,17 +3772,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 454.5
+    e00: 239.999985
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 454.5
+    e11: 239.999985
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 454.5
+    e22: 239.999985
     e23: 0
     e30: 0
     e31: 0

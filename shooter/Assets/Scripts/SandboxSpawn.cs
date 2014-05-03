@@ -48,7 +48,7 @@ public class SandboxSpawn : MonoBehaviour
             }
         }
 
-        Vector3 spawnPoint = new Vector3(-1, 1, 0);
+        Vector3 spawnPoint = iTweenPath.GetPath("BasicPath4")[0];
         Instantiate(enemy, spawnPoint, enemy.transform.rotation);
     }
 }

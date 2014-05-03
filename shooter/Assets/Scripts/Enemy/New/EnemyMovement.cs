@@ -11,16 +11,37 @@ public class EnemyMovement : MonoBehaviour
 		iTween.MoveTo(gameObject, iTween.Hash ("path", GetRelativePath (this.pathName, this.transform.position), "speed", this.speed, "looptype", iTween.LoopType.loop));
     }
 
+    // Starting point must be (0,0,0)
     private Vector3[] GetRelativePath(string pathName, Vector3 relativePoint)
     {
         Vector3[] path = iTweenPath.GetPath(pathName);
-        Vector3[] result = new Vector3[path.Length];
-        for (int i = 0; i < path.Length; i++)
+        Vector3[] convertedPath = MakeRelativePath(path);
+        Vector3[] result = new Vector3[convertedPath.Length];
+        for (int i = 0; i < convertedPath.Length; i++)
         {
-            result[i] = relativePoint + path[i];
+            result[i] = relativePoint + convertedPath[i];
         }
 
         return result;
+    }
+
+    private Vector3[] MakeRelativePath(Vector3[] path)
+    {
+        Vector3[] convertedPath = new Vector3[path.Length];
+        Vector3 startingPoint = path[0];
+        float startX = startingPoint.x;
+        float startY = startingPoint.y;
+        float startZ = startingPoint.z;
+        for (int i = 0; i < path.Length; i++) 
+        {
+            Vector3 point = path[i];
+            Vector3 newPoint = new Vector3(point.x, point.y, point.z);
+            newPoint.x -= startX;
+            newPoint.y -= startY;
+            newPoint.z -= startZ;
+            convertedPath[i] = newPoint;
+        }
+        return convertedPath;
     }
 
 }

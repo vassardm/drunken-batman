@@ -18,7 +18,7 @@ public class BossAI : MonoBehaviour {
 	void Start () {
 		gameScript = Camera.main.GetComponent<GameBehavior> ();
 		time = Time.time + shootSpeed + startShootTime;
-		health = 150;
+		health = 250;
 	
 	}
 	
@@ -30,13 +30,13 @@ public class BossAI : MonoBehaviour {
 					Instantiate(bossBullet, transform.position, Quaternion.Euler (0, 0, i * (360 / numBullets) + angle));
 				}
 
-				float randomNumberAngleFloor = 7.5f;
-				float randomNumberAngleCeiling = 12.5f;
+				float randomNumberAngleFloor = 6.5f;
+				float randomNumberAngleCeiling = 15.5f;
 				var varyingAngleIncNumb = Random.Range (randomNumberAngleFloor, randomNumberAngleCeiling);
 				angle += varyingAngleIncNumb;
 
-				float randomNumberFloor = 0.20f;
-				float randomNumberCeiling = 0.40f;
+				float randomNumberFloor = 0.28f;
+				float randomNumberCeiling = 0.55f;
 				var varyingShootSpeedNumb = Random.Range (randomNumberFloor, randomNumberCeiling);
 				time += varyingShootSpeedNumb;
 				//angle += angleIncrement;

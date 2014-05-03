@@ -12,8 +12,6 @@ public class SandboxSpawn : MonoBehaviour
     public GameBehavior gameScript;
 
 	void Update() {
-        Vector3 defaultSpawnPoint = new Vector3(0, 0, 0);
-
 		if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             SpawnEnemy(enemy1, iTweenPath.GetPath(pathName1)[0]);

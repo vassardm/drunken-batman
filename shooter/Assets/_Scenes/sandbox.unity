@@ -188,6 +188,7 @@ GameObject:
   - 114: {fileID: 106788443}
   - 82: {fileID: 106788444}
   - 114: {fileID: 106788445}
+  - 114: {fileID: 106788446}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -363,6 +364,21 @@ MonoBehaviour:
   gameScript: {fileID: 106788443}
   deathFlag: {fileID: 1280911189}
   fragmentCounter: 0
+--- !u!114 &106788446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106788437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3196d4d068589740bb353b35c2cda7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave1EnemyA: {fileID: 100000, guid: 7e9b44982df21664699a8155ce138810, type: 2}
+  wave1EnemyB: {fileID: 100000, guid: 72412e0bb63d1b441881e71426865e28, type: 2}
+  wave1EnemyC: {fileID: 100000, guid: 8b7b9ebc0f030d2448d10a7f8f583371, type: 2}
+  wave1EnemyD: {fileID: 100000, guid: a7164c627a72d9742aed700fa2bd5923, type: 2}
 --- !u!1 &145440365
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +753,7 @@ GameObject:
   - 136: {fileID: 244083076}
   - 114: {fileID: 244083075}
   - 82: {fileID: 244083082}
+  - 114: {fileID: 244083083}
   m_Layer: 11
   m_Name: MedEnemy
   m_TagString: Enemy
@@ -925,6 +942,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &244083083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 12abbcd03e4df6a4c96c713e7611102a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1631714285}
+  m_GameObject: {fileID: 244083073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538bfae3530c1524d91c846bf31bf933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  pathName: Wave3Path
+  loop: 0
 --- !u!1 &335364990
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,8 +1004,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 371
-  storedScreenHeight: 893
+  storedScreenWidth: 1067
+  storedScreenHeight: 667
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1268,8 +1300,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 371
-  storedScreenHeight: 893
+  storedScreenWidth: 1067
+  storedScreenHeight: 667
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -2218,8 +2250,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 371
-  storedScreenHeight: 893
+  storedScreenWidth: 1067
+  storedScreenHeight: 667
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -2536,8 +2568,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: .0313725509, b: .0627451017, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: 1
-  storedScreenWidth: 371
-  storedScreenHeight: 893
+  storedScreenWidth: 1067
+  storedScreenHeight: 667
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .790000021, y: .689999998}
   screenPositionNormalized: 1
@@ -3885,8 +3917,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 371
-  storedScreenHeight: 893
+  storedScreenWidth: 1067
+  storedScreenHeight: 667
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: 41539258830f7a24abc38d8bbe487af3, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3948,7 +3980,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+  m_LocalScale: {x: .00299850083, y: .00299850083, z: .00299850083}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -4006,17 +4038,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 239.999985
+    e00: 333.5
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 239.999985
+    e11: 333.5
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 239.999985
+    e22: 333.5
     e23: 0
     e30: 0
     e31: 0
@@ -4169,6 +4201,7 @@ GameObject:
   - 136: {fileID: 1872448176}
   - 114: {fileID: 1872448171}
   - 82: {fileID: 1872448177}
+  - 114: {fileID: 1872448178}
   m_Layer: 11
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -4357,6 +4390,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1872448178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 12abbcd03e4df6a4c96c713e7611102a,
+    type: 2}
+  m_PrefabInternal: {fileID: 951382453}
+  m_GameObject: {fileID: 1872448168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538bfae3530c1524d91c846bf31bf933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  pathName: Wave3Path
+  loop: 0
 --- !u!1 &1891713945
 GameObject:
   m_ObjectHideFlags: 0

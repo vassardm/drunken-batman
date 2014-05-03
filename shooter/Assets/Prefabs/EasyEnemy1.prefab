@@ -17,8 +17,9 @@ GameObject:
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400004}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400006}
   m_Layer: 11
-  m_Name: SideToSideEnemy
+  m_Name: EasyEnemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,6 +168,7 @@ MonoBehaviour:
   time: 23.0049057
   startShootTime: 0
   volume: .300000012
+  enemyDefeatedTrigger: 0
   enemyDie: {fileID: 8300000, guid: a51023c126c5c794484c8eb2622fac8c, type: 3}
   gameScript: {fileID: 0}
 --- !u!114 &11400002
@@ -191,6 +193,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2225b5b84d7ea4d4bb3924d11a302f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538bfae3530c1524d91c846bf31bf933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  pathName: Wave1PathA
+  loop: 0
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 0

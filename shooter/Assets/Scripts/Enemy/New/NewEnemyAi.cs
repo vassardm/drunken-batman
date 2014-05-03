@@ -6,6 +6,7 @@ public class NewEnemyAI : MonoBehaviour
     public int health;
 
     public RegularEnemyRewards rewards;
+    public LevelController controller;
     public GameBehavior GameScript { get; set; }
 
 	// Use this for initialization
@@ -36,6 +37,7 @@ public class NewEnemyAI : MonoBehaviour
             Destroy(gameObject);
             GameScript.enemiesKilled++;
             rewards.DropRewards(GameScript, gameObject);
+            controller.DecrementEnemyCount();
         }
     }
 }

@@ -5,10 +5,13 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     public string pathName;
+    public bool loop;
 
     void Start()
     {
-		iTween.MoveTo(gameObject, iTween.Hash ("path", GetRelativePath (this.pathName, this.transform.position), "speed", this.speed, "looptype", iTween.LoopType.loop));
+        Hashtable hash = iTween.Hash("path", GetRelativePath(this.pathName, this.transform.position), "speed", this.speed);
+        if (loop) { hash.Add("looptype", iTween.LoopType.loop); }
+		iTween.MoveTo(gameObject, hash);
     }
 
     // Starting point must be (0,0,0)

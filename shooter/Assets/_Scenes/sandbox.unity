@@ -403,11 +403,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: StraightRight2
+  pathName: Wave4PathB
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
-  - {x: -5.55000019, y: .75, z: 0}
   - {x: 2.45000005, y: .75, z: 0}
+  - {x: -5.55000019, y: .75, z: 0}
   nodeCount: 2
   initialized: 1
   initialName: New Path 3
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: StraightRight1
+  pathName: Wave4PathA
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -5.55000019, y: 2.22000003, z: 0}
@@ -443,11 +443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: New Path 4
+  pathName: Wave4PathC
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
-  - {x: 2.45000005, y: -.870000005, z: 0}
   - {x: -5.55000019, y: -.870000005, z: 0}
+  - {x: 2.45000005, y: -.870000005, z: 0}
   nodeCount: 2
   initialized: 1
   initialName: New Path 4
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: StraightLoop
+  pathName: Wave2Path
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -5.73999977, y: .970000029, z: 0}
@@ -2110,8 +2110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538bfae3530c1524d91c846bf31bf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  pathName: BasicPath4
+  speed: 1
+  pathName: Wave4PathA
+  loop: 1
 --- !u!1001 &1077905999
 Prefab:
   m_ObjectHideFlags: 0
@@ -2351,7 +2352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: New Path 2
+  pathName: Wave3Path
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -3.21000004, y: -3.61999989, z: 0}
@@ -3395,7 +3396,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1619168515}
-  - 114: {fileID: 1619168514}
   - 114: {fileID: 1619168516}
   - 114: {fileID: 1619168517}
   - 114: {fileID: 1619168518}
@@ -3407,33 +3407,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1619168514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1619168513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: CirclePath
-  pathColor: {r: 0, g: 1, b: 1, a: 1}
-  nodes:
-  - {x: -.00999999978, y: 1.95653152, z: 0}
-  - {x: 1.13, y: 1.09953356, z: 0}
-  - {x: 1.49288797, y: -.0771111846, z: 0}
-  - {x: 1.12842178, y: -1.15249002, z: 0}
-  - {x: 0, y: -1.63999999, z: 0}
-  - {x: -.649999976, y: -1.36000001, z: 0}
-  - {x: -.910000026, y: -.670000017, z: 0}
-  - {x: -.460000008, y: -.189999998, z: 0}
-  - {x: 0, y: 1.95653248, z: 0}
-  nodeCount: 9
-  initialized: 1
-  initialName: New Path 1
-  pathVisible: 0
 --- !u!4 &1619168515
 Transform:
   m_ObjectHideFlags: 0
@@ -3456,7 +3429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: BasicPath1
+  pathName: Wave1PathA
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -5.65999985, y: 2.4000001, z: 0}
@@ -3484,7 +3457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: BasicPath2
+  pathName: Wave1PathB
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: 2.70000005, y: 2.4000001, z: 0}
@@ -3512,7 +3485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: BasicPath3
+  pathName: Wave1PathC
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: 2.61999989, y: 1.01999998, z: 0}
@@ -3540,7 +3513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: BasicPath4
+  pathName: Wave1PathD
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -5.65999985, y: 1.03999996, z: 0}
@@ -3595,7 +3568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: BossPath
+  pathName: BossWavePath
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -1.04999995, y: 2.1400001, z: 0}
@@ -4158,14 +4131,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37c67c9b520f5f4c982fd08b31f9d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1: {fileID: 1075318337}
-  enemy2: {fileID: 100000, guid: 9db67d6d9655c754db9fc859feaa0711, type: 2}
-  enemy3: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
+  enemy1: {fileID: 100000, guid: c1ed0baec1cbe3448855ac5d1037c790, type: 2}
+  enemy2: {fileID: 100000, guid: 7b1b7c4e2f9753d419bbb5ef54c3e38f, type: 2}
+  enemy3: {fileID: 100000, guid: 6b68eeaf793a95a4e953e52fdd04ef5d, type: 2}
   enemy4: {fileID: 100000, guid: d4e2bcaeca17a254b96efc776beb2462, type: 2}
   enemy5: {fileID: 0}
-  pathName1: BasicPath4
-  pathName2: 
-  pathName3: 
+  pathName1: Wave4PathA
+  pathName2: Wave4PathB
+  pathName3: Wave4PathC
   pathName4: 
   pathName5: 
   gameScript: {fileID: 106788443}

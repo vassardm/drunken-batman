@@ -20,19 +20,19 @@ public class SandboxSpawn : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SpawnEnemy(enemy2, defaultSpawnPoint);
+            SpawnEnemy(enemy2, iTweenPath.GetPath(pathName2)[0]);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SpawnEnemy(enemy3, defaultSpawnPoint);
+            SpawnEnemy(enemy3, iTweenPath.GetPath(pathName3)[0]);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            SpawnEnemy(enemy4, defaultSpawnPoint);
+            SpawnEnemy(enemy4, iTweenPath.GetPath(pathName4)[0]);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            SpawnEnemy(enemy5, defaultSpawnPoint);
+            SpawnEnemy(enemy5, iTweenPath.GetPath(pathName5)[0]);
         }
 
         if (Input.GetKeyDown(KeyCode.J))

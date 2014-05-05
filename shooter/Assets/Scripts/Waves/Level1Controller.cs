@@ -12,17 +12,18 @@ public class Level1Controller : MonoBehaviour, LevelController {
         currentEnemyCount = 4;
         currentWave = 1;
 
-        StartWave1();
-    }
-
-    void Update()
-    {
-        
+        StartCoroutine(WaitAndSpawn());
     }
 
     public void DecrementEnemyCount()
     {
         currentEnemyCount--;
+    }
+
+    private IEnumerator WaitAndSpawn()
+    {
+        yield return new WaitForSeconds(3f);
+        StartWave1();
     }
 
     private void StartWave1()

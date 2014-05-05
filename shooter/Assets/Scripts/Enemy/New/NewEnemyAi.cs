@@ -6,7 +6,7 @@ public class NewEnemyAI : MonoBehaviour
     public int health;
 
     public RegularEnemyRewards rewards;
-    public LevelController controller;
+    public Level1Controller controller;
     public GameBehavior GameScript { get; set; }
 
 	// Use this for initialization

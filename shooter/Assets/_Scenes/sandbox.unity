@@ -379,6 +379,7 @@ MonoBehaviour:
   wave1EnemyB: {fileID: 100000, guid: 72412e0bb63d1b441881e71426865e28, type: 2}
   wave1EnemyC: {fileID: 100000, guid: 8b7b9ebc0f030d2448d10a7f8f583371, type: 2}
   wave1EnemyD: {fileID: 100000, guid: a7164c627a72d9742aed700fa2bd5923, type: 2}
+  wave2Enemy: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
 --- !u!1 &145440365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,6 +1989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   rewards: {fileID: 1936018687}
+  controller: {fileID: 0}
 --- !u!82 &1075318340
 AudioSource:
   m_ObjectHideFlags: 0

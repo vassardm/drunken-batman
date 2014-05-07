@@ -188,7 +188,8 @@ GameObject:
   - 114: {fileID: 106788443}
   - 82: {fileID: 106788444}
   - 114: {fileID: 106788445}
-  - 114: {fileID: 106788446}
+  - 114: {fileID: 106788448}
+  - 114: {fileID: 106788447}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -364,7 +365,7 @@ MonoBehaviour:
   gameScript: {fileID: 106788443}
   deathFlag: {fileID: 1280911189}
   fragmentCounter: 0
---- !u!114 &106788446
+--- !u!114 &106788447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -379,7 +380,24 @@ MonoBehaviour:
   wave1EnemyB: {fileID: 100000, guid: 72412e0bb63d1b441881e71426865e28, type: 2}
   wave1EnemyC: {fileID: 100000, guid: 8b7b9ebc0f030d2448d10a7f8f583371, type: 2}
   wave1EnemyD: {fileID: 100000, guid: a7164c627a72d9742aed700fa2bd5923, type: 2}
-  wave2Enemy: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
+  singlePathEnemy1: {fileID: 100000, guid: 12abbcd03e4df6a4c96c713e7611102a, type: 2}
+  singlePathEnemy2: {fileID: 100000, guid: c1ed0baec1cbe3448855ac5d1037c790, type: 2}
+  boss: {fileID: 100000, guid: d4e2bcaeca17a254b96efc776beb2462, type: 2}
+--- !u!114 &106788448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106788437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad342b04a9194cf4793dd51597e670a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneUpPickupItem: {fileID: 100000, guid: 4cd02dc312979554489c7192932a3860, type: 2}
+  bombUpPickUpItem: {fileID: 100000, guid: 7eb3231fafbc24e4ab57d9e825860a0f, type: 2}
+  firePowerPickUpItem: {fileID: 100000, guid: c231b64f0c01398429f9839ad5e5533e, type: 2}
+  scoreUpPickUpItem: {fileID: 100000, guid: a17023e4920be1643bfb77fc917f96da, type: 2}
 --- !u!1 &145440365
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +441,7 @@ MonoBehaviour:
   pathName: Wave4PathB
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
-  - {x: 2.45000005, y: .75, z: 0}
+  - {x: 2.7872467, y: .75, z: 0}
   - {x: -5.55000019, y: .75, z: 0}
   nodeCount: 2
   initialized: 1
@@ -444,7 +462,7 @@ MonoBehaviour:
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -5.55000019, y: 2.22000003, z: 0}
-  - {x: 2.45000005, y: 2.22000003, z: 0}
+  - {x: 2.74679017, y: 2.22000003, z: 0}
   nodeCount: 2
   initialized: 1
   initialName: New Path 3
@@ -464,7 +482,7 @@ MonoBehaviour:
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -5.55000019, y: -.870000005, z: 0}
-  - {x: 2.45000005, y: -.870000005, z: 0}
+  - {x: 2.78617144, y: -.870000005, z: 0}
   nodeCount: 2
   initialized: 1
   initialName: New Path 4
@@ -755,6 +773,7 @@ GameObject:
   - 114: {fileID: 244083075}
   - 82: {fileID: 244083082}
   - 114: {fileID: 244083083}
+  - 114: {fileID: 244083084}
   m_Layer: 11
   m_Name: MedEnemy
   m_TagString: Enemy
@@ -780,7 +799,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1631714285}
   m_GameObject: {fileID: 244083073}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0797b3ccb31b7f4eacbd7ac6d151b9a, type: 3}
   m_Name: 
@@ -955,9 +974,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538bfae3530c1524d91c846bf31bf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  pathName: Wave3Path
+  speed: 1
+  pathName: Wave2Path
   loop: 0
+--- !u!114 &244083084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 12abbcd03e4df6a4c96c713e7611102a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1631714285}
+  m_GameObject: {fileID: 244083073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &335364990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1141,7 @@ MonoBehaviour:
   - {x: .100000001, y: 1.00999999, z: 0}
   - {x: .699999988, y: 1.00999999, z: 0}
   - {x: 2.47000003, y: 1.00999999, z: 0}
-  - {x: 3.45000005, y: 1.00999999, z: 0}
+  - {x: 5.91473675, y: 1.00999999, z: 0}
   nodeCount: 16
   initialized: 1
   initialName: New Path 1
@@ -1988,8 +2020,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  rewards: {fileID: 1936018687}
-  controller: {fileID: 0}
 --- !u!82 &1075318340
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2398,7 +2428,7 @@ MonoBehaviour:
   - {x: -.790000021, y: 2.21000004, z: 0}
   - {x: -.5, y: 1.75999999, z: 0}
   - {x: -.289999992, y: .959999979, z: 0}
-  - {x: -.289999992, y: -3.6099999, z: 0}
+  - {x: -.289999992, y: -6.00471497, z: 0}
   nodeCount: 10
   initialized: 1
   initialName: New Path 2
@@ -3982,7 +4012,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00299850083, y: .00299850083, z: .00299850083}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -4040,17 +4070,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 333.5
+    e00: 239.999985
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 333.5
+    e11: 239.999985
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 333.5
+    e22: 239.999985
     e23: 0
     e30: 0
     e31: 0
@@ -4204,6 +4234,7 @@ GameObject:
   - 114: {fileID: 1872448171}
   - 82: {fileID: 1872448177}
   - 114: {fileID: 1872448178}
+  - 114: {fileID: 1872448179}
   m_Layer: 11
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -4246,7 +4277,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 951382453}
   m_GameObject: {fileID: 1872448168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0797b3ccb31b7f4eacbd7ac6d151b9a, type: 3}
   m_Name: 
@@ -4404,9 +4435,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538bfae3530c1524d91c846bf31bf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  pathName: Wave3Path
+  speed: 1
+  pathName: Wave2Path
   loop: 0
+--- !u!114 &1872448179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 12abbcd03e4df6a4c96c713e7611102a,
+    type: 2}
+  m_PrefabInternal: {fileID: 951382453}
+  m_GameObject: {fileID: 1872448168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &1891713945
 GameObject:
   m_ObjectHideFlags: 0

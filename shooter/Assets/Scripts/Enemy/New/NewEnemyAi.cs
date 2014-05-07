@@ -5,12 +5,14 @@ public class NewEnemyAI : MonoBehaviour
 {
     public int health;
 
-    public RegularEnemyRewards rewards;
-    public Level1Controller controller;
-    public GameBehavior GameScript { get; set; }
+    private RegularEnemyRewards rewards;
+    private Level1Controller controller;
+    private GameBehavior GameScript { get; set; }
 
 	// Use this for initialization
 	void Start () {
+        rewards = Camera.main.GetComponent<RegularEnemyRewards>();
+        controller = Camera.main.GetComponent<Level1Controller>();
         GameScript = Camera.main.GetComponent<GameBehavior>();
 	}
 	

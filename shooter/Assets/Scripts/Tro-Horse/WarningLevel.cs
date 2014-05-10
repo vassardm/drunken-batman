@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System; // Allows us to use the IComparable Interface.
 
 // To use a collection's sort() method, we need to use the IComparable interface.
@@ -7,12 +8,12 @@ public class WarningLevel : IComparable<WarningLevel> {
 
 	// A warning level has a color and an effect to the system.
 	public string color;
-	public int valueEffect;
+	public List<float> valueEffects;
 	public float endGameModifier;
 
-	public WarningLevel (string newColor, int newValueEffect, float newEndGameModifier) {
+	public WarningLevel (string newColor, List<float> newValueEffects, float newEndGameModifier) {
 		color = newColor;
-		valueEffect = newValueEffect;
+		valueEffects = newValueEffects;
 		endGameModifier = newEndGameModifier;
 	}
 
@@ -20,8 +21,8 @@ public class WarningLevel : IComparable<WarningLevel> {
 		return color;
 	}
 
-	public int getValueEffect() {
-		return valueEffect;
+	public List<float> getValueEffects() {
+		return valueEffects;
 	}
 
 	public float getEndGameModifer() {
@@ -33,24 +34,15 @@ public class WarningLevel : IComparable<WarningLevel> {
 		return color;
 	}
 	
-	public int setValueEffect(int newValueEffect) {
-		valueEffect = newValueEffect;
-		return valueEffect;
-	}
-	
-	public float setEndGameModifier(float newEndGameModifier) {
-		endGameModifier = newEndGameModifier;
-		return endGameModifier;
+	public void setValueEffect(List<float> newValueEffect) {
+		valueEffects = newValueEffect;
 	}
 
-	public int CompareTo(WarningLevel other) {
-		if (other == null) {
-			return 1;
-		}
+    public float setEndGameModifier(float newEndGameModifier)
+    {
+        endGameModifier = newEndGameModifier;
+        return endGameModifier;
+    }
 
-		// Return the difference in modifiers
-		return valueEffect + (other.valueEffect);
-
-	}
-
+    public int CompareTo(WarningLevel other) { return 0; }
 }

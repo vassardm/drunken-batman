@@ -6,10 +6,14 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     public string pathName;
     public bool loop;
+    THorseSystemMechanics th;
 
     void Start()
     {
-        Hashtable hash = iTween.Hash("path", GetRelativePath(this.pathName, this.transform.position), "speed", this.speed);
+        th = Camera.main.GetComponent<THorseSystemMechanics>();
+
+        Hashtable hash = iTween.Hash("path", GetRelativePath(this.pathName, this.transform.position),
+            "speed", (this.speed + th.GetModifier(0)));
         if (loop) { hash.Add("looptype", iTween.LoopType.loop); }
 		iTween.MoveTo(gameObject, hash);
     }

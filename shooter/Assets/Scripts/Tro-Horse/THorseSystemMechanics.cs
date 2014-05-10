@@ -47,14 +47,23 @@ public class THorseSystemMechanics : MonoBehaviour {
 	// Create and load the warning levels.
 	// TODO: Add the effect modifiers once the enemy class gets constructed.
 	public Dictionary<string, WarningLevel> launchWarningLevelDictionary() {
+        // List elements: {speed, startShootTime, timeBetweenShots, bulletVelocity}
+        List<float> redModifier = new List<float>() { 1.5f, -0.75f, -0.75f, 1.5f };
+        List<float> orangeModifier = new List<float>() { 1, -0.5f, -0.5f, 1 };
+        List<float> yellowModifier = new List<float>() { 0.5f, -0.25f, -0.25f, 0.5f };
+        List<float> greenModifier = new List<float>() { 0, 0, 0, 0 };
+        List<float> blueModifier = new List<float>() { -0.5f, 0, 0, -1 };
+        List<float> purpleModifier = new List<float>() { -1, 0.5f, -0.5f, -1.5f };
+        List<float> whiteModifier = new List<float>() { -1.5f, 0.75f, -0.75f, -1.75f };
+
 		Dictionary<string, WarningLevel> securityLevels = new Dictionary<string, WarningLevel> ();
-		WarningLevel red = new WarningLevel("red", 0, 4.0f);
-		WarningLevel orange = new WarningLevel ("orange", 0, 3.0f);
-		WarningLevel yellow = new WarningLevel ("yellow", 0, 2.0f);
-		WarningLevel green = new WarningLevel ("green", 0, 1.0f);
-		WarningLevel blue = new WarningLevel ("blue", 0, 0.5f);
-		WarningLevel purple = new WarningLevel ("purple", 0, 0.25f);
-		WarningLevel white = new WarningLevel ("white", 0, 0.001f);
+		WarningLevel red = new WarningLevel("red", redModifier, 4.0f);
+		WarningLevel orange = new WarningLevel ("orange", orangeModifier, 3.0f);
+		WarningLevel yellow = new WarningLevel ("yellow", yellowModifier, 2.0f);
+		WarningLevel green = new WarningLevel ("green", greenModifier, 1.0f);
+		WarningLevel blue = new WarningLevel ("blue", blueModifier, 0.5f);
+		WarningLevel purple = new WarningLevel ("purple", purpleModifier, 0.25f);
+		WarningLevel white = new WarningLevel ("white", whiteModifier, 0.001f);
 		securityLevels.Add ("red", red);
 		securityLevels.Add ("orange", orange);
 		securityLevels.Add ("yellow", yellow);
@@ -73,7 +82,7 @@ public class THorseSystemMechanics : MonoBehaviour {
 			deathFlag.deathTrigger = false;
 		}
 		else {
-			increasePointScore();
+			increasePointScore(5);
 		}
 	}
 
@@ -89,15 +98,17 @@ public class THorseSystemMechanics : MonoBehaviour {
 	}
 
 	// Handle the mechanics if a player does well against the system.
-	public void increasePointScore() {
-		// This counter increases in two ways.
-		// 1) You will earn 3 points for each enemy you defeated.
-		// 2) You will earn 1 point for each graze you perform.
+	public void increasePointScore(int points) {
 		if (gameScript.grazeTriggered) {
-			fragmentCounter += 1;
+			fragmentCounter += points;
 			gameScript.grazeTriggered = false;
 		}
 
+        if (gameScript.enemyDeathTriggered)
+        {
+            fragmentCounter += points;
+            gameScript.enemyDeathTriggered = false;
+        }
 
 		// In case that the player is doing too well....
 		if (fragmentCounter > fragmentMax) {
@@ -150,4 +161,9 @@ public class THorseSystemMechanics : MonoBehaviour {
 		}
 		
 	}
+
+    internal float GetModifier(int index)
+    {
+        return currentWarningLevel.getValueEffects()[index];
+    }
 }

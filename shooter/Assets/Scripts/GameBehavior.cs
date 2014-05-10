@@ -14,6 +14,7 @@ public class GameBehavior : MonoBehaviour {
 
 	public bool paused = false;
 	public bool grazeTriggered = false;
+    public bool enemyDeathTriggered = false;
 
 	public float fireRate;
 	public float firePower = 0;

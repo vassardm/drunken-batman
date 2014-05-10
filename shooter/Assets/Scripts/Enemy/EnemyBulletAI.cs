@@ -4,15 +4,14 @@ using System.Collections;
 public class EnemyBulletAI : MonoBehaviour {
 
 	public GameBehavior globals;
+    public Vector2 velocity;
 	public bool grazeTrigger = false;
 	public bool entered = false; // You need this flag or the game will try to read EVERY instance of the collison!
 
 	// Use this for initialization
 	void Start () {
 
-		Vector2 newVelocity = Vector2.zero;
-		newVelocity.y = -3.0f;
-		rigidbody2D.velocity = newVelocity;
+		rigidbody2D.velocity = velocity;
 		globals = Camera.main.GetComponent<GameBehavior>();
 	
 	}

@@ -8,12 +8,14 @@ public class NewEnemyAI : MonoBehaviour
     private RegularEnemyRewards rewards;
     private Level1Controller controller;
     private GameBehavior GameScript { get; set; }
+    private THorseSystemMechanics th;
 
 	// Use this for initialization
 	void Start () {
         rewards = Camera.main.GetComponent<RegularEnemyRewards>();
         controller = Camera.main.GetComponent<Level1Controller>();
         GameScript = Camera.main.GetComponent<GameBehavior>();
+        th = Camera.main.GetComponent<THorseSystemMechanics>();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +42,8 @@ public class NewEnemyAI : MonoBehaviour
             //GameScript.enemiesKilled++;
             rewards.DropRewards(GameScript, gameObject);
             //controller.DecrementEnemyCount();
+            GameScript.enemyDeathTriggered = true;
+            th.increasePointScore(15);
         }
     }
 

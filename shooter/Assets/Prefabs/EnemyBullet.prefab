@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globals: {fileID: 0}
+  velocity: {x: 0, y: -3}
+  grazeTrigger: 0
   entered: 0
 --- !u!114 &11400002
 MonoBehaviour:

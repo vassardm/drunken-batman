@@ -16,10 +16,10 @@ GameObject:
   - 136: {fileID: 13600000}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400008}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400004}
   m_Layer: 11
-  m_Name: EasyEnemy2
+  m_Name: Wave1EnemyC
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,12 +156,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ce348928b11e8a4d8e9cab63fa8b636, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
-  timeBetweenShots: 2
-  startShootTime: 1
+  health: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,6 +171,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71de3df2e22bf5d46b76b8ddcec6cf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce348928b11e8a4d8e9cab63fa8b636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
+  timeBetweenShots: 2
+  startShootTime: 1
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,20 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  pathName: Wave1PathB
+  pathName: Wave1PathC
   loop: 0
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 2
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

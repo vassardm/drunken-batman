@@ -19,7 +19,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400000}
   m_Layer: 11
-  m_Name: EasyEnemy1
+  m_Name: Wave1EnemyA
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -17,6 +17,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400000}
   m_Layer: 11
   m_Name: EasyEnemy2
   m_TagString: Enemy
@@ -147,6 +148,20 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce348928b11e8a4d8e9cab63fa8b636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
+  timeBetweenShots: 2
+  startShootTime: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

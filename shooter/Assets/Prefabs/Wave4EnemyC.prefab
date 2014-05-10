@@ -17,6 +17,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400006}
   m_Layer: 11
   m_Name: Wave4EnemyC
   m_TagString: Enemy
@@ -184,6 +185,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71de3df2e22bf5d46b76b8ddcec6cf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce348928b11e8a4d8e9cab63fa8b636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
+  timeBetweenShots: .5
+  startShootTime: 0
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

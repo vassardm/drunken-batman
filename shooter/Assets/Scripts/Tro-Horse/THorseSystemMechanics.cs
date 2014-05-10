@@ -25,8 +25,7 @@ public class THorseSystemMechanics : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		updateFragmentCounterFunctionality ();
-		updateSecurityLevelSystemChange ();
-		print (currentWarningLevel.getColor() + "   " + fragmentCounter);
+        updateSecurityLevelSystemChange();
 	}
 
 	// Return the values provided from the GameBehavior

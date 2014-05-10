@@ -9,11 +9,15 @@ public class SimpleBulletPattern : MonoBehaviour {
     public float timeBetweenShots;
     public float startShootTime;
 
+    private THorseSystemMechanics th;
+
     private float time;
 
     void Start()
     {
-        time = Time.time + timeBetweenShots + startShootTime;
+        th = Camera.main.GetComponent<THorseSystemMechanics>();
+
+        time = Time.time + (timeBetweenShots + th.GetModifier(2)) + (startShootTime + th.GetModifier(1));
     }
 	
 	// Update is called once per frame
@@ -21,8 +25,10 @@ public class SimpleBulletPattern : MonoBehaviour {
     {
         if (Time.time > time)
         {
+            int counter = 0;
+            print(counter + 1 + "I am firing!!!!!!");
             Instantiate(bullet, transform.position, transform.rotation);
-            time += timeBetweenShots;
+            time += (timeBetweenShots + th.GetModifier(2));
         }
 	}
 }

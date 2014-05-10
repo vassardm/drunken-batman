@@ -8,10 +8,14 @@ public class EnemyBulletAI : MonoBehaviour {
 	public bool grazeTrigger = false;
 	public bool entered = false; // You need this flag or the game will try to read EVERY instance of the collison!
 
+    private THorseSystemMechanics th;
+
 	// Use this for initialization
 	void Start () {
+        th = Camera.main.GetComponent<THorseSystemMechanics>();
 
-		rigidbody2D.velocity = velocity;
+        Vector2 newVelocity = new Vector2(velocity.x, velocity.y + th.GetModifier(3));
+        rigidbody2D.velocity = newVelocity;
 		globals = Camera.main.GetComponent<GameBehavior>();
 	
 	}

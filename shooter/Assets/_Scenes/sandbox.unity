@@ -284,6 +284,7 @@ MonoBehaviour:
   bossKilled: 0
   paused: 0
   grazeTriggered: 0
+  enemyDeathTriggered: 0
   fireRate: .400000006
   firePower: 0
   numOfBullets: 1

@@ -37,9 +37,15 @@ public class NewEnemyAI : MonoBehaviour
         if (health < 1)
         {
             Destroy(gameObject);
-            GameScript.enemiesKilled++;
+            //GameScript.enemiesKilled++;
             rewards.DropRewards(GameScript, gameObject);
-            controller.DecrementEnemyCount();
+            //controller.DecrementEnemyCount();
         }
+    }
+
+    void OnDestroy()
+    {
+        GameScript.enemiesKilled++;
+        controller.DecrementEnemyCount();
     }
 }

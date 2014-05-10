@@ -6,8 +6,10 @@ using System.Collections;
 public class Level1Controller : MonoBehaviour 
 {
     public GameObject wave1EnemyA, wave1EnemyB, wave1EnemyC, wave1EnemyD;
-    public GameObject singlePathEnemy1, singlePathEnemy2;
+    public GameObject wave2Enemy; 
+    public GameObject wave3EnemyA, wave3EnemyB;
     public GameObject wave4EnemyA, wave4EnemyB, wave4EnemyC;
+    public GameObject wave5EnemyA, wave5EnemyB, wave5EnemyC;
     public GameObject boss;
 
     private int currentEnemyCount;
@@ -39,17 +41,21 @@ public class Level1Controller : MonoBehaviour
             {
                 case 2:
                     currentEnemyCount = SINGLE_PATH_WAVE_COUNT;
-                    StartSinglePathWave(singlePathEnemy1, SINGLE_PATH_WAVE_COUNT);
+                    StartCoroutine(StartWave2());
                     break;
                 case 3:
-                    currentEnemyCount = SINGLE_PATH_WAVE_COUNT;
-                    StartSinglePathWave(singlePathEnemy2, SINGLE_PATH_WAVE_COUNT);
+                    currentEnemyCount = SINGLE_PATH_WAVE_COUNT * 2;
+                    StartCoroutine(StartWave3());
                     break;
                 case 4:
                     currentEnemyCount = WAVE4_PATH_COUNT * 3;
-                    StartCoroutine(StartWave4());
+                    StartCoroutine(StartThreePathWave(wave4EnemyA, wave4EnemyB, wave4EnemyC));
                     break;
                 case 5:
+                    currentEnemyCount = WAVE4_PATH_COUNT * 3;
+                    StartCoroutine(StartThreePathWave(wave5EnemyA, wave5EnemyB, wave5EnemyC));
+                    break;
+                case 6:
                     currentEnemyCount = 1;
                     StartCoroutine(StartBoss());
                     break;
@@ -81,41 +87,58 @@ public class Level1Controller : MonoBehaviour
     }
 
     /// <summary>
-    /// Start a wave that has multiple enemies on a single path.
+    /// Start wave 2.
     /// </summary>
-    /// <param name="enemy">The enemy to put on the path</param>
-    private void StartSinglePathWave(GameObject enemy, int count)
+    /// <returns>The IEnumerator for StartCoroutine</returns>
+    private IEnumerator StartWave2()
     {
-        string pathName = enemy.GetComponent<EnemyMovement>().pathName;
-        StartCoroutine(SpawnSinglePathEnemies(enemy, pathName, count));
-    }
-
-    private IEnumerator SpawnSinglePathEnemies(GameObject enemy, string pathName, int count)
-    {
+        string pathName = wave2Enemy.GetComponent<EnemyMovement>().pathName;
         isRunning = true;
-        for (int i = 0; i < count; i++)
+
+        for (int i = 0; i < SINGLE_PATH_WAVE_COUNT; i++)
         {
             yield return new WaitForSeconds(TIME_BETWEEN_WAVES);
-            Instantiate(enemy, iTweenPath.GetPath(pathName)[0], enemy.transform.rotation);
+            Instantiate(wave2Enemy, iTweenPath.GetPath(pathName)[0], wave2Enemy.transform.rotation);
         }
 
         isRunning = false;
     }
 
-    private IEnumerator StartWave4()
+    /// <summary>
+    /// Start wave 2.
+    /// </summary>
+    /// <returns>The IEnumerator for StartCoroutine</returns>
+    private IEnumerator StartWave3()
+    {
+        isRunning = true;
+        yield return new WaitForSeconds(TIME_BETWEEN_WAVES);
+
+        for (int i = 0; i < SINGLE_PATH_WAVE_COUNT; i++)
+        {
+            SpawnEnemy(wave3EnemyA);
+            yield return new WaitForSeconds(TIME_BETWEEN_WAVES / 2);
+
+            SpawnEnemy(wave3EnemyB);
+            yield return new WaitForSeconds(TIME_BETWEEN_WAVES / 2);
+        }
+
+        isRunning = false;
+    }
+
+    private IEnumerator StartThreePathWave(GameObject enemyA, GameObject enemyB, GameObject enemyC)
     {
         isRunning = true;
         yield return new WaitForSeconds(TIME_BETWEEN_WAVES);
 
         for (int i = 0; i < WAVE4_PATH_COUNT; i++)
         {
-            SpawnEnemyWithWait(wave4EnemyA);
+            SpawnEnemy(enemyA);
             yield return new WaitForSeconds(TIME_BETWEEN_WAVES / 2);
 
-            SpawnEnemyWithWait(wave4EnemyB);
+            SpawnEnemy(enemyB);
             yield return new WaitForSeconds(TIME_BETWEEN_WAVES / 2);
 
-            SpawnEnemyWithWait(wave4EnemyC);
+            SpawnEnemy(enemyC);
             yield return new WaitForSeconds(TIME_BETWEEN_WAVES / 2);
         }
 
@@ -135,7 +158,7 @@ public class Level1Controller : MonoBehaviour
     /// </summary>
     /// <param name="enemy">The enemy to spawn</param>
     /// <returns>The IEnumerator for StartCoroutine</returns>
-    private void SpawnEnemyWithWait(GameObject enemy)
+    private void SpawnEnemy(GameObject enemy)
     {
         string pathName = enemy.GetComponent<EnemyMovement>().pathName;
         Instantiate(enemy, iTweenPath.GetPath(pathName)[0], enemy.transform.rotation);

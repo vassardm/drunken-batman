@@ -285,6 +285,7 @@ MonoBehaviour:
   paused: 0
   grazeTriggered: 0
   enemyDeathTriggered: 0
+  bossBattleTrigger: 0
   fireRate: .400000006
   firePower: 0
   numOfBullets: 1
@@ -292,6 +293,7 @@ MonoBehaviour:
   highScoreLabel: {fileID: 0}
   grazeLabel: {fileID: 0}
   backgroundLevelMusic: {fileID: 0}
+  bossBattleMusic: {fileID: 106788438}
   grazeClip: {fileID: 8300000, guid: f512a7f6c352b5e4cbb0f872a9df32bf, type: 3}
   placeholder: {fileID: 0}
 --- !u!82 &106788444
@@ -302,7 +304,7 @@ AudioSource:
   m_GameObject: {fileID: 106788437}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9624d1ce898c6824689455fb2091cbf4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .30399999
   m_Pitch: 1
@@ -377,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3196d4d068589740bb353b35c2cda7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScript: {fileID: 106788443}
   wave1EnemyA: {fileID: 100000, guid: 7e9b44982df21664699a8155ce138810, type: 2}
   wave1EnemyB: {fileID: 100000, guid: 72412e0bb63d1b441881e71426865e28, type: 2}
   wave1EnemyC: {fileID: 100000, guid: 8b7b9ebc0f030d2448d10a7f8f583371, type: 2}
@@ -985,7 +988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
 --- !u!1 &335364990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,8 +1035,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 667
+  storedScreenWidth: 379
+  storedScreenHeight: 284
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: acf327304ae372942ab20012d2a0620e, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1329,8 +1331,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 667
+  storedScreenWidth: 379
+  storedScreenHeight: 284
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .0299999993, y: .340000004}
   screenPositionNormalized: 1
@@ -2016,7 +2018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
 --- !u!82 &1075318340
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2279,8 +2280,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 667
+  storedScreenWidth: 379
+  storedScreenHeight: 284
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .730000019, y: .600000024}
   screenPositionNormalized: 1
@@ -2558,6 +2559,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: bossBattleMusic
+      value: 
+      objectReference: {fileID: 106788438}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   m_RootGameObject: {fileID: 106788437}
@@ -2626,8 +2631,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: .0313725509, b: .0627451017, a: 1}
   effectSmoothChange: 1
   effectSmoothChangeSpeed: 1
-  storedScreenWidth: 879
-  storedScreenHeight: 667
+  storedScreenWidth: 379
+  storedScreenHeight: 284
   _tint: {r: 1, g: 1, b: 1, a: 1}
   screenPosition: {x: .790000021, y: .689999998}
   screenPositionNormalized: 1
@@ -4064,8 +4069,8 @@ MonoBehaviour:
   labelOutlineColor: {r: 0, g: 0, b: 0, a: 1}
   effectSmoothChange: 0
   effectSmoothChangeSpeed: .5
-  storedScreenWidth: 879
-  storedScreenHeight: 667
+  storedScreenWidth: 379
+  storedScreenHeight: 284
   _tint: {r: 1, g: 1, b: 1, a: 1}
   icon: {fileID: 2800000, guid: 41539258830f7a24abc38d8bbe487af3, type: 3}
   iconColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4127,7 +4132,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -4185,17 +4190,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 239.999985
+    e00: 160
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 239.999985
+    e11: 160
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 239.999985
+    e22: 160
     e23: 0
     e30: 0
     e31: 0
@@ -4553,7 +4558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
 --- !u!1 &1891713945
 GameObject:
   m_ObjectHideFlags: 0

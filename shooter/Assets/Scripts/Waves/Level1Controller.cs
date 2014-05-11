@@ -5,6 +5,7 @@ using System.Collections;
 
 public class Level1Controller : MonoBehaviour 
 {
+	public GameBehavior gameScript;
     public GameObject wave1EnemyA, wave1EnemyB, wave1EnemyC, wave1EnemyD;
     public GameObject wave2Enemy; 
     public GameObject wave3EnemyA, wave3EnemyB;
@@ -18,7 +19,7 @@ public class Level1Controller : MonoBehaviour
     private const int WAVE1_COUNT = 4;
     private const int SINGLE_PATH_WAVE_COUNT = 15;
     private const int WAVE4_PATH_COUNT = 10;
-    private const float TIME_BETWEEN_WAVES = 1f;
+	private const float TIME_BETWEEN_WAVES = 1f;
 
     private bool isRunning;
 
@@ -57,6 +58,7 @@ public class Level1Controller : MonoBehaviour
                     break;
                 case 6:
                     currentEnemyCount = 1;
+				    gameScript.bossBattleTrigger = true;
                     StartCoroutine(StartBoss());
                     break;
             }

@@ -15,6 +15,7 @@ public class GameBehavior : MonoBehaviour {
 	public bool paused = false;
 	public bool grazeTriggered = false;
     public bool enemyDeathTriggered = false;
+	public bool bossBattleTrigger = false;
 
 	public float fireRate;
 	public float firePower = 0;
@@ -24,7 +25,8 @@ public class GameBehavior : MonoBehaviour {
 	public UILabel highScoreLabel;
 	public UILabel grazeLabel;
 
-	public AudioClip backgroundLevelMusic;
+	public AudioListener backgroundLevelMusic;
+	public AudioListener bossBattleMusic;
 	public AudioClip grazeClip;
 
 	public GUIText placeholder;
@@ -49,7 +51,7 @@ public class GameBehavior : MonoBehaviour {
 	}
 
 	public void launchAudio() {
-		audio.Play ();
+		backgroundLevelMusic.audio.Play ();
 	}
 
 	public void launchLabels() {
@@ -81,6 +83,11 @@ public class GameBehavior : MonoBehaviour {
 				paused = false;
 				audio.volume = .3f;
 			}
+		}
+
+		if (bossBattleTrigger && backgroundLevelMusic.audio.isPlaying) {
+			backgroundLevelMusic.audio.Stop();
+			bossBattleMusic.audio.Play();
 		}
 
 		updateGrazeMeterFunctionality ();

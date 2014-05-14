@@ -48,15 +48,15 @@ public class Level1Controller : MonoBehaviour
                     currentEnemyCount = SINGLE_PATH_WAVE_COUNT * 2;
                     StartCoroutine(StartWave3());
                     break;
+                //case 4:
+                //    currentEnemyCount = WAVE4_PATH_COUNT * 3;
+                //    StartCoroutine(StartThreePathWave(wave4EnemyA, wave4EnemyB, wave4EnemyC));
+                //    break;
                 case 4:
-                    currentEnemyCount = WAVE4_PATH_COUNT * 3;
-                    StartCoroutine(StartThreePathWave(wave4EnemyA, wave4EnemyB, wave4EnemyC));
-                    break;
-                case 5:
                     currentEnemyCount = WAVE4_PATH_COUNT * 3;
                     StartCoroutine(StartThreePathWave(wave5EnemyA, wave5EnemyB, wave5EnemyC));
                     break;
-                case 6:
+                case 5:
                     currentEnemyCount = 1;
 				    gameScript.bossBattleTrigger = true;
                     StartCoroutine(StartBoss());

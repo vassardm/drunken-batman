@@ -988,6 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 6
 --- !u!1 &335364990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!82 &1075318340
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3225,8 +3227,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1482185280}
   - 114: {fileID: 1482185283}
-  - 114: {fileID: 1482185282}
   - 114: {fileID: 1482185281}
+  - 114: {fileID: 1482185282}
   m_Layer: 0
   m_Name: Wave5
   m_TagString: Untagged
@@ -4132,7 +4134,7 @@ Transform:
   m_GameObject: {fileID: 1774306739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 950002837}
   - {fileID: 877603839}
@@ -4190,17 +4192,17 @@ MonoBehaviour:
   renderQueue: 0
   startingRenderQueue: 3000
   worldToLocal:
-    e00: 160
+    e00: 239.999985
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 160
+    e11: 239.999985
     e12: 0
     e13: 0
     e20: 0
     e21: 0
-    e22: 160
+    e22: 239.999985
     e23: 0
     e30: 0
     e31: 0
@@ -4558,6 +4560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1ceca1ab95202449caf885fdca44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 6
 --- !u!1 &1891713945
 GameObject:
   m_ObjectHideFlags: 0

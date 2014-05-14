@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce348928b11e8a4d8e9cab63fa8b636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 100000, guid: 9b3b08dbcb2b84f43bcbd23f57c8809d, type: 2}
+  bullet: {fileID: 100000, guid: 75eabc76782dbcf48a2c3eab1b0daf44, type: 2}
   timeBetweenShots: 1.5
   startShootTime: 0
 --- !u!114 &11400002

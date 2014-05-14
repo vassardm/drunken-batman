@@ -11,11 +11,11 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 50: {fileID: 5000000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
   m_Layer: 9
-  m_Name: EnemyBullet
+  m_Name: EnemyRightBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,13 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258f5a68ae8831245b70021a8b946ce4, type: 3}
+  m_Script: {fileID: 11500000, guid: 71de3df2e22bf5d46b76b8ddcec6cf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globals: {fileID: 0}
-  velocity: {x: 0, y: -3}
-  grazeTrigger: 0
-  entered: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,9 +105,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71de3df2e22bf5d46b76b8ddcec6cf40, type: 3}
+  m_Script: {fileID: 11500000, guid: 258f5a68ae8831245b70021a8b946ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globals: {fileID: 0}
+  velocity: {x: 3, y: 0}
+  grazeTrigger: 0
+  entered: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

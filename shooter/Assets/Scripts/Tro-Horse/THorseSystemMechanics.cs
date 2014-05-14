@@ -99,7 +99,7 @@ public class THorseSystemMechanics : MonoBehaviour {
 	// Handle the mechanics if a player does well against the system.
 	public void increasePointScore(int points) {
 		if (gameScript.grazeTriggered) {
-			fragmentCounter += points;
+			fragmentCounter += (points / 5);
 			gameScript.grazeTriggered = false;
 		}
 

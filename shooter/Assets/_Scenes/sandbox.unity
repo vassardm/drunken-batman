@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a81ca0b196c1474f931ac68f5d2e2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScoreCounter: 1000000
+  highScoreCounter: 0
   scoreCounter: 0
   numOfLives: 99
   bombCounter: 99
@@ -2531,7 +2531,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
       propertyPath: highScoreCounter
-      value: 1000000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
       propertyPath: numOfLives

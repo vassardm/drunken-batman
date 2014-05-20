@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameBehavior : MonoBehaviour {
 
-	public int highScoreCounter = 1000000;
+	public int highScoreCounter;
 	public int scoreCounter = 0;
 	public int numOfLives = 99;
 	public int bombCounter = 99;
@@ -99,7 +99,6 @@ public class GameBehavior : MonoBehaviour {
 	public void updateScoreandHighScoreFunctionality() {
 		scoreLabel = GameObject.Find ("Current Score").GetComponent < UILabel>();
 		scoreLabel.text = scoreCounter.ToString();
-		
 		
 		if (scoreCounter >= highScoreCounter) {
 			highScoreCounter = scoreCounter;

@@ -289,9 +289,9 @@ MonoBehaviour:
   fireRate: .400000006
   firePower: 0
   numOfBullets: 1
-  scoreLabel: {fileID: 0}
-  highScoreLabel: {fileID: 0}
-  grazeLabel: {fileID: 0}
+  scoreLabel: {fileID: 1030819139}
+  highScoreLabel: {fileID: 433793009}
+  grazeLabel: {fileID: 877603840}
   backgroundLevelMusic: {fileID: 0}
   bossBattleMusic: {fileID: 106788438}
   grazeClip: {fileID: 8300000, guid: f512a7f6c352b5e4cbb0f872a9df32bf, type: 3}
@@ -2581,6 +2581,18 @@ Prefab:
       propertyPath: bossBattleMusic
       value: 
       objectReference: {fileID: 106788438}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: scoreLabel
+      value: 
+      objectReference: {fileID: 1030819139}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: grazeLabel
+      value: 
+      objectReference: {fileID: 877603840}
+    - target: {fileID: 11400000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
+      propertyPath: highScoreLabel
+      value: 
+      objectReference: {fileID: 433793009}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d66d81c5a60e784fae7d0dfe37bcc65, type: 2}
   m_RootGameObject: {fileID: 106788437}
